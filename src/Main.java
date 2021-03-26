@@ -1,5 +1,6 @@
 import algorithms.mazeGenerators.EmptyMazeGenerator;
 import algorithms.mazeGenerators.Maze;
+import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.mazeGenerators.SimpleMazeGenerator;
 
 public class Main
@@ -7,12 +8,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("hey");
-        EmptyMazeGenerator empt = new EmptyMazeGenerator();
-        Maze maze = empt.generate(20, 8);
-        SimpleMazeGenerator d = new SimpleMazeGenerator();
-        Maze c = d.generate(10, 30);
-        c.Print();
-        maze.Print();
-
+        MyMazeGenerator m = new MyMazeGenerator();
+        Maze newMaze = m.generate(100, 100);
+        newMaze.Print();
     }
 }

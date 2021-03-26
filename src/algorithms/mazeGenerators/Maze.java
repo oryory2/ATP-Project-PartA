@@ -47,7 +47,7 @@ public class Maze
         for (int t = 0; t < mazeArr[0].length; t++) // Last Row
         {
             if(t != mazeArr[0].length - 1)
-                System.out.print(mazeArr[0][t] + " ");
+                System.out.print(mazeArr[mazeArr.length - 1][t] + " ");
             else
                 System.out.println("E }");
         }
