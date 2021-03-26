@@ -10,8 +10,7 @@ public class Maze
     {
         this.mazeArr = mazeArr;
         this.StartPosition = new Position(0,0);
-        this.GoalPosition = new Position(mazeArr.length, mazeArr[0].length);
-
+        this.GoalPosition = new Position(mazeArr.length - 1, mazeArr[0].length - 1);
     }
     public Position getStartPosition()
     {
