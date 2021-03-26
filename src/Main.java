@@ -2,6 +2,7 @@ import algorithms.mazeGenerators.EmptyMazeGenerator;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.mazeGenerators.SimpleMazeGenerator;
+import test.RunMazeGenerator;
 
 public class Main
 {
@@ -9,7 +10,7 @@ public class Main
     {
         System.out.println("hey");
         MyMazeGenerator m = new MyMazeGenerator();
-        Maze newMaze = m.generate(100, 100);
-        newMaze.Print();
+        System.out.println(m.measureAlgorithmTimeMillis(1000, 1000));
+        RunMazeGenerator.testMazeGenerator(new MyMazeGenerator());
     }
 }
