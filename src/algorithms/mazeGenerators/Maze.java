@@ -5,12 +5,16 @@ public class Maze
     private Position StartPosition;
     private Position GoalPosition;
     private int [][] mazeArr;
+    private int max_rows;
+    private int max_columns;
 
     public Maze(int [][] mazeArr)
     {
         this.mazeArr = mazeArr;
         this.StartPosition = new Position(0,0);
         this.GoalPosition = new Position(mazeArr.length - 1, mazeArr[0].length - 1);
+        this.max_rows = mazeArr.length;
+        this.max_columns = mazeArr[0].length;
     }
     public Position getStartPosition()
     {
@@ -20,6 +24,7 @@ public class Maze
     {
         return this.GoalPosition;
     }
+
     public void Print()
     {
 
@@ -52,5 +57,14 @@ public class Maze
                 System.out.println("E }");
         }
         System.out.println("}");
+    }
+
+
+    public int getMax_rows() {
+        return max_rows;
+    }
+
+    public int getMax_columns() {
+        return max_columns;
     }
 }
