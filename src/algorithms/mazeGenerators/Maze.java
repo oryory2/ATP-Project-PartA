@@ -67,7 +67,6 @@ public class Maze
         return this.mazeArr;
     }
 
-
     public int getMax_rows() {
         return max_rows;
     }

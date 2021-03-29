@@ -12,7 +12,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
     public BreadthFirstSearch()
     {
         super();
-        super.name = "BreadthFirstSearch";
+        this.name = "BreadthFirstSearch";
     }
 
     public Solution solve(ISearchable ISC)
@@ -24,9 +24,12 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
         ArrayList<AState> visitedStates = new ArrayList<AState>();
         statesQueue.add(startState);
         visitedStates.add(startState);
-        boolean solution = false;
+        if (thisState.compStates(ISC.getGoalState()))
+            return restoreSolutionPath(ISC.getStartState(), thisState);
 
-        while((!statesQueue.isEmpty()) && (solution == false))
+
+        boolean solved = false;
+        while((!statesQueue.isEmpty()) && (!solved))
         {
             statesQueue.remove(thisState);
             ArrayList<AState> nearbyStates = ISC.getAllPossibleStates(thisState);
@@ -34,16 +37,21 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
             {
                 if (!(nearbyStates.get(i).legalState()))
                     continue;
-                if (ASearchingAlgorithm.isVisited(visitedStates, nearbyStates.get(i)) == true)
+                if (ASearchingAlgorithm.isVisited(visitedStates, nearbyStates.get(i)))
                     continue;
                 nearbyStates.get(i).setPrevState(thisState);
                 statesQueue.add(nearbyStates.get(i));
-                if (nearbyStates.get(i).compStates(ISC.getGoalState()) == true)
+                visitedStates.add(nearbyStates.get(i));
+
+                if (nearbyStates.get(i).compStates(ISC.getGoalState()))
                 {
                     thisState = nearbyStates.get(i);
-                    solution = true;
+                    solved = true;
+                    break;
                 }
             }
+            if(solved)
+                break;
             thisState = statesQueue.get(0);
         }
             return restoreSolutionPath(ISC.getStartState(), thisState);

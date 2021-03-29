@@ -31,7 +31,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
     {
         for(int i = 0; i < States.size(); i++)
         {
-            if(thisState.compStates(States.get(i)) == true)
+            if(thisState.compStates(States.get(i)))
                 return true;
         }
         return false;
@@ -42,13 +42,13 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
         ArrayList<AState> SolutionPath = new ArrayList<AState>();
         boolean flag = false;
 
-        while(flag == false)
+        while(!flag)
         {
             SolutionPath.add(0, thisState);
-            if(thisState.compStates(startState) == true)
+            if(thisState.compStates(startState))
             {
                 flag = true;
-                break;
+                continue;
             }
             thisState = thisState.getPrevState();
         }

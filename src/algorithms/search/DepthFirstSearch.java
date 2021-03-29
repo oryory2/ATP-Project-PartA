@@ -24,7 +24,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
         visitedStates.add(startState);
         boolean End = false;
 
-        while(End == false)
+        while(!End)
         {
             if(thisState.compStates(ISC.getGoalState()))
             {
@@ -42,27 +42,22 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                     continue;
                 possibleMovesArr[i] = 1;
                 counter--;
+
                 if(!(possibleMoves.get(i).legalState()))
                 {
                     continue;
                 }
-                else
+                if(ASearchingAlgorithm.isVisited(visitedStates, possibleMoves.get(i)))
                 {
-                    if(ASearchingAlgorithm.isVisited(visitedStates, possibleMoves.get(i)) == true)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        thisState = possibleMoves.get(i);
-                        solutionPath.add(thisState);
-                        visitedStates.add(thisState);
-                        Moves = true;
-                        break;
-                    }
+                    continue;
                 }
+                thisState = possibleMoves.get(i);
+                solutionPath.add(thisState);
+                visitedStates.add(thisState);
+                Moves = true;
+                break;
             }
-            if(Moves == false)
+            if(!Moves)
             {
                 solutionPath.remove(thisState);
                 thisState = solutionPath.get(solutionPath.size() - 1);
