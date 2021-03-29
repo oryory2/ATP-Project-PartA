@@ -3,6 +3,9 @@ package algorithms.mazeGenerators;
 import java.util.List;
 
 public class Position
+        /**
+         * This Class describe a specific Position in a Maze (row,column)
+         */
 {
     private int row;
     private int column;
@@ -35,7 +38,7 @@ public class Position
         return column;
     }
 
-    public static Position[] findLegalNeighbors (Position p, int max_row, int max_column)
+    public static Position[] findLegalNeighbors (Position p, int max_row, int max_column) // gets a Position, and returns all the Possible moves (Positions) in the Maze
     {
         int NeighborsCounter = 0;
         Position [] poseArr = new Position[4];
