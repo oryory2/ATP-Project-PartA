@@ -36,4 +36,22 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
         }
         return false;
     }
+
+    public static Solution restoreSolutionPath(AState startState, AState thisState)
+    {
+        ArrayList<AState> SolutionPath = new ArrayList<AState>();
+        boolean flag = false;
+
+        while(flag == false)
+        {
+            SolutionPath.add(0, thisState);
+            if(thisState.compStates(startState) == true)
+            {
+                flag = true;
+                break;
+            }
+            thisState = thisState.getPrevState();
+        }
+        return new Solution(SolutionPath);
+    }
 }

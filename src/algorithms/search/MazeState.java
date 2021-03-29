@@ -37,5 +37,4 @@ public class MazeState extends AState
             return true;
         return false;
     }
-
 }
