@@ -33,9 +33,15 @@ public class DepthFirstSearch extends ASearchingAlgorithm
             }
             ArrayList<AState> possibleMoves = ISC.getAllPossibleStates(thisState);
             boolean Moves = false;
-
-            for(int i = 0; i < possibleMoves.size(); i++)
+            int counter = possibleMoves.size();
+            int [] possibleMovesArr = new int[possibleMoves.size()];
+            while (counter != 0)
             {
+                int i = (int)(Math.random() * possibleMoves.size());
+                if(possibleMovesArr[i] == 1)
+                    continue;
+                possibleMovesArr[i] = 1;
+                counter--;
                 if(!(possibleMoves.get(i).legalState()))
                 {
                     continue;
