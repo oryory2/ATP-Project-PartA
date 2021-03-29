@@ -1,0 +1,87 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"081d7d07-990d-43e5-ab10-022071672d55\" name=\"Default Changelist\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/ASearchingAlgorithm.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/AState.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/BestFirstSearch.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/BreadthFirstSearch.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/DepthFirstSearch.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/ISearchable.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/ISearchingAlgorithm.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/MazeState.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/SearchableMaze.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithms/search/Solution.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/AMazeGenerator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/AMazeGenerator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/EmptyMazeGenerator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/EmptyMazeGenerator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/IMazeGenerator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/IMazeGenerator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/Maze.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/Maze.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/Position.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/Position.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/SimpleMazeGenerator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/algorithms/mazeGenerators/SimpleMazeGenerator.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1qLZgKs1aynTtAMEFAvDkdJsU3u\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"ATP-Project-PartA\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"ArquillianJUnit\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"081d7d07-990d-43e5-ab10-022071672d55\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1616860941928</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1616860941928</updated>\r\n      <workItem from=\"1616860943575\" duration=\"82000\" />\r\n      <workItem from=\"1616861045492\" duration=\"79000\" />\r\n      <workItem from=\"1616861195539\" duration=\"1342000\" />\r\n      <workItem from=\"1616862930175\" duration=\"1406000\" />\r\n      <workItem from=\"1616943941162\" duration=\"2238000\" />\r\n      <workItem from=\"1616946215439\" duration=\"1033000\" />\r\n      <workItem from=\"1616947464147\" duration=\"10000\" />\r\n      <workItem from=\"1617010886658\" duration=\"2527000\" />\r\n      <workItem from=\"1617013729738\" duration=\"209000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e0e94ef29a449d035ec0d3f85f3c5024f68824c5)
++++ b/.idea/workspace.xml	(date 1617014246290)
+@@ -1,31 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="081d7d07-990d-43e5-ab10-022071672d55" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/ASearchingAlgorithm.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/AState.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/BestFirstSearch.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/BreadthFirstSearch.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/DepthFirstSearch.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/ISearchable.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/ISearchingAlgorithm.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/MazeState.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/SearchableMaze.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/algorithms/search/Solution.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/AMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/AMazeGenerator.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/EmptyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/EmptyMazeGenerator.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/IMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/IMazeGenerator.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/Maze.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/Position.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/SimpleMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/SimpleMazeGenerator.java" afterDir="false" />
+-    </list>
++    <list default="true" id="081d7d07-990d-43e5-ab10-022071672d55" name="Default Changelist" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -35,11 +11,15 @@
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="1qLZgKs1aynTtAMEFAvDkdJsU3u" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+@@ -86,11 +66,25 @@
+       <workItem from="1616946215439" duration="1033000" />
+       <workItem from="1616947464147" duration="10000" />
+       <workItem from="1617010886658" duration="2527000" />
+-      <workItem from="1617013729738" duration="209000" />
++      <workItem from="1617013729738" duration="512000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++  </component>
+ </project>
+\ No newline at end of file
