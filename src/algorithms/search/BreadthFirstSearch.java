@@ -5,9 +5,10 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
          * This Class describe a Searching Algorithm work by the BreadthFirstSearch method
          */
 {
-    public BreadthFirstSearch(String name, ISearchable Problem)
+    public BreadthFirstSearch()
     {
-        super(name, Problem);
+        super();
+        super.name = "BreadthFirstSearch";
     }
 
     public Solution solve(ISearchable ISC)

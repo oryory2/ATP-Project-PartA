@@ -32,7 +32,6 @@ public class SearchableMaze implements ISearchable
         int thisRow = ((Position)state.getState()).getRow();
         int thisColumn = ((Position)state.getState()).getColumn();
 
-
         if((((Position)state.getState()).getRow() - 1 >= 0) && (mazeArr[thisRow - 1][thisColumn] == 0))
         {
             Position p = new Position(((Position)state.getState()).getRow() - 1, ((Position)state.getState()).getColumn()); // upper
@@ -94,5 +93,19 @@ public class SearchableMaze implements ISearchable
             }
         }
         return maze_state_arr;
+    }
+
+    public AState getStartState()
+    {
+        Position p = this.maze.getStartPosition();
+        AState StartState = new MazeState(p);
+        return StartState;
+    }
+
+    public AState getGoalState()
+    {
+        Position p = this.maze.getGoalPosition();
+        AState GoalState = new MazeState(p);
+        return GoalState;
     }
 }

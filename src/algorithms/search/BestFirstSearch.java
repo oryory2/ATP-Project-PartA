@@ -5,9 +5,10 @@ public class BestFirstSearch extends ASearchingAlgorithm
          * This Class describe a Searching Algorithm work by the BestFirstSearch method
          */
 {
-    public BestFirstSearch(String name, ISearchable Problem)
+    public BestFirstSearch()
     {
-        super(name, Problem);
+        super();
+        super.name = "BestFirstSearch";
     }
 
     public Solution solve(ISearchable ISC)

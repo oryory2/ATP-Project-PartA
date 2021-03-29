@@ -6,15 +6,13 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
          */
 {
 
-    private String name;
-    private int num_of_nodes;
-    private ISearchable Problem;
+    protected String name;
+    protected int NumberOfNodesEvaluated;
 
-    public ASearchingAlgorithm(String name,ISearchable Problem)
+    public ASearchingAlgorithm()
     {
-        this.name=name;
-        this.Problem = Problem;
-        this.num_of_nodes = -1;
+        this.name = "ASearchingAlgorithm";
+        this.NumberOfNodesEvaluated = -1;
     }
 
     public String getName()
@@ -24,6 +22,6 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
 
     public int getNumberOfNodesEvaluated()
     {
-        return this.num_of_nodes;
+        return this.NumberOfNodesEvaluated;
     }
 }

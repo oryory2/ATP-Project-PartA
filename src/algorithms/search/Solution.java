@@ -8,11 +8,9 @@ public class Solution
 {
     private ArrayList<AState> AstateArr;
 
-
     public Solution(ArrayList<AState> AstateArr)
     {
         this.AstateArr = AstateArr;
-
     }
 
     public ArrayList<AState> getSolutionPath()

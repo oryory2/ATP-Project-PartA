@@ -6,4 +6,5 @@ public abstract class AState
          */
 {
    abstract public Object getState();
+   public abstract boolean legalState();
 }

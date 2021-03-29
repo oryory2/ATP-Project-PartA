@@ -17,4 +17,11 @@ public class MazeState extends AState
     {
         return pose;
     }
+
+    public boolean legalState()
+    {
+        if((this.pose.getColumn() == -1) && (this.pose.getRow() == -1))
+            return false;
+        return true;
+    }
 }
