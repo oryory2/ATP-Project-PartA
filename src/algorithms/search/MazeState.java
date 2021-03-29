@@ -24,4 +24,18 @@ public class MazeState extends AState
             return false;
         return true;
     }
+
+    public boolean compStates(AState state)
+    {
+        Object thisState = this.getState();
+        Object otherState = ((MazeState)state).getState();
+
+        Position thisPose = ((Position)thisState);
+        Position otherPose = ((Position)otherState);
+
+        if((thisPose.getRow() == otherPose.getRow()) && (thisPose.getColumn() == otherPose.getColumn()))
+            return true;
+        return false;
+    }
+
 }

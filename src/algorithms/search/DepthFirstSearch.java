@@ -26,7 +26,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
 
         while(End == false)
         {
-            if(thisState == ISC.getGoalState())
+            if(thisState.compStates(ISC.getGoalState()))
             {
                 End = true;
                 continue;
@@ -42,7 +42,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 }
                 else
                 {
-                    if(visitedStates.contains(possibleMoves.get(i)) == true)
+                    if(ASearchingAlgorithm.isVisited(visitedStates, possibleMoves.get(i)) == true)
                     {
                         continue;
                     }
@@ -62,6 +62,9 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 thisState = solutionPath.get(solutionPath.size() - 1);
             }
         }
+        this.NumberOfNodesEvaluated = visitedStates.size();
         return new Solution(solutionPath);
     }
+
+
 }

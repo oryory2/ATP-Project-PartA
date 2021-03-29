@@ -10,7 +10,7 @@ public class Main
     {
         System.out.println("hey");
         MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(4,4);
+        Maze maze = m.generate(10,10);
         SearchableMaze Smaze = new SearchableMaze(maze);
         DepthFirstSearch d = new DepthFirstSearch();
         Solution s = d.solve(Smaze);
