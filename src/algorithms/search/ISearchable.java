@@ -12,4 +12,5 @@ public interface ISearchable
     AState getGoalState();
     public boolean isVisited(AState state);
     void setVisit(AState state);
+    ArrayList<AState> getPriorityStates(ArrayList<AState> state_List);
 }

@@ -122,5 +122,16 @@ public class SearchableMaze implements ISearchable
     {
         this.visitedArr[((Position)state.getState()).getColumn()][((Position)state.getState()).getRow()] = 1;
     }
-
+    public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List){
+        ArrayList<AState> priority_state = new ArrayList<AState>();
+        priority_state.add(state_List.get(0));
+        priority_state.add(state_List.get(2));
+        priority_state.add(state_List.get(4));
+        priority_state.add(state_List.get(6));
+        priority_state.add(state_List.get(1));
+        priority_state.add(state_List.get(3));
+        priority_state.add(state_List.get(5));
+        priority_state.add(state_List.get(7));
+        return priority_state;
+    }
 }
