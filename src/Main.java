@@ -9,8 +9,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("hey");
-        EmptyMazeGenerator m = new EmptyMazeGenerator();
-        Maze maze = m.generate(1000,1000);
+        MyMazeGenerator m = new MyMazeGenerator();
+        Maze maze = m.generate(5,5);
         SearchableMaze Smaze = new SearchableMaze(maze);
         //DepthFirstSearch d = new DepthFirstSearch();
         //Solution s1 = d.solve(Smaze);
