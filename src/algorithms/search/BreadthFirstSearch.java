@@ -58,7 +58,9 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
             if(solved)
                 break;
             thisState = statesQueue.get(0);
-        }   this.NumberOfNodesEvaluated = visitedStates;
-            return restoreSolutionPath(ISC.getStartState(), thisState);
+        }
+        this.NumberOfNodesEvaluated = visitedStates;
+        ISC.resetProblem();
+        return restoreSolutionPath(ISC.getStartState(), thisState);
     }
 }

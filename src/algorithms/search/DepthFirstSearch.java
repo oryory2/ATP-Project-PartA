@@ -66,6 +66,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
             }
         }
         this.NumberOfNodesEvaluated = visitedStates;
+        ISC.resetProblem();
         return new Solution(solutionPath);
     }
 

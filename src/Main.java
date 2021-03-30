@@ -12,8 +12,8 @@ public class Main
         MyMazeGenerator m = new MyMazeGenerator();
         Maze maze = m.generate(5,5);
         SearchableMaze Smaze = new SearchableMaze(maze);
-        //DepthFirstSearch d = new DepthFirstSearch();
-        //Solution s1 = d.solve(Smaze);
+        DepthFirstSearch d = new DepthFirstSearch();
+        Solution s1 = d.solve(Smaze);
 //        BreadthFirstSearch b = new BreadthFirstSearch();
 //        Solution s2 = b.solve(Smaze);
         System.out.println("hey");

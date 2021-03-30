@@ -54,7 +54,9 @@ public class BestFirstSearch extends ASearchingAlgorithm
             if(solved)
                 break;
             thisState = statesQueue.get(0);
-        }   this.NumberOfNodesEvaluated = visitedStates;
+        }
+        this.NumberOfNodesEvaluated = visitedStates;
+        ISC.resetProblem();
         return restoreSolutionPath(ISC.getStartState(), thisState);
     }
 }

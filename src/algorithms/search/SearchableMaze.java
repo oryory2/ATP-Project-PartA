@@ -134,4 +134,8 @@ public class SearchableMaze implements ISearchable
         priority_state.add(state_List.get(7));
         return priority_state;
     }
+
+    public void resetProblem(){
+        this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
+    }
 }
