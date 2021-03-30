@@ -19,9 +19,10 @@ public class DepthFirstSearch extends ASearchingAlgorithm
         AState startState = ISC.getStartState();
         AState thisState = startState;
         ArrayList<AState> solutionPath = new ArrayList<AState>();
-        ArrayList<AState> visitedStates = new ArrayList<AState>();
+        int visitedStates = 0;
         solutionPath.add(startState);
-        visitedStates.add(startState);
+        ISC.setVisit(startState);
+        visitedStates++;
         boolean End = false;
 
         while(!End)
@@ -47,13 +48,14 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 {
                     continue;
                 }
-                if(ASearchingAlgorithm.isVisited(visitedStates, possibleMoves.get(i)))
+                if(ISC.isVisited(possibleMoves.get(i)))
                 {
                     continue;
                 }
                 thisState = possibleMoves.get(i);
                 solutionPath.add(thisState);
-                visitedStates.add(thisState);
+                ISC.setVisit(thisState);
+                visitedStates++;
                 Moves = true;
                 break;
             }
@@ -63,7 +65,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 thisState = solutionPath.get(solutionPath.size() - 1);
             }
         }
-        this.NumberOfNodesEvaluated = visitedStates.size();
+        this.NumberOfNodesEvaluated = visitedStates;
         return new Solution(solutionPath);
     }
 

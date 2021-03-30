@@ -9,10 +9,14 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("hey");
-        MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(5,5);
+        EmptyMazeGenerator m = new EmptyMazeGenerator();
+        Maze maze = m.generate(1000,1000);
         SearchableMaze Smaze = new SearchableMaze(maze);
-        DepthFirstSearch d = new DepthFirstSearch();
-        Solution s = d.solve(Smaze);
+        //DepthFirstSearch d = new DepthFirstSearch();
+        //Solution s1 = d.solve(Smaze);
+        BreadthFirstSearch b = new BreadthFirstSearch();
+        Solution s2 = b.solve(Smaze);
+        System.out.println("hey");
+
     }
 }

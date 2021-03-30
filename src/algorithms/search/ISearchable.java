@@ -10,4 +10,6 @@ public interface ISearchable
     ArrayList<AState> getAllPossibleStates(AState state); // gets a AState, and returns all the Possible legal moves in the specific problem
     AState getStartState();
     AState getGoalState();
+    public boolean isVisited(AState state);
+    void setVisit(AState state);
 }

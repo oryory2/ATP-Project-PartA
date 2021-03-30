@@ -11,10 +11,12 @@ public class SearchableMaze implements ISearchable
 {
 
     private Maze maze;
+    private int [][] visitedArr;
 
     public SearchableMaze(Maze maze)
     {
         this.maze = maze;
+        this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
     }
 
     public ArrayList<AState> getAllPossibleStates(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
@@ -108,4 +110,17 @@ public class SearchableMaze implements ISearchable
         AState GoalState = new MazeState(p);
         return GoalState;
     }
+
+    public boolean isVisited(AState state)
+    {
+        if(this.visitedArr[((Position)state.getState()).getColumn()][((Position)state.getState()).getRow()] == 1)
+            return true;
+        return false;
+    }
+
+    public void setVisit(AState state)
+    {
+        this.visitedArr[((Position)state.getState()).getColumn()][((Position)state.getState()).getRow()] = 1;
+    }
+
 }
