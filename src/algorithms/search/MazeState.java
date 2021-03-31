@@ -37,4 +37,9 @@ public class MazeState extends AState
             return true;
         return false;
     }
+
+    public String toString() ////////////////////////////////////////////////////// optional(?)
+    {
+        return this.getState().toString();
+    }
 }

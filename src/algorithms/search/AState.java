@@ -21,7 +21,4 @@ public abstract class AState
    public abstract boolean legalState();
    public abstract boolean compStates(AState state);
 
-
-
-
 }

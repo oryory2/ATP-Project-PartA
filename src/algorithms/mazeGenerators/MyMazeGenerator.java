@@ -10,7 +10,8 @@ public class MyMazeGenerator extends AMazeGenerator
          * This Class describe MazeGenerator that build the Maze by the DFS method
          */
 {
-    public Maze generate(int row, int column) {
+    public Maze generate(int row, int column)
+    {
         int[][] mazeArr = new int[row][column];
         for (int i = 0; i < mazeArr.length; i++)
         {

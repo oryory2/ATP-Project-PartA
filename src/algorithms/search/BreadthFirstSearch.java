@@ -21,13 +21,14 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
         AState thisState = startState;
         int visitedStates = 0;
         LinkedList<AState> statesQueue = new LinkedList<AState>();
-        //ArrayList<AState> visitedStates = new ArrayList<AState>();
         statesQueue.add(startState);
-        //visitedStates.add(startState);
         ISC.setVisit(startState);
         visitedStates++;
         if (thisState.compStates(ISC.getGoalState()))
+        {
+            this.NumberOfNodesEvaluated = visitedStates;
             return restoreSolutionPath(ISC.getStartState(), thisState);
+        }
 
 
         boolean solved = false;
@@ -39,14 +40,12 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
             {
                 if (!(nearbyStates.get(i).legalState()))
                     continue;
-                //if (ASearchingAlgorithm.isVisited(visitedStates, nearbyStates.get(i)))
                 if(ISC.isVisited(nearbyStates.get(i)))
                     continue;
                 nearbyStates.get(i).setPrevState(thisState);
                 statesQueue.add(nearbyStates.get(i));
                 ISC.setVisit(nearbyStates.get(i));
                 visitedStates++;
-                //visitedStates.add(nearbyStates.get(i));
 
                 if (nearbyStates.get(i).compStates(ISC.getGoalState()))
                 {

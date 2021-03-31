@@ -10,12 +10,12 @@ public class Main
     {
         System.out.println("hey");
         MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(5,5);
+        Maze maze = m.generate(4,4);
         SearchableMaze Smaze = new SearchableMaze(maze);
-        DepthFirstSearch d = new DepthFirstSearch();
-        Solution s1 = d.solve(Smaze);
-//        BreadthFirstSearch b = new BreadthFirstSearch();
-//        Solution s2 = b.solve(Smaze);
+        //DepthFirstSearch d = new DepthFirstSearch();
+        //Solution s1 = d.solve(Smaze);
+        BreadthFirstSearch b = new BreadthFirstSearch();
+        Solution s2 = b.solve(Smaze);
         System.out.println("hey");
         BestFirstSearch BF = new BestFirstSearch();
         Solution s3 = BF.solve(Smaze);

@@ -8,11 +8,11 @@ public interface ISearchable
          */
 {
     ArrayList<AState> getAllPossibleStates(AState state); // gets a AState, and returns all the Possible legal moves in the specific problem
+    ArrayList<AState> getPriorityStates(ArrayList<AState> state_List);
     AState getStartState();
     AState getGoalState();
-    public boolean isVisited(AState state);
+    boolean isVisited(AState state);
     void setVisit(AState state);
     void resetProblem();
-    ArrayList<AState> getPriorityStates(ArrayList<AState> state_List);
 
 }

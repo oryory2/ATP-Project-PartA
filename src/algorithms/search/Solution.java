@@ -15,6 +15,6 @@ public class Solution
 
     public ArrayList<AState> getSolutionPath()
     {
-        return null;
+        return this.AstateArr;
     }
 }

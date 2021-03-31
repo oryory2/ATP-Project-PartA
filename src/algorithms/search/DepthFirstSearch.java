@@ -44,7 +44,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 possibleMovesArr[i] = 1;
                 counter--;
 
-                if(!(possibleMoves.get(i).legalState()))
+                if(!(possibleMoves.get(i).legalState())) // not legal indexes or a wall
                 {
                     continue;
                 }
@@ -69,6 +69,4 @@ public class DepthFirstSearch extends ASearchingAlgorithm
         ISC.resetProblem();
         return new Solution(solutionPath);
     }
-
-
 }

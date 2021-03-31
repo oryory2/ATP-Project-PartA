@@ -24,8 +24,10 @@ public class BestFirstSearch extends ASearchingAlgorithm
         ISC.setVisit(startState);
         visitedStates++;
         if (thisState.compStates(ISC.getGoalState()))
+        {
+            this.NumberOfNodesEvaluated = visitedStates;
             return restoreSolutionPath(ISC.getStartState(), thisState);
-
+        }
 
         boolean solved = false;
         while((!statesQueue.isEmpty()) && (!solved))
