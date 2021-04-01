@@ -1,6 +1,7 @@
 import algorithms.maze3D.IMazeGenerator3D;
 import algorithms.maze3D.Maze3D;
 import algorithms.maze3D.MyMaze3DGenerator;
+import algorithms.maze3D.SearchableMaze3D;
 import algorithms.mazeGenerators.*;
 import algorithms.search.*;
 import test.RunMazeGenerator;
@@ -24,7 +25,10 @@ public class Main
         Solution s3 = BF.solve(Smaze);
         System.out.println("check");*/
         IMazeGenerator3D g = new MyMaze3DGenerator();
-        Maze3D newMaze = g.generate(2,100,100);
+        Maze3D newMaze = g.generate(3,3,3);
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
+        SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
+        bfs.solve(sMaze);
         System.out.println("gh");
     }
 }

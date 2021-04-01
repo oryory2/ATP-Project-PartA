@@ -15,6 +15,11 @@ public class Position3D
         this.column = column;
     }
 
+    public String toString()
+    {
+        return "{" + this.depth + "," + this.row + "," + this.column + "}";
+    }
+
     public int getRow()
     {
         return this.row;
@@ -32,32 +37,32 @@ public class Position3D
         int NeighborsCounter = 0;
         Position3D [] poseArr = new Position3D[6];
 
-        if(p.row - 1 >= 0)
+        if(p.row - 1 >= 0) // up
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth, p.row - 1, p.column);
             NeighborsCounter++;
         }
-        if(p.column + 1 < max_column)
+        if(p.column + 1 < max_column) // right
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column + 1);
             NeighborsCounter++;
         }
-        if(p.row + 1 < max_row)
+        if(p.row + 1 < max_row) // down
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth, p.row + 1, p.column);
             NeighborsCounter++;
         }
-        if(p.column - 1 >= 0)
+        if(p.column - 1 >= 0) // left
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column - 1);
             NeighborsCounter++;
         }
-        if(p.depth + 1 < max_depth)
+        if(p.depth + 1 < max_depth) // inside
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth + 1, p.row, p.column);
             NeighborsCounter++;
         }
-        if(p.depth - 1 >= 0)
+        if(p.depth - 1 >= 0) // outside
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth - 1, p.row, p.column);
         }
@@ -72,8 +77,5 @@ public class Position3D
             return new Position3D(thisPose.depth, thisPose.getRow() + 1, thisPose.getColumn());
         else
             return new Position3D(thisPose.depth, thisPose.getRow(), thisPose.getColumn() + 1);
-
-
-
     }
 }
