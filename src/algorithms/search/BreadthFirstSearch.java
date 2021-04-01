@@ -35,7 +35,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
         while((!statesQueue.isEmpty()) && (!solved))
         {
             statesQueue.remove(thisState);
-            ArrayList<AState> nearbyStates = ISC.getAllPossibleStates(thisState);
+            ArrayList<AState> nearbyStates = ISC.getAllSuccessors(thisState);
             for(int i = 0; i < nearbyStates.size(); i++)
             {
                 if (!(nearbyStates.get(i).legalState()))

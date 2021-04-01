@@ -19,7 +19,7 @@ public class SearchableMaze implements ISearchable
         this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
     }
 
-    public ArrayList<AState> getAllPossibleStates(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
+    public ArrayList<AState> getAllSuccessors(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
     {
         ArrayList<AState> maze_state_arr = new ArrayList<AState>();
         boolean flag_up = false;

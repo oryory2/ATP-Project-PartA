@@ -66,10 +66,9 @@ public class Position
 
     public static Position findNextPose (Position p, int max_row, int max_column)
     {
-        if(p.getRow() + 1 < max_row)
+        if (p.getRow() + 1 < max_row)
             return new Position(p.getRow() + 1, p.getColumn());
         else
             return new Position(p.getRow(), p.getColumn() + 1);
     }
-
 }

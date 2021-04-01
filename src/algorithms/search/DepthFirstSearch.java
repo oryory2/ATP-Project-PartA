@@ -32,7 +32,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 End = true;
                 continue;
             }
-            ArrayList<AState> possibleMoves = ISC.getAllPossibleStates(thisState);
+            ArrayList<AState> possibleMoves = ISC.getAllSuccessors(thisState);
             boolean Moves = false;
             int counter = possibleMoves.size();
             int [] possibleMovesArr = new int[possibleMoves.size()];
@@ -44,7 +44,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 possibleMovesArr[i] = 1;
                 counter--;
 
-                if(!(possibleMoves.get(i).legalState())) // not legal indexes or a wall
+                if(!(possibleMoves.get(i).legalState())) // not legal indexes or it's a wall
                 {
                     continue;
                 }

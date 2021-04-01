@@ -19,7 +19,7 @@ public class SearchableMaze3D implements ISearchable
         this.visitArr = new int[maze.getMax_depth()][maze.getMax_rows()][maze.getMax_columns()];
     }
 
-    public ArrayList<AState> getAllPossibleStates(AState state)
+    public ArrayList<AState> getAllSuccessors(AState state)
     {
         ArrayList<AState> maze_state_arr = new ArrayList<AState>();
 

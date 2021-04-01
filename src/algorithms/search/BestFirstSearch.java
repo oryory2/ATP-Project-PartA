@@ -33,7 +33,7 @@ public class BestFirstSearch extends ASearchingAlgorithm
         while((!statesQueue.isEmpty()) && (!solved))
         {
             statesQueue.remove(thisState);
-            ArrayList<AState> nearbyStates_first = ISC.getAllPossibleStates(thisState);
+            ArrayList<AState> nearbyStates_first = ISC.getAllSuccessors(thisState);
             ArrayList<AState> nearbyStates = ISC.getPriorityStates(nearbyStates_first);
             for(int i = 0; i < nearbyStates.size(); i++)
             {

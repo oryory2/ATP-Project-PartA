@@ -24,40 +24,40 @@ public class MyMazeGenerator extends AMazeGenerator
         ArrayList<Position> PoseList = new ArrayList<Position>();
         int flag = 0;
         do
+        {
+            Position [] legalNeighbors = Position.findLegalNeighbors(thisPose, mazeArr.length, mazeArr[0].length);
+            for(int i = 0; i < 4; i++)
             {
-                Position [] legalNeighbors = Position.findLegalNeighbors(thisPose, mazeArr.length, mazeArr[0].length);
-                for(int i = 0; i < 4; i++)
-                {
-                    if(legalNeighbors[i] == null)
-                        break;
-                    if((mazeArr[legalNeighbors[i].getRow()][legalNeighbors[i].getColumn()] != 1) || (legalNeighbors[i] == lastPose))
-                        continue;
-                    PoseList.add(legalNeighbors[i]);
-                }
-
-                if(PoseList.isEmpty())
-                {
-                    lastPose = thisPose;
-                    thisPose = Position.findNextPose(thisPose,mazeArr.length,mazeArr[0].length);
+                if(legalNeighbors[i] == null)
+                    break;
+                if((mazeArr[legalNeighbors[i].getRow()][legalNeighbors[i].getColumn()] != 1) || (legalNeighbors[i] == lastPose))
                     continue;
-                }
-                int randomPick = (int) (Math.random() * (PoseList.size()));
-                if(randomPick == PoseList.size())
-                    randomPick = randomPick - 1;
+                PoseList.add(legalNeighbors[i]);
+            }
 
-                Position p = PoseList.get(randomPick);
-                if((p.getRow() == mazeArr.length - 1) && (p.getColumn() == mazeArr[0].length - 1))
-                {
-                    mazeArr[p.getRow()][p.getColumn()] = 0;
-                    flag = 1;
-                }
-                else
-                {
-                    thisPose = p;
-                    mazeArr[thisPose.getRow()][thisPose.getColumn()] = 0;
-                    lastPose = thisPose;
-                    PoseList.clear();
-                }
+            if(PoseList.isEmpty())
+            {
+                lastPose = thisPose;
+                thisPose = Position.findNextPose(thisPose, mazeArr.length, mazeArr[0].length);
+                continue;
+            }
+            int randomPick = (int) (Math.random() * (PoseList.size()));
+            if(randomPick == PoseList.size())
+                randomPick = randomPick - 1;
+
+            Position p = PoseList.get(randomPick);
+            if((p.getRow() == mazeArr.length - 1) && (p.getColumn() == mazeArr[0].length - 1))
+            {
+                mazeArr[p.getRow()][p.getColumn()] = 0;
+                flag = 1;
+            }
+            else
+            {
+                thisPose = p;
+                mazeArr[thisPose.getRow()][thisPose.getColumn()] = 0;
+                lastPose = thisPose;
+                PoseList.clear();
+            }
         }
         while(flag != 1);
         Maze newMaze = new Maze(mazeArr);

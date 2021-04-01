@@ -32,7 +32,8 @@ public class MyMaze3DGenerator extends AMaze3DGenerator
                 PoseList.add(legalNeighbors[i]);
             }
 
-            if (PoseList.isEmpty()) {
+            if (PoseList.isEmpty())
+            {
                 lastPose = thisPose;
                 thisPose = Position3D.findNextPose(thisPose, mazeArr.length, mazeArr[0].length, mazeArr[0][0].length);
                 continue;
