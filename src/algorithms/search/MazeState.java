@@ -28,7 +28,7 @@ public class MazeState extends AState
     public boolean compStates(AState state)
     {
         Object thisState = this.getState();
-        Object otherState = ((MazeState)state).getState();
+        Object otherState = state.getState();
 
         Position thisPose = ((Position)thisState);
         Position otherPose = ((Position)otherState);

@@ -1,42 +1,40 @@
-package algorithms.search;
-import algorithms.mazeGenerators.Maze;
+package algorithms.maze3D;
+
 import algorithms.mazeGenerators.Position;
+import algorithms.search.AState;
+import algorithms.search.ISearchable;
+import algorithms.search.MazeState;
+import algorithms.search.SearchableMaze;
 
 import java.util.ArrayList;
 
-public class SearchableMaze implements ISearchable
-        /**
-         * This Class describe a Searchable Maze (Maze that can be resolved)
-         */
+public class SearchableMaze3D implements ISearchable
 {
+    private Maze3D maze;
+    private int [][][] visitArr;
 
-    private Maze maze;
-    private int [][] visitedArr;
-
-    public SearchableMaze(Maze maze)
+    public SearchableMaze3D(Maze3D maze)
     {
         this.maze = maze;
-        this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
+        this.visitArr = new int[maze.getMax_depth()][maze.getMax_rows()][maze.getMax_columns()];
     }
 
-    public ArrayList<AState> getAllPossibleStates(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
+    public ArrayList<AState> getAllPossibleStates(AState state)
     {
         ArrayList<AState> maze_state_arr = new ArrayList<AState>();
-        boolean flag_up = false;
-        boolean flag_down = false;
-        boolean flag_left = false;
-        boolean flag_right = false;
-        for(int i = 0; i < 8; i++)
-        {
-            maze_state_arr.add(new MazeState(new Position(-1,-1))); // initializing the ArrayList, (-1,-1) means illegal move
-        }
-        int [][] mazeArr = this.maze.getMazeArr();
-        int thisRow = ((Position)state.getState()).getRow();
-        int thisColumn = ((Position)state.getState()).getColumn();
 
-        if((((Position)state.getState()).getRow() - 1 >= 0) && (mazeArr[thisRow - 1][thisColumn] == 0))
+        for(int i = 0; i < 6; i++)
         {
-            Position p = new Position(((Position)state.getState()).getRow() - 1, ((Position)state.getState()).getColumn()); // upper
+            maze_state_arr.add(new Maze3DState((new Position3D(-1,-1,-1)))); // initializing the ArrayList, (-1,-1,-1) means illegal move
+        }
+        int [][][] mazeArr = this.maze.getMap();
+        int thisDepth = ((Position3D)state.getState()).getDepth();
+        int thisRow = ((Position3D)state.getState()).getRow();
+        int thisColumn = ((Position3D)state.getState()).getColumn();
+
+        if((((Position3D)state.getState()).getRow() - 1 >= 0) && (mazeArr[thisRow - 1][thisColumn] == 0))
+        {
+            Position p = new Position3D(((Position3D)state.getState()).getRow() - 1, ((Position3D)state.getState()).getColumn()); // upper
             maze_state_arr.set(0,new MazeState(p));
             flag_up = true;
         }
@@ -97,45 +95,41 @@ public class SearchableMaze implements ISearchable
         return maze_state_arr;
     }
 
+    public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List)
+    {
+        return state_List;
+    }
+
     public AState getStartState()
     {
-        Position p = this.maze.getStartPosition();
-        AState StartState = new MazeState(p);
-        return StartState;
+        Position3D p = this.maze.getStartPosition();
+        AState startState = new Maze3DState(p);
+        return startState;
     }
 
     public AState getGoalState()
     {
-        Position p = this.maze.getGoalPosition();
-        AState GoalState = new MazeState(p);
-        return GoalState;
+        Position3D p = this.maze.getGoalPosition();
+        AState goalState = new Maze3DState(p);
+        return goalState;
     }
 
     public boolean isVisited(AState state)
     {
-        if(this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] == 1)
+        Position3D thisState = ((Position3D)state.getState());
+        if(this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] == 1)
             return true;
         return false;
     }
 
     public void setVisit(AState state)
     {
-        this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] = 1;
-    }
-    public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List){
-        ArrayList<AState> priority_state = new ArrayList<AState>();
-        priority_state.add(state_List.get(0));
-        priority_state.add(state_List.get(2));
-        priority_state.add(state_List.get(4));
-        priority_state.add(state_List.get(6));
-        priority_state.add(state_List.get(1));
-        priority_state.add(state_List.get(3));
-        priority_state.add(state_List.get(5));
-        priority_state.add(state_List.get(7));
-        return priority_state;
+        Position3D thisState = ((Position3D)state.getState());
+        this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] = 1;
     }
 
-    public void resetProblem(){
-        this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
+    public void resetProblem()
+    {
+        this.visitArr = new int[maze.getMax_depth()][maze.getMax_rows()][maze.getMax_columns()];
     }
 }
