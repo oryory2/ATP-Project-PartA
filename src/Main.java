@@ -29,7 +29,7 @@ public class Main
         //BreadthFirstSearch bfs = new BreadthFirstSearch();
         //SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
         //bfs.solve(sMaze);
-        //System.out.println("gh");
+        System.out.println("gh");
         System.out.println("gh");
     }
 }
