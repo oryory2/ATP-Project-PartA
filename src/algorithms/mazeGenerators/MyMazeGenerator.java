@@ -13,6 +13,7 @@ public class MyMazeGenerator extends AMazeGenerator
     public Maze generate(int row, int column)
     {
         int[][] mazeArr = new int[row][column];
+        int helper = 0;
         for (int i = 0; i < mazeArr.length; i++)
         {
             for (int j = 0; j < mazeArr[0].length; j++)
@@ -38,7 +39,8 @@ public class MyMazeGenerator extends AMazeGenerator
             if(PoseList.isEmpty())
             {
                 lastPose = thisPose;
-                thisPose = Position.findNextPose(thisPose, mazeArr.length, mazeArr[0].length);
+                thisPose = Position.findNextPose(thisPose, mazeArr.length, mazeArr[0].length, helper);
+                helper++;
                 continue;
             }
             int randomPick = (int) (Math.random() * (PoseList.size()));
