@@ -28,7 +28,7 @@ public class Maze
         return this.GoalPosition;
     }
 
-    public void Print()
+    public void print()
     {
 
         System.out.println("{");
