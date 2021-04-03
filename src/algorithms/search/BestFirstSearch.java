@@ -22,12 +22,12 @@ public class BestFirstSearch extends ASearchingAlgorithm
         }
         AState startState = ISC.getStartState();
         AState thisState = startState;
-        int visitedStates = 0;
+        int visitedStates = 0; // counting how many States were visited (NumberOfNodesEvaluated)
         LinkedList<AState> statesQueue = new LinkedList<AState>();
-        statesQueue.add(startState);
+        statesQueue.add(startState); // adding the startState to the queue
         ISC.setVisit(startState);
         visitedStates++;
-        if (thisState.compStates(ISC.getGoalState()))
+        if (thisState.compStates(ISC.getGoalState())) // check if we are in the GoalState
         {
             this.setNumberOfNodesEvaluated(visitedStates);
             return restoreSolutionPath(ISC.getStartState(), thisState);
@@ -36,9 +36,12 @@ public class BestFirstSearch extends ASearchingAlgorithm
         boolean solved = false;
         while((!statesQueue.isEmpty()) && (!solved))
         {
+            // in each iteration we:
+            // remove "thisState" from the queue
+            // add all the Possible states we can move to, also set their "father" to be "thisState"
             statesQueue.remove(thisState);
             ArrayList<AState> nearbyStates_first = ISC.getAllSuccessors(thisState);
-            ArrayList<AState> nearbyStates = ISC.getPriorityStates(nearbyStates_first);
+            ArrayList<AState> nearbyStates = ISC.getPriorityStates(nearbyStates_first); // Organizing the Successors Array by a certain priority
             for(int i = 0; i < nearbyStates.size(); i++)
             {
                 if (!(nearbyStates.get(i).legalState()))
@@ -50,7 +53,7 @@ public class BestFirstSearch extends ASearchingAlgorithm
                 ISC.setVisit(nearbyStates.get(i));
                 visitedStates++;
 
-                if (nearbyStates.get(i).compStates(ISC.getGoalState()))
+                if (nearbyStates.get(i).compStates(ISC.getGoalState())) // check if we are in the GoalState
                 {
                     thisState = nearbyStates.get(i);
                     solved = true;
@@ -63,6 +66,6 @@ public class BestFirstSearch extends ASearchingAlgorithm
         }
         this.setNumberOfNodesEvaluated(visitedStates);
         ISC.resetProblem();
-        return restoreSolutionPath(ISC.getStartState(), thisState);
+        return restoreSolutionPath(ISC.getStartState(), thisState); // restore the solution path and return the Solution to the problem
     }
 }

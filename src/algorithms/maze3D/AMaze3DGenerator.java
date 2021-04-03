@@ -9,9 +9,9 @@ public abstract class AMaze3DGenerator implements IMazeGenerator3D
         {
             throw new RuntimeException("One or more of the supplied sizes are not legal! Depth/Row/Column values must be at least 2");
         }
-        long S_time = System.currentTimeMillis();
+        long S_time = System.currentTimeMillis(); // Get the Current time (before running "generate")
         this.generate(depth, row, column);
-        long E_time = System.currentTimeMillis();
+        long E_time = System.currentTimeMillis(); // Get the Current time (after running "generate")
         return E_time - S_time;
     }
 

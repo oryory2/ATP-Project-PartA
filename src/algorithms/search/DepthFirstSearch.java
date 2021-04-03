@@ -23,15 +23,20 @@ public class DepthFirstSearch extends ASearchingAlgorithm
         AState startState = ISC.getStartState();
         AState thisState = startState;
         ArrayList<AState> solutionPath = new ArrayList<AState>();
-        int visitedStates = 0;
-        solutionPath.add(startState);
+        int visitedStates = 0; // counting how many States were visited (NumberOfNodesEvaluated)
+        solutionPath.add(startState); // adding the startState to solutionPath
         ISC.setVisit(startState);
         visitedStates++;
         boolean End = false;
 
         while(!End)
         {
-            if(thisState.compStates(ISC.getGoalState()))
+            // in each iteration we:
+            // remove "thisState" from the solutionPath
+            // gets all the optional move from the current State
+            // if there is no legal move, go back for the last move before the current one
+
+            if(thisState.compStates(ISC.getGoalState())) // check if we are in the GoalState
             {
                 End = true;
                 continue;
@@ -48,7 +53,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 possibleMovesArr[i] = 1;
                 counter--;
 
-                if(!(possibleMoves.get(i).legalState())) // not legal indexes or it's a wall
+                if(!(possibleMoves.get(i).legalState()))
                 {
                     continue;
                 }
@@ -56,6 +61,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 {
                     continue;
                 }
+                // there is a valid move
                 thisState = possibleMoves.get(i);
                 solutionPath.add(thisState);
                 ISC.setVisit(thisState);
@@ -63,7 +69,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 Moves = true;
                 break;
             }
-            if(!Moves)
+            if(!Moves) // there is not a valid move from the current State
             {
                 solutionPath.remove(thisState);
                 thisState = solutionPath.get(solutionPath.size() - 1);

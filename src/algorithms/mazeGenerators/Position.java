@@ -10,6 +10,8 @@ public class Position
     private int row;
     private int column;
 
+    // We chose to describe illegal Position by {-1,-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
+
     public Position(int row, int column)
     {
         if((row < 0) || (column < 0))
@@ -54,6 +56,8 @@ public class Position
             if(!((p.getRow() == -1) && (p.getColumn() == -1)))
                 throw new RuntimeException("One or more of the Position indexes are not legal! Position can't have negative indexes");
         }
+
+        // for each possible move (up, down, left, right) we check if it's a valid move
         int NeighborsCounter = 0;
         Position [] poseArr = new Position[4];
         if(p.getRow() - 1 >= 0)
@@ -89,6 +93,8 @@ public class Position
             if(!((p.getRow() == -1) && (p.getColumn() == -1)))
                 throw new RuntimeException("One or more of the Position indexes are not legal! Position can't have negative indexes");
         }
+
+        // we choose our next Position by moving up/right (one of them must be valid, because we are not in the GoalPosition)
         if(helper % 2 == 0)
         {
             if (p.getRow() + 1 < max_row)

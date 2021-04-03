@@ -5,6 +5,8 @@ import algorithms.search.AState;
 
 public class Position3D
 {
+    // We chose to describe illegal Position by {-1,-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
+
     private int depth;
     private int row;
     private int column;
@@ -54,6 +56,7 @@ public class Position3D
         int NeighborsCounter = 0;
         Position3D [] poseArr = new Position3D[6];
 
+        // for each possible move (up, down, left, right, inside, outside) we check if it's a valid move
         if(p.row - 1 >= 0) // up
         {
             poseArr[NeighborsCounter] = new Position3D(p.depth, p.row - 1, p.column);
@@ -97,11 +100,13 @@ public class Position3D
             if(!((thisPose.getDepth() == -1) && (thisPose.getRow() == -1) && (thisPose.getColumn() == -1)))
                 throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
         }
-        if(thisPose.depth + 1 < max_depth)
+
+        // we choose our next Position by moving inside/up/right (one of them must be valid, because we are not in the GoalPosition)
+        if(thisPose.depth + 1 < max_depth) // inside
             return new Position3D(thisPose.depth + 1, thisPose.getRow(), thisPose.getColumn());
-        else if(thisPose.row + 1 < max_row)
+        else if(thisPose.row + 1 < max_row) // up
             return new Position3D(thisPose.depth, thisPose.getRow() + 1, thisPose.getColumn());
-        else
+        else                                // right
             return new Position3D(thisPose.depth, thisPose.getRow(), thisPose.getColumn() + 1);
     }
 }

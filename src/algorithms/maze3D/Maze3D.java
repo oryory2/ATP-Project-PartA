@@ -25,7 +25,9 @@ public class Maze3D {
         this.max_depth = mazeArr.length;
         this.max_rows = mazeArr[0].length;
         this.max_columns = mazeArr[0][0].length;
+        // we chose the StartPosition to be (0,0,0)
         this.StartPosition = new Position3D(0, 0, 0);
+        // we chose the GoalPosition to be (mazeArr.length - 1,mazeArr[0].length - 1,mazeArr[0][0].length - 1)
         this.GoalPosition = new Position3D(mazeArr.length - 1, mazeArr[0].length - 1, mazeArr[0][0].length - 1);
     }
 
@@ -58,7 +60,7 @@ public class Maze3D {
     {
         System.out.println("{");
         System.out.print("{ S ");
-        for (int i = 1; i < mazeArr[0][0].length; i++) {
+        for (int i = 1; i < mazeArr[0][0].length; i++) { // First Row
             if (i != mazeArr[0][0].length - 1)
                 System.out.print(mazeArr[0][0][i] + " ");
             else

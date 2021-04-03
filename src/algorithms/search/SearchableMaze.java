@@ -51,31 +51,31 @@ public class SearchableMaze implements ISearchable
                 throw new RuntimeException("The AState that supplied is not legal! AState Position can't have negative indexes");
         }
 
+        // for each possible move (up, down, left, right, diagonal moves) we check if it's a valid move
         if((thisRow - 1 >= 0) && (mazeArr[thisRow - 1][thisColumn] == 0))
-        {
-            Position p = new Position(thisRow - 1, thisColumn); // upper
+        { // upper
+            Position p = new Position(thisRow - 1, thisColumn);
             maze_state_arr.set(0,new MazeState(p));
             flag_up = true;
         }
 
         if((thisColumn + 1 < this.maze.getMax_columns()) && (mazeArr[thisRow][thisColumn + 1] == 0))
-        {
-            Position p = new Position(thisRow, thisColumn + 1); // right
+        { // right
+            Position p = new Position(thisRow, thisColumn + 1);
             maze_state_arr.set(2,new MazeState(p));
             flag_right = true;
         }
 
-
         if((thisRow + 1 < this.maze.getMax_rows()) && (mazeArr[thisRow + 1][thisColumn] == 0))
-        {
-            Position p = new Position(thisRow + 1, thisColumn); // lower
+        { // lower
+            Position p = new Position(thisRow + 1, thisColumn);
             maze_state_arr.set(4,new MazeState(p));
             flag_down = true;
         }
 
         if((thisColumn - 1 >= 0) && (mazeArr[thisRow][thisColumn - 1] == 0))
-        {
-            Position p  = new Position(thisRow, thisColumn - 1); // left
+        { // left
+            Position p  = new Position(thisRow, thisColumn - 1);
             maze_state_arr.set(6,new MazeState(p));
             flag_left = true;
         }
@@ -153,6 +153,8 @@ public class SearchableMaze implements ISearchable
         {
             throw new RuntimeException("The ArrayList that supplied is not legal! (null)");
         }
+
+        // Organizing the state_List by priority, first will be the not-diagonal moves
         ArrayList<AState> priority_state = new ArrayList<AState>();
         priority_state.add(state_List.get(0));
         priority_state.add(state_List.get(2));

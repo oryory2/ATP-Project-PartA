@@ -14,6 +14,7 @@ public class SimpleMazeGenerator extends AMazeGenerator
 
         int [][] mazeArr = new int[row][column];
         for(int i = 1; i < mazeArr.length; i++)
+        // Randomize all the cells Value, and staying one sure path from the startPose to goalPose
         {
             for (int j = 0; j < mazeArr[0].length - 1; j++)
                 mazeArr[i][j] = (int)(Math.random() * 2);

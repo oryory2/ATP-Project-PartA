@@ -22,7 +22,9 @@ public class Maze
             throw new RuntimeException("The Array that supplied is not legal! it must have at least 2 Rows and 2 Columns");
         }
         this.mazeArr = mazeArr;
+        // we chose the StartPosition to be (0,0)
         this.StartPosition = new Position(0,0);
+        // we chose the GoalPosition to be (mazeArr.length - 1, mazeArr[0].length - 1)
         this.GoalPosition = new Position(mazeArr.length - 1, mazeArr[0].length - 1);
         this.max_rows = mazeArr.length;
         this.max_columns = mazeArr[0].length;

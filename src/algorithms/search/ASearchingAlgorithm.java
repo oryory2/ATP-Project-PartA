@@ -27,11 +27,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
         return this.name;
     }
 
-    /**
-     * Returns the name of a certain searching algorithm
-     * @param name the name wished to set to the algorithm as its name field
-     * @return void
-     */
+
     public void setName(String name)
     {
         if(name == null)
@@ -41,10 +37,6 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
         this.name = name;
     }
 
-    /**
-     * Returns the
-     * @return void
-     */
     public int getNumberOfNodesEvaluated()
     {
         return this.NumberOfNodesEvaluated;

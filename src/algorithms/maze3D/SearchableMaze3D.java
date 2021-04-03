@@ -49,6 +49,7 @@ public class SearchableMaze3D implements ISearchable
                 throw new RuntimeException("The AState that supplied is not legal! AState Position3D can't have negative indexes");
         }
 
+        // for each possible move (up, down, left, right, inside, outside) we check if it's a valid move
         if((thisRow - 1 >= 0) && (mazeArr[thisDepth][thisRow - 1][thisColumn] == 0))
         {
             Position3D p = new Position3D(thisDepth,thisRow - 1, thisColumn); // upper
@@ -94,6 +95,7 @@ public class SearchableMaze3D implements ISearchable
         {
             throw new RuntimeException("The ArrayList that supplied is not legal! (null)");
         }
+        // there is no need for this Method in the 3DMaze, so we just returned the original state_List
         return state_List;
     }
 

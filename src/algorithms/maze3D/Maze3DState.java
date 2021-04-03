@@ -6,7 +6,7 @@ import algorithms.search.MazeState;
 
 public class Maze3DState extends AState
 {
-
+        // We chose to describe illegal Maze3DState by having position {-1,-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
         public Maze3DState(Position3D p)
         {
             if(p == null)
