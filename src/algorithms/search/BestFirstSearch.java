@@ -12,6 +12,14 @@ public class BestFirstSearch extends ASearchingAlgorithm /** This Class describe
         this.setName("BestFirstSearch");
     }
 
+     /**
+     * This method solves an Isearchable problem using the Best First Search algorithm
+     * begins to solve from the starting point
+     * Uses a "priority queue" to know where we would prefer to go
+     * Also uses an array that saves all the states we visited
+     * @param ISC problem we want to solve
+     * @return Solution of an Isearchable problem
+     */
     public Solution solve(ISearchable ISC)
     {
         if(ISC == null)

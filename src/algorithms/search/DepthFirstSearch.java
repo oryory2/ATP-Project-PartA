@@ -12,6 +12,17 @@ public class DepthFirstSearch extends ASearchingAlgorithm /** This Class describ
         this.setName("DepthFirstSearch");
     }
 
+     /**
+     * This method solves an Isearchable problem using the Depth First Search algorithm
+     * begins to solve from the starting point
+     * Uses an array that saves all the states we visited
+     * we will keep going in depth randomly
+     * until there are no more moves
+     * When there are no moves we will go back to the prev state.
+     * When the goal is reached return the solution
+     * @param ISC problem we want to solve
+     * @return Solution of an Isearchable problem
+     */
     public Solution solve(ISearchable ISC)
     {
         if(ISC == null)

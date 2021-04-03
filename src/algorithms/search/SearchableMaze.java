@@ -11,6 +11,10 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
     private Maze maze;
     private int [][] visitedArr;
 
+     /**
+     * Constructor of SearchableMaze
+     * @param maze a certain maze we want to turn into an Isearchable problem
+     */
     public SearchableMaze(Maze maze)
     {
         if(maze == null)
@@ -25,6 +29,12 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
     }
 
+     /**
+     * gets a MazeState, and returns all the Possible legal moves
+     * from the certain state
+     * @param state the state we want to check moves from
+     * @return List of possible Successors
+     */
     public ArrayList<AState> getAllSuccessors(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
     {
         if(state == null)
@@ -112,6 +122,10 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         return maze_state_arr;
     }
 
+     /**
+     * puts the start position into a start state and returns it
+     * @return The Start State of a SearchableMaze problem
+     */
     public AState getStartState()
     {
         Position p = this.maze.getStartPosition();
@@ -119,6 +133,10 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         return StartState;
     }
 
+     /**
+     * puts the Goal position into a start state and returns it
+     * @return The Goal State of a SearchableMaze problem
+     */
     public AState getGoalState()
     {
         Position p = this.maze.getGoalPosition();
@@ -126,6 +144,14 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         return GoalState;
     }
 
+     /**
+     * check whether a certain State is already visited
+     * We will use a two-dimensional matrix to indicate whether we have visited a state or not
+     * 1 indicates a state we have already visited
+     * 0 indicates a state we have not visited yet
+     * @param state the state we want to check if visited
+     * @return Visited or not
+     */
     public boolean isVisited(AState state)
     {
         if(state == null)
@@ -137,6 +163,11 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         return false;
     }
 
+     /**
+     * Mark a certain state as visited
+     * change the value in a two-dimensional matrix that symbolizes visits from 0 to 1
+     * @param state the state we want to mark as visited
+     */
     public void setVisit(AState state)
     {
         if(state == null)
@@ -145,6 +176,13 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         }
         this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] = 1;
     }
+
+     /**
+     * Arranges the list of legal moves in order
+     * sothere is a preference for non-diagonal moves
+     * @param state_List list of Successors of a State
+     * @return States list arranged by priority
+     */
     public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List)
     {
         if(state_List == null)
@@ -165,6 +203,10 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         return priority_state;
     }
 
+     /**
+     * change all the values in the two-dimensional matrix representing visits to 0
+     * which means that we will return the problem to the starting situation
+     */
     public void resetProblem(){
         this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
     }

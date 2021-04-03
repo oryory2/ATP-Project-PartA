@@ -6,6 +6,11 @@ public class MazeState extends AState /** This Class describe a State inside a M
 {
     // We chose to describe illegal MazeState by having position {-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
 
+     /**
+     * constructor
+     * @param p the position we want to put into the Mazestate
+     * assign p to this.pose field
+     */
     public MazeState(Position p)
     {
         if(p == null)
@@ -20,6 +25,9 @@ public class MazeState extends AState /** This Class describe a State inside a M
         this.pose = p;
     }
 
+     /**
+     * @return whether the MazeState is legal or not
+     */
     public boolean legalState()
     {
         if((((Position)this.pose).getRow() == -1) && (((Position)this.pose).getColumn() == -1))
@@ -27,6 +35,12 @@ public class MazeState extends AState /** This Class describe a State inside a M
         return true;
     }
 
+     /**
+     * Returns whether other MazeState is equal to this one
+     * Compares between MazeStates by row and column
+     * @param state MazeState we want to compare to
+     * @return equal or not
+     */
     public boolean compStates(AState state)
     {
         if(state == null)
@@ -44,6 +58,11 @@ public class MazeState extends AState /** This Class describe a State inside a M
         return false;
     }
 
+     /**
+     * toString implementation of MazeState
+     * Uses the Position toString implementation in oreder to print the MazeState
+     * @return MazeState's Position toString
+     */
     public String toString()
     {
         return this.getState().toString();

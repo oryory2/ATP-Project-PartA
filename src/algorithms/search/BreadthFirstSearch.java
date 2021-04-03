@@ -14,6 +14,14 @@ public class BreadthFirstSearch extends ASearchingAlgorithm /** This Class descr
 
     }
 
+     /**
+     * This method solves an Isearchable problem using the Breadth First Search algorithm
+     * begins to solve from the starting point
+     * Uses a normal queue
+     * uses an array that saves all the states we visited
+     * @param ISC problem we want to solve
+     * @return Solution of an Isearchable problem
+     */
     public Solution solve(ISearchable ISC)
     {
         if(ISC == null)

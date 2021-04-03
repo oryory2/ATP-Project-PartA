@@ -6,6 +6,12 @@ public class Solution /** This Class describe a Solution of an SearchAble proble
 {
     private ArrayList<AState> AstateArr;
 
+     /**
+     * Constructor gets an ArrayList of AState
+     * presenting the solution path
+     * and sets it as the AstateArr field
+     * @param AstateArr the solution path array
+     */
     public Solution(ArrayList<AState> AstateArr)
     {
         if(AstateArr == null)
@@ -14,6 +20,10 @@ public class Solution /** This Class describe a Solution of an SearchAble proble
         }
         this.AstateArr = AstateArr;
     }
+
+     /**
+     * @return the Solution Path of a problem
+     */
     public ArrayList<AState> getSolutionPath()
     {
         return this.AstateArr;
