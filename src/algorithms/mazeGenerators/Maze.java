@@ -13,6 +13,14 @@ public class Maze
 
     public Maze(int [][] mazeArr)
     {
+        if(mazeArr == null)
+        {
+            throw new RuntimeException("The Array that supplied is not legal (null)");
+        }
+        if((mazeArr.length <= 1) || (mazeArr[0].length <= 1))
+        {
+            throw new RuntimeException("The Array that supplied is not legal! it must have at least 2 Rows and 2 Columns");
+        }
         this.mazeArr = mazeArr;
         this.StartPosition = new Position(0,0);
         this.GoalPosition = new Position(mazeArr.length - 1, mazeArr[0].length - 1);

@@ -6,10 +6,17 @@ public class MazeState extends AState
          * This Class describe a State inside a Maze (Position on the Maze board)
          */
 {
-    private Position pose;
-
     public MazeState(Position p)
     {
+        if(p == null)
+        {
+            throw new RuntimeException("The Position that supplied is not legal (null)");
+        }
+        if((p.getRow() < 0) ||(p.getColumn() < 0))
+        {
+            if(!((p.getRow() == -1) && (p.getColumn() == -1)))
+                throw new RuntimeException("The Position that supplied is not legal! Position can't have negative indexes");
+        }
         this.pose = p;
     }
 
@@ -20,13 +27,17 @@ public class MazeState extends AState
 
     public boolean legalState()
     {
-        if((this.pose.getColumn() == -1) && (this.pose.getRow() == -1))
+        if((((Position)this.pose).getRow() == -1) && (((Position)this.pose).getColumn() == -1))
             return false;
         return true;
     }
 
     public boolean compStates(AState state)
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         Object thisState = this.getState();
         Object otherState = state.getState();
 
@@ -38,7 +49,7 @@ public class MazeState extends AState
         return false;
     }
 
-    public String toString() ////////////////////////////////////////////////////// optional(?)
+    public String toString()
     {
         return this.getState().toString();
     }

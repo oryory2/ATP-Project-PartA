@@ -6,10 +6,18 @@ import algorithms.search.MazeState;
 
 public class Maze3DState extends AState
 {
-        private Position3D pose;
 
         public Maze3DState(Position3D p)
         {
+            if(p == null)
+            {
+                throw new RuntimeException("The Position3D that supplied is not legal (null)");
+            }
+            if((p.getDepth() < 0) || (p.getRow() < 0) || (p.getColumn() < 0))
+            {
+                if(!((p.getDepth() == -1) && (p.getRow() == -1) && (p.getColumn() == -1)))
+                    throw new RuntimeException("The Position3D that supplied is not legal! Position3D can't have negative indexes");
+            }
             this.pose = p;
         }
 
@@ -20,13 +28,17 @@ public class Maze3DState extends AState
 
         public boolean legalState()
         {
-            if((this.pose.getDepth() == -1) &&(this.pose.getRow() == -1) && (this.pose.getColumn() == -1))
+            if((((Position3D)this.pose).getDepth() == -1) && (((Position3D)this.pose).getRow() == -1) && (((Position3D)this.pose).getColumn() == -1))
                 return false;
             return true;
         }
 
         public boolean compStates(AState state)
         {
+            if(state == null)
+            {
+                throw new RuntimeException("The AState that supplied is not legal! (null)");
+            }
             Object thisState = this.getState();
             Object otherState = state.getState();
 

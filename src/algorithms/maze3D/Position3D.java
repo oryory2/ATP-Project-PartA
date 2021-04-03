@@ -1,6 +1,7 @@
 package algorithms.maze3D;
 
 import algorithms.mazeGenerators.Position;
+import algorithms.search.AState;
 
 public class Position3D
 {
@@ -10,6 +11,11 @@ public class Position3D
 
     public Position3D(int depth, int row, int column)
     {
+        if((depth < 0) || (row < 0) || (column < 0))
+        {
+            if(!((depth == -1) && (row == -1) && (column == -1)))
+                throw new RuntimeException("One or more of the supplied sizes are not legal! Position3D can't have negative indexes");
+        }
         this.depth = depth;
         this.row = row;
         this.column = column;
@@ -32,8 +38,19 @@ public class Position3D
     {
         return this.depth;
     }
+
     public static Position3D[] findLegalNeighbors (Position3D p, int max_depth, int max_row, int max_column)
     {
+        if(p == null)
+        {
+            throw new RuntimeException("The Position3D that supplied is not legal (null)");
+        }
+        if((p.getDepth() < 0) || (p.getRow() < 0) || (p.getColumn() < 0))
+        {
+            if(!((p.getDepth() == -1) && (p.getRow() == -1) && (p.getColumn() == -1)))
+                throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
+        }
+
         int NeighborsCounter = 0;
         Position3D [] poseArr = new Position3D[6];
 
@@ -71,6 +88,15 @@ public class Position3D
 
     public static Position3D findNextPose(Position3D thisPose, int max_depth, int max_row, int max_column)
     {
+        if(thisPose == null)
+        {
+            throw new RuntimeException("The Position3D that supplied is not legal (null)");
+        }
+        if((thisPose.getDepth() < 0) || (thisPose.getRow() < 0) || (thisPose.getColumn() < 0))
+        {
+            if(!((thisPose.getDepth() == -1) && (thisPose.getRow() == -1) && (thisPose.getColumn() == -1)))
+                throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
+        }
         if(thisPose.depth + 1 < max_depth)
             return new Position3D(thisPose.depth + 1, thisPose.getRow(), thisPose.getColumn());
         else if(thisPose.row + 1 < max_row)

@@ -8,8 +8,9 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
          */
 {
 
-    protected String name;
-    protected int NumberOfNodesEvaluated;
+    private String name;
+    private int NumberOfNodesEvaluated;
+
 
     public ASearchingAlgorithm()
     {
@@ -17,28 +18,50 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
         this.NumberOfNodesEvaluated = -1;
     }
 
+    /**
+     * Returns the name of a certain searching algorithm
+     * @return the algorithm's name
+     */
     public String getName()
     {
         return this.name;
     }
 
+    /**
+     * Returns the name of a certain searching algorithm
+     * @param name the name wished to set to the algorithm as its name field
+     * @return void
+     */
+    public void setName(String name)
+    {
+        if(name == null)
+        {
+            throw new RuntimeException("The name supplied is not legal (null)");
+        }
+        this.name = name;
+    }
+
+    /**
+     * Returns the
+     * @return void
+     */
     public int getNumberOfNodesEvaluated()
     {
         return this.NumberOfNodesEvaluated;
     }
 
-    public static boolean isVisited(ArrayList<AState> States, AState thisState)
+    public void setNumberOfNodesEvaluated(int number)
     {
-        for(int i = 0; i < States.size(); i++)
-        {
-            if(thisState.compStates(States.get(i)))
-                return true;
-        }
-        return false;
+        this.NumberOfNodesEvaluated = number;
     }
+
 
     public static Solution restoreSolutionPath(AState startState, AState thisState)
     {
+        if((startState == null) || (thisState == null))
+        {
+            throw new RuntimeException("One or more of the supplied arguments is not legal (null)");
+        }
         ArrayList<AState> SolutionPath = new ArrayList<AState>();
         boolean flag = false;
 
@@ -54,4 +77,5 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
         }
         return new Solution(SolutionPath);
     }
+
 }

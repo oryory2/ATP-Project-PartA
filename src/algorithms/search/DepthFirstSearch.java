@@ -11,11 +11,15 @@ public class DepthFirstSearch extends ASearchingAlgorithm
     public DepthFirstSearch()
     {
         super();
-        super.name = "DepthFirstSearch";
+        this.setName("DepthFirstSearch");
     }
 
     public Solution solve(ISearchable ISC)
     {
+        if(ISC == null)
+        {
+            throw new RuntimeException("The ISearchable that supplied is not legal (null)");
+        }
         AState startState = ISC.getStartState();
         AState thisState = startState;
         ArrayList<AState> solutionPath = new ArrayList<AState>();
@@ -65,7 +69,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm
                 thisState = solutionPath.get(solutionPath.size() - 1);
             }
         }
-        this.NumberOfNodesEvaluated = visitedStates;
+        this.setNumberOfNodesEvaluated(visitedStates);
         ISC.resetProblem();
         return new Solution(solutionPath);
     }

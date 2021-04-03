@@ -15,12 +15,24 @@ public class SearchableMaze implements ISearchable
 
     public SearchableMaze(Maze maze)
     {
+        if(maze == null)
+        {
+            throw new RuntimeException("The Maze that supplied is not legal (null)");
+        }
+        if((maze.getMax_rows() <= 1) || (maze.getMax_columns() <= 1))
+        {
+            throw new RuntimeException("The Maze that supplied is not legal! it must have at least 2 Rows and 2 Columns");
+        }
         this.maze = maze;
         this.visitedArr = new int[this.maze.getMax_rows()][this.maze.getMax_columns()];
     }
 
     public ArrayList<AState> getAllSuccessors(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         ArrayList<AState> maze_state_arr = new ArrayList<AState>();
         boolean flag_up = false;
         boolean flag_down = false;
@@ -33,6 +45,11 @@ public class SearchableMaze implements ISearchable
         int [][] mazeArr = this.maze.getMazeArr();
         int thisRow = ((Position)state.getState()).getRow();
         int thisColumn = ((Position)state.getState()).getColumn();
+        if((thisRow < 0)|| (thisColumn < 0))
+        {
+            if(!((thisRow == -1) && (thisColumn == -1)))
+                throw new RuntimeException("The AState that supplied is not legal! AState Position can't have negative indexes");
+        }
 
         if((thisRow - 1 >= 0) && (mazeArr[thisRow - 1][thisColumn] == 0))
         {
@@ -113,6 +130,10 @@ public class SearchableMaze implements ISearchable
 
     public boolean isVisited(AState state)
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         if(this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] == 1)
             return true;
         return false;
@@ -120,9 +141,18 @@ public class SearchableMaze implements ISearchable
 
     public void setVisit(AState state)
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] = 1;
     }
-    public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List){
+    public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List)
+    {
+        if(state_List == null)
+        {
+            throw new RuntimeException("The ArrayList that supplied is not legal! (null)");
+        }
         ArrayList<AState> priority_state = new ArrayList<AState>();
         priority_state.add(state_List.get(0));
         priority_state.add(state_List.get(2));

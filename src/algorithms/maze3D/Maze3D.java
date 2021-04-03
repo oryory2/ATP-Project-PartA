@@ -11,9 +11,17 @@ public class Maze3D {
     private Position3D GoalPosition;
 
 
-    public Maze3D(int[][][] mazeArr) {
+    public Maze3D(int[][][] mazeArr)
+    {
+        if(mazeArr == null)
+        {
+            throw new RuntimeException("The Array that supplied is not legal (null)");
+        }
+        if((mazeArr.length <= 1) ||(mazeArr[0].length <= 1) || (mazeArr[0][0].length <= 1))
+        {
+            throw new RuntimeException("The Array that supplied is not legal! Depth/Row/Column values must be at least 2");
+        }
         this.mazeArr = mazeArr;
-
         this.max_depth = mazeArr.length;
         this.max_rows = mazeArr[0].length;
         this.max_columns = mazeArr[0][0].length;

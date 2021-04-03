@@ -7,11 +7,20 @@ import java.util.ArrayList;
 
 public class MyMaze3DGenerator extends AMaze3DGenerator
 {
-    public Maze3D generate(int depth, int row, int column) {
+    public Maze3D generate(int depth, int row, int column)
+    {
+
+        if((depth <= 1) || (row <= 1) || (column <= 1))
+        {
+            throw new RuntimeException("One or more of the supplied sizes are not legal! Depth/Row/Column values must be at least 2");
+        }
         int[][][] mazeArr = new int[depth][row][column];
-        for (int i = 0; i < mazeArr.length; i++) {
-            for (int j = 0; j < mazeArr[0].length; j++) {
-                for (int k = 0; k < mazeArr[0][0].length; k++) {
+        for (int i = 0; i < mazeArr.length; i++)
+        {
+            for (int j = 0; j < mazeArr[0].length; j++)
+            {
+                for (int k = 0; k < mazeArr[0][0].length; k++)
+                {
                     mazeArr[i][j][k] = 1;
                 }
             }

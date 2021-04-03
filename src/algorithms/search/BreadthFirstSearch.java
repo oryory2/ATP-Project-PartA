@@ -12,11 +12,16 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
     public BreadthFirstSearch()
     {
         super();
-        this.name = "BreadthFirstSearch";
+        this.setName("BreadthFirstSearch");
+
     }
 
     public Solution solve(ISearchable ISC)
     {
+        if(ISC == null)
+        {
+            throw new RuntimeException("The ISearchable that supplied is not legal (null)");
+        }
         AState startState = ISC.getStartState();
         AState thisState = startState;
         int visitedStates = 0;
@@ -26,7 +31,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
         visitedStates++;
         if (thisState.compStates(ISC.getGoalState()))
         {
-            this.NumberOfNodesEvaluated = visitedStates;
+            this.setNumberOfNodesEvaluated(visitedStates);
             return restoreSolutionPath(ISC.getStartState(), thisState);
         }
 
@@ -58,7 +63,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm
                 break;
             thisState = statesQueue.get(0);
         }
-        this.NumberOfNodesEvaluated = visitedStates;
+        this.setNumberOfNodesEvaluated(visitedStates);
         ISC.resetProblem();
         return restoreSolutionPath(ISC.getStartState(), thisState);
     }

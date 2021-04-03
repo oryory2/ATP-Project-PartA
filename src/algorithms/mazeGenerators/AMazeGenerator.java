@@ -7,6 +7,10 @@ public abstract class AMazeGenerator implements IMazeGenerator
 {
     public long measureAlgorithmTimeMillis(int row, int column)
     {
+        if((row <= 1) || (column <= 1))
+        {
+            throw new RuntimeException("One or more of the supplied sizes are not legal! Row and Column values must be at least 2");
+        }
         long S_time = System.currentTimeMillis();
         this.generate(row, column);
         long E_time = System.currentTimeMillis();

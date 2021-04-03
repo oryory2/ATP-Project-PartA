@@ -15,14 +15,25 @@ public class SearchableMaze3D implements ISearchable
 
     public SearchableMaze3D(Maze3D maze)
     {
+        if(maze == null)
+        {
+            throw new RuntimeException("The Maze3D that supplied is not legal (null)");
+        }
+        if((maze.getMax_depth() <= 1) || (maze.getMax_rows() <= 1) || (maze.getMax_columns() <= 1))
+        {
+            throw new RuntimeException("The Maze3D that supplied is not legal! Depth/Row/Column values must be at least 2");
+        }
         this.maze = maze;
         this.visitArr = new int[maze.getMax_depth()][maze.getMax_rows()][maze.getMax_columns()];
     }
 
     public ArrayList<AState> getAllSuccessors(AState state)
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         ArrayList<AState> maze_state_arr = new ArrayList<AState>();
-
         for(int i = 0; i < 6; i++)
         {
             maze_state_arr.add(new Maze3DState((new Position3D(-1,-1,-1)))); // initializing the ArrayList, (-1,-1,-1) means illegal move
@@ -31,6 +42,12 @@ public class SearchableMaze3D implements ISearchable
         int thisDepth = ((Position3D)state.getState()).getDepth();
         int thisRow = ((Position3D)state.getState()).getRow();
         int thisColumn = ((Position3D)state.getState()).getColumn();
+
+        if((thisDepth < 0) || (thisRow < 0)|| (thisColumn < 0))
+        {
+            if(!((thisDepth == -1) && (thisRow == -1) && (thisColumn == -1)))
+                throw new RuntimeException("The AState that supplied is not legal! AState Position3D can't have negative indexes");
+        }
 
         if((thisRow - 1 >= 0) && (mazeArr[thisDepth][thisRow - 1][thisColumn] == 0))
         {
@@ -43,7 +60,6 @@ public class SearchableMaze3D implements ISearchable
             Position3D p = new Position3D(thisDepth,thisRow, thisColumn + 1); // right
             maze_state_arr.set(1,new Maze3DState(p));
         }
-
 
         if((thisRow + 1 < this.maze.getMax_rows()) && (mazeArr[thisDepth][thisRow + 1][thisColumn] == 0))
         {
@@ -74,6 +90,10 @@ public class SearchableMaze3D implements ISearchable
 
     public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List)
     {
+        if(state_List == null)
+        {
+            throw new RuntimeException("The ArrayList that supplied is not legal! (null)");
+        }
         return state_List;
     }
 
@@ -93,6 +113,10 @@ public class SearchableMaze3D implements ISearchable
 
     public boolean isVisited(AState state)
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         Position3D thisState = ((Position3D)state.getState());
         if(this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] == 1)
             return true;
@@ -101,6 +125,10 @@ public class SearchableMaze3D implements ISearchable
 
     public void setVisit(AState state)
     {
+        if(state == null)
+        {
+            throw new RuntimeException("The AState that supplied is not legal! (null)");
+        }
         Position3D thisState = ((Position3D)state.getState());
         this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] = 1;
     }
