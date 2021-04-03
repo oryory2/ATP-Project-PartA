@@ -26,7 +26,7 @@ public class MazeState extends AState /** This Class describe a State inside a M
     }
 
      /**
-     * @return whether the MazeState is legal or not
+     * @return whether the MazeState is legal or not (boolean)
      */
     public boolean legalState()
     {
@@ -39,7 +39,7 @@ public class MazeState extends AState /** This Class describe a State inside a M
      * Returns whether other MazeState is equal to this one
      * Compares between MazeStates by row and column
      * @param state MazeState we want to compare to
-     * @return equal or not
+     * @return equal or not (boolean)
      */
     public boolean compStates(AState state)
     {
@@ -61,7 +61,7 @@ public class MazeState extends AState /** This Class describe a State inside a M
      /**
      * toString implementation of MazeState
      * Uses the Position toString implementation in oreder to print the MazeState
-     * @return MazeState's Position toString
+     * @return MazeState's Position toString (String)
      */
     public String toString()
     {

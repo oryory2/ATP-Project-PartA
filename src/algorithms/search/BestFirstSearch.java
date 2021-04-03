@@ -18,7 +18,7 @@ public class BestFirstSearch extends ASearchingAlgorithm /** This Class describe
      * Uses a "priority queue" to know where we would prefer to go
      * Also uses an array that saves all the states we visited
      * @param ISC problem we want to solve
-     * @return Solution of an Isearchable problem
+     * @return Solution of an Isearchable problem (Solution)
      */
     public Solution solve(ISearchable ISC)
     {

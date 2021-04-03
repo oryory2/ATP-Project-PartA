@@ -8,7 +8,7 @@ public abstract class AState /** This Class describe a state in a any Searchable
     /**
     * Returns whether a particular state is possible under the conditions of the problem
     * will return true if its valid and false if not
-    * @return whether the state is valid or not
+    * @return whether the state is valid or not (boolean)
     */
    public abstract boolean legalState();
 
@@ -17,21 +17,21 @@ public abstract class AState /** This Class describe a state in a any Searchable
     * Compares between states
     * Each state class will write differently the way it compares other states towards it
     * @param state state we want to compare to
-    * @return equal or not
+    * @return equal or not (boolean)
     */
    public abstract boolean compStates(AState state);
 
     /**
     * Returns the pose field of the state
     * Each state class will define differently the state Object
-    * @return pose field
+    * @return pose field (Object)
     */
    public Object getState() { return this.pose; }
 
     /**
     * Returns the state from which we have reached the current state
     * during a particular SearchingAlgorithm run
-    * @return prevState field
+    * @return prevState field (AState)
     */
    public AState getPrevState()
    {

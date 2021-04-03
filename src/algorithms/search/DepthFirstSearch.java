@@ -21,7 +21,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm /** This Class describ
      * When there are no moves we will go back to the prev state.
      * When the goal is reached return the solution
      * @param ISC problem we want to solve
-     * @return Solution of an Isearchable problem
+     * @return Solution of an Isearchable problem (Solution)
      */
     public Solution solve(ISearchable ISC)
     {

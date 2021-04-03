@@ -22,7 +22,7 @@ public class Solution /** This Class describe a Solution of an SearchAble proble
     }
 
      /**
-     * @return the Solution Path of a problem
+     * @return the Solution Path of a problem (ArrayList<AState>)
      */
     public ArrayList<AState> getSolutionPath()
     {

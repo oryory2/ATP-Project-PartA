@@ -13,8 +13,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("hey");
-        //EmptyMazeGenerator m = new EmptyMazeGenerator();
-        //Maze maze = m.generate(100,100);
+        MyMazeGenerator m = new MyMazeGenerator();
+        Maze maze = m.generate(30,30);
         //SearchableMaze Smaze = new SearchableMaze(maze);
         //DepthFirstSearch d = new DepthFirstSearch();
         //Solution s1 = d.solve(Smaze);
@@ -23,15 +23,17 @@ public class Main
         //BestFirstSearch BF = new BestFirstSearch();
         //Solution s3 = BF.solve(Smaze);
         //System.out.println("check");
-        IMazeGenerator3D g = new MyMaze3DGenerator();
-        Maze3D newMaze = g.generate(2,1000,1000);
-        SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
-        BreadthFirstSearch bfs = new BreadthFirstSearch();
-        Solution s1 = bfs.solve(sMaze);
-        BestFirstSearch bfs2 = new BestFirstSearch();
-        Solution s2 = bfs2.solve(sMaze);
-        DepthFirstSearch d = new DepthFirstSearch();
-        Solution s3 = d.solve(sMaze);
+        //IMazeGenerator3D g = new MyMaze3DGenerator();
+        //Maze3D newMaze = g.generate(2,1000,1000);
+        //SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
+        //BreadthFirstSearch bfs = new BreadthFirstSearch();
+        //Solution s1 = bfs.solve(sMaze);
+        //BestFirstSearch bfs2 = new BestFirstSearch();
+        //Solution s2 = bfs2.solve(sMaze);
+        //DepthFirstSearch d = new DepthFirstSearch();
+        //Solution s3 = d.solve(sMaze);
+        maze.print();
+
         System.out.println("gh");
     }
 }

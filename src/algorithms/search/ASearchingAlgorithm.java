@@ -20,7 +20,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm /** Thi
     }
 
      /**
-     * @return the name of the algorithm
+     * @return the name of the algorithm (String)
      */
     public String getName()
     {
@@ -44,7 +44,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm /** Thi
      * Returns how many nodes we went through during the run of the algorithm
      * The algorithm goes through a certain number of nodes
      * When a solution is reached its stops evaluating nodes
-     * @return number of nodes evaluated
+     * @return number of nodes evaluated (int)
      */
     public int getNumberOfNodesEvaluated()
     {
@@ -67,7 +67,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm /** Thi
      * Until we reached the start state
      * @param startState The starting State of the problem we want to solve
      * @param thisState The Goal State of the problem we want to solve
-     * @return Solution path
+     * @return Solution path (Solution)
      */
     public static Solution restoreSolutionPath(AState startState, AState thisState)
     {

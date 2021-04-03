@@ -20,7 +20,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm /** This Class descr
      * Uses a normal queue
      * uses an array that saves all the states we visited
      * @param ISC problem we want to solve
-     * @return Solution of an Isearchable problem
+     * @return Solution of an Isearchable problem (Solution)
      */
     public Solution solve(ISearchable ISC)
     {

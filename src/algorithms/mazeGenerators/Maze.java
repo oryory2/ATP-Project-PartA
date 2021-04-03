@@ -9,6 +9,12 @@ public class Maze /** This Class describe a Maze from any Shape */
     private int max_rows;
     private int max_columns;
 
+     /**
+     * constructor
+     * setting the StartPosition of the Maze to be {0, 0}
+     * setting the GoalPosition of the Maze to be {mazeArr.length - 1, mazeArr[0].length - 1}
+     * @param mazeArr the 2DArray that presenting the Maze
+     */
     public Maze(int [][] mazeArr)
     {
         if(mazeArr == null)
@@ -27,15 +33,27 @@ public class Maze /** This Class describe a Maze from any Shape */
         this.max_rows = mazeArr.length;
         this.max_columns = mazeArr[0].length;
     }
+
+     /**
+     * @return the StartPosition of the maze (Position)
+     */
     public Position getStartPosition()
     {
         return this.StartPosition;
     }
+
+     /**
+     * @return the GoalPosition of the maze (Position)
+     */
     public Position getGoalPosition()
     {
         return this.GoalPosition;
     }
 
+     /**
+     * Printing method for the Maze
+     * Printing the maze according to the 2DArray representing him
+     */
     public void print()
     {
 
@@ -70,15 +88,24 @@ public class Maze /** This Class describe a Maze from any Shape */
         System.out.println("}");
     }
 
+     /**
+     * @return the 2DArray representing the maze (int [][])
+     */
     public int [][] getMazeArr()
     {
         return this.mazeArr;
     }
 
+     /**
+     * @return the number of rows in the maze (int)
+     */
     public int getMax_rows() {
         return max_rows;
     }
 
+     /**
+     * @return the number of columns in the maze (int)
+     */
     public int getMax_columns() {
         return max_columns;
     }
