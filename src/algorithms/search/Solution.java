@@ -1,10 +1,8 @@
 package algorithms.search;
 import java.util.ArrayList;
 
-public class Solution
-        /**
-         * This Class describe a Solution of an SearchAble problem
-         */
+public class Solution /** This Class describe a Solution of an SearchAble problem */
+
 {
     private ArrayList<AState> AstateArr;
 

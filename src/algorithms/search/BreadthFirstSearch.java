@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BreadthFirstSearch extends ASearchingAlgorithm
-        /**
-         * This Class describe a Searching Algorithm work by the BreadthFirstSearch method
-         */
+public class BreadthFirstSearch extends ASearchingAlgorithm /** This Class describe a Searching Algorithm work by the BreadthFirstSearch method */
+
 {
     public BreadthFirstSearch()
     {

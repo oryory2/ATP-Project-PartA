@@ -3,7 +3,7 @@ package algorithms.maze3D;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.AState;
 
-public class Position3D
+public class Position3D /** This Class describe a specific 3DPosition in a 3DMaze (depth,row,column) */
 {
     // We chose to describe illegal Position by {-1,-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
 

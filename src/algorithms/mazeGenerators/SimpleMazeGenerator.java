@@ -1,9 +1,7 @@
 package algorithms.mazeGenerators;
 
-public class SimpleMazeGenerator extends AMazeGenerator
-        /**
-         * This Class describe MazeGenerator that build the Maze in a coincidence way
-         */
+public class SimpleMazeGenerator extends AMazeGenerator /** This Class describe MazeGenerator that build the Maze in a coincidence way */
+
 {
     public Maze generate(int row, int column)
     {

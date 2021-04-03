@@ -8,7 +8,7 @@ import algorithms.search.SearchableMaze;
 
 import java.util.ArrayList;
 
-public class SearchableMaze3D implements ISearchable
+public class SearchableMaze3D implements ISearchable /** This Class describe a Searchable 3DMaze (Maze that can be resolved) */
 {
     private Maze3D maze;
     private int [][][] visitArr;

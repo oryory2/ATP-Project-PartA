@@ -1,6 +1,6 @@
 package algorithms.maze3D;
 
-public abstract class AMaze3DGenerator implements IMazeGenerator3D
+public abstract class AMaze3DGenerator implements IMazeGenerator3D /** This Abstract Class describe a 3DMazeGenerator that knows how to build the 3DMaze */
 {
 
     public long measureAlgorithmTimeMillis(int depth, int row, int column)

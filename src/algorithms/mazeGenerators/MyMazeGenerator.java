@@ -5,10 +5,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MyMazeGenerator extends AMazeGenerator
-        /**
-         * This Class describe MazeGenerator that build the Maze by the DFS method
-         */
+public class MyMazeGenerator extends AMazeGenerator /** This Class describe MazeGenerator that build the Maze by the DFS method */
+
 {
     public Maze generate(int row, int column)
     {

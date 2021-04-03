@@ -2,10 +2,8 @@ package algorithms.search;
 
 import java.util.ArrayList;
 
-public abstract class ASearchingAlgorithm implements ISearchingAlgorithm
-        /**
-         * This Abstract Class describe an Searching Algorithm
-         */
+public abstract class ASearchingAlgorithm implements ISearchingAlgorithm /** This Abstract Class describe an Searching Algorithm */
+
 {
 
     private String name;

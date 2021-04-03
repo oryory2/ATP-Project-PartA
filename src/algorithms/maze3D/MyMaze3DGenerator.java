@@ -5,7 +5,7 @@ import algorithms.mazeGenerators.Position;
 
 import java.util.ArrayList;
 
-public class MyMaze3DGenerator extends AMaze3DGenerator
+public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 3DMazeGenerator that build the Maze by the DFS method */
 {
     public Maze3D generate(int depth, int row, int column)
     {

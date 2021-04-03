@@ -2,7 +2,8 @@ package algorithms.maze3D;
 
 import algorithms.mazeGenerators.Position;
 
-public class Maze3D {
+public class Maze3D /** This Class describe a 3DMaze from any Shape */
+{
     private int[][][] mazeArr;
     private int max_rows;
     private int max_columns;

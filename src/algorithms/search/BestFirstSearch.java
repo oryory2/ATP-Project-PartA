@@ -3,10 +3,8 @@ package algorithms.search;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class BestFirstSearch extends ASearchingAlgorithm
-        /**
-         * This Class describe a Searching Algorithm work by the BestFirstSearch method
-         */
+public class BestFirstSearch extends ASearchingAlgorithm /** This Class describe a Searching Algorithm work by the BestFirstSearch method */
+
 {
     public BestFirstSearch()
     {

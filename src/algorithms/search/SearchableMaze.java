@@ -4,10 +4,8 @@ import algorithms.mazeGenerators.Position;
 
 import java.util.ArrayList;
 
-public class SearchableMaze implements ISearchable
-        /**
-         * This Class describe a Searchable Maze (Maze that can be resolved)
-         */
+public class SearchableMaze implements ISearchable /** This Class describe a Searchable Maze (Maze that can be resolved) */
+
 {
 
     private Maze maze;

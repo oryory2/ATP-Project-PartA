@@ -1,9 +1,7 @@
 package algorithms.mazeGenerators;
 
-public class Maze
-        /**
-         * This Class describe a Maze from any Shape
-         */
+public class Maze /** This Class describe a Maze from any Shape */
+
 {
     private Position StartPosition;
     private Position GoalPosition;

@@ -4,7 +4,7 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.AState;
 import algorithms.search.MazeState;
 
-public class Maze3DState extends AState
+public class Maze3DState extends AState /** This Class describe a State inside a 3DMaze (Position on the Maze board) */
 {
         // We chose to describe illegal Maze3DState by having position {-1,-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
         public Maze3DState(Position3D p)

@@ -1,9 +1,6 @@
 package algorithms.search;
 
-public abstract class AState
-        /**
-         * This Class describe a state in a any Searchable problem
-         */
+public abstract class AState /** This Class describe a state in a any Searchable problem */
 {
    protected Object pose;
    protected AState prevState;
