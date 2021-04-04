@@ -11,6 +11,13 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
     private int row;
     private int column;
 
+     /**
+     * constructor
+     * initializing a new Position3D, described by {depth,row,column}
+     * @param depth The depth index of the Position3D
+     * @param row The row index of the Position3D
+     * @param column The column index of the Position3D
+     */
     public Position3D(int depth, int row, int column)
     {
         if((depth < 0) || (row < 0) || (column < 0))
@@ -23,24 +30,47 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
         this.column = column;
     }
 
+     /**
+     * @return The display of the Position3D - {depth,row,column} (String)
+     */
     public String toString()
     {
         return "{" + this.depth + "," + this.row + "," + this.column + "}";
     }
 
-    public int getRow()
-    {
-        return this.row;
-    }
-    public int getColumn()
-    {
-        return this.column;
-    }
+     /**
+     * @return The Depth index of the Position3D (int)
+     */
     public int getDepth()
     {
         return this.depth;
     }
 
+     /**
+     * @return The row index of the Position3D (int)
+     */
+    public int getRow()
+    {
+        return this.row;
+    }
+
+     /**
+     * @return The Column index of the Position3D (int)
+     */
+    public int getColumn()
+    {
+        return this.column;
+    }
+
+     /**
+     * gets a Position3D, and returns all the Possible legal moves (Position3D) from
+     * the specific Position3D by the depth/row/columns borders
+     * @param p The Specific Position
+     * @param max_depth The depth of the maze
+     * @param max_row The number of rows in the maze
+     * @param max_column The number of columns in the maze
+     * @return List of possible Positions (Position3D[])
+     */
     public static Position3D[] findLegalNeighbors (Position3D p, int max_depth, int max_row, int max_column)
     {
         if(p == null)
@@ -89,6 +119,15 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
         return poseArr;
     }
 
+     /**
+     * gets a stuck Position3D (we visited in all the possible NeighborsPositions),
+     * and returns an optional Position3D (inside/down/right) - one of them will be valid because we are not in the GoalPosition
+     * @param thisPose The Specific Position3D
+     * @param max_depth The depth of the maze
+     * @param max_row The number of rows in the maze
+     * @param max_column The number of columns in the maze
+     * @return The next optional Position (Position3D)
+     */
     public static Position3D findNextPose(Position3D thisPose, int max_depth, int max_row, int max_column)
     {
         if(thisPose == null)

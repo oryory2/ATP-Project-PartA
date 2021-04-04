@@ -32,7 +32,7 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
      /**
      * gets a MazeState, and returns all the Possible legal moves
      * from the certain state
-     * @param state the state we want to check moves from
+     * @param state the MazeState we want to check moves from
      * @return List of possible Successors (ArrayList<AState>)
      */
     public ArrayList<AState> getAllSuccessors(AState state) // gets a MazeState, and returns all the Possible legal moves in the Maze
@@ -123,7 +123,7 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
     }
 
      /**
-     * puts the start position into a start state and returns it
+     * puts the start position into a MazeState and returns it
      * @return The Start State of a SearchableMaze problem (AState)
      */
     public AState getStartState()
@@ -134,7 +134,7 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
     }
 
      /**
-     * puts the Goal position into a start state and returns it
+     * puts the Goal position into a MazeState and returns it
      * @return The Goal State of a SearchableMaze problem (AState)
      */
     public AState getGoalState()
@@ -178,8 +178,8 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
     }
 
      /**
-     * Arranges the list of legal moves in order
-     * sothere is a preference for non-diagonal moves
+     * Arranges the list of legal moves in Priority order
+     * so there is a preference for non-diagonal moves
      * @param state_List list of Successors of a State
      * @return States list arranged by priority (ArrayList<AState>)
      */

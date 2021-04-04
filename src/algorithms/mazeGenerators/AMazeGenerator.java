@@ -3,12 +3,7 @@ package algorithms.mazeGenerators;
 public abstract class AMazeGenerator implements IMazeGenerator /** This Abstract Class describe a MazeGenerator that knows how to build the Maze */
 
 {
-     /**
-     * Returns the time takes to the "generate" method to run
-     * @param row The number of rows will be in the maze
-     * @param column The number of columns will be in the maze
-     * @return time in millis (long)
-     */
+
     public long measureAlgorithmTimeMillis(int row, int column)
     {
         if((row <= 1) || (column <= 1))

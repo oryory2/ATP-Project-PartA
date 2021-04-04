@@ -52,7 +52,7 @@ public class Maze /** This Class describe a Maze from any Shape */
 
      /**
      * Printing method for the Maze
-     * Printing the maze according to the 2DArray representing him
+     * Printing the maze according to the 2DArray representing it
      */
     public void print()
     {

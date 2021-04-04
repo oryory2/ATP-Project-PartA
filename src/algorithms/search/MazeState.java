@@ -8,7 +8,7 @@ public class MazeState extends AState /** This Class describe a State inside a M
 
      /**
      * constructor
-     * @param p the position we want to put into the Mazestate
+     * @param p the position that represent the Mazestate
      * assign p to this.pose field
      */
     public MazeState(Position p)

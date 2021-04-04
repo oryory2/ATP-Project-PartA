@@ -12,6 +12,12 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
     private Position3D GoalPosition;
 
 
+     /**
+     * constructor
+     * setting the StartPosition of the Maze to be {0,0,0}
+     * setting the GoalPosition of the Maze to be {mazeArr.length - 1, mazeArr[0].length - 1, mazeArr[0][0].length - 1}
+     * @param mazeArr the 3DArray that presenting the Maze
+     */
     public Maze3D(int[][][] mazeArr)
     {
         if(mazeArr == null)
@@ -32,31 +38,50 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
         this.GoalPosition = new Position3D(mazeArr.length - 1, mazeArr[0].length - 1, mazeArr[0][0].length - 1);
     }
 
-    public int[][][] getMap() {
-        return mazeArr;
-    }
+     /**
+     * @return the 3DArray representing the maze (int [][][])
+     */
+    public int[][][] getMap() { return mazeArr; }
 
-    public int getMax_rows() {
-        return max_rows;
-    }
-
-    public int getMax_columns() {
-        return max_columns;
-    }
-
+    /**
+     * @return the depth of the maze (int)
+     */
     public int getMax_depth() {
         return max_depth;
     }
 
+     /**
+     * @return the number of rows in the maze (int)
+     */
+    public int getMax_rows() {
+        return max_rows;
+    }
+
+     /**
+     * @return the number of columns in the maze (int)
+     */
+    public int getMax_columns() {
+        return max_columns;
+    }
+
+     /**
+     * @return the StartPosition of the maze (Position3D)
+     */
     public Position3D getStartPosition() {
         return StartPosition;
     }
 
+     /**
+     * @return the GoalPosition of the maze (Position3D)
+     */
     public Position3D getGoalPosition() {
         return GoalPosition;
     }
 
-
+     /**
+     * Printing method for the Maze3D
+     * Printing the maze according to the 3DArray representing it
+     */
     public void print()
     {
         System.out.println("{");

@@ -66,6 +66,17 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         }
         while(flag != 1);
 
+        /*for(int i = 0; i < mazeArr.length; i++)
+        {
+            for(int j = 0; j < mazeArr[0].length; j++)
+            {
+                if(mazeArr[i][j] == 1)
+                {
+                    mazeArr[i][j] = (int) (Math.random() * 2);
+                }
+            }
+
+        }*/
         Maze newMaze = new Maze(mazeArr);
         return newMaze;
     }

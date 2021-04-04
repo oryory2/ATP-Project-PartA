@@ -7,6 +7,13 @@ import algorithms.search.MazeState;
 public class Maze3DState extends AState /** This Class describe a State inside a 3DMaze (Position on the Maze board) */
 {
         // We chose to describe illegal Maze3DState by having position {-1,-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
+
+     /**
+     * constructor
+     * @param p the Position3D that represent the Maze3DState
+     * assign p to this.pose field
+     */
+
         public Maze3DState(Position3D p)
         {
             if(p == null)
@@ -21,11 +28,9 @@ public class Maze3DState extends AState /** This Class describe a State inside a
             this.pose = p;
         }
 
-        public Object getState()
-        {
-            return pose;
-        }
-
+     /**
+     * @return whether the Maze3DState is legal or not (boolean)
+     */
         public boolean legalState()
         {
             if((((Position3D)this.pose).getDepth() == -1) && (((Position3D)this.pose).getRow() == -1) && (((Position3D)this.pose).getColumn() == -1))
@@ -33,6 +38,12 @@ public class Maze3DState extends AState /** This Class describe a State inside a
             return true;
         }
 
+     /**
+     * Returns whether other Maze3DState is equal to this one
+     * Compares between Maze3DStates by depth/row/column
+     * @param state Maze3DState we want to compare to
+     * @return equal or not (boolean)
+     */
         public boolean compStates(AState state)
         {
             if(state == null)
@@ -50,6 +61,11 @@ public class Maze3DState extends AState /** This Class describe a State inside a
             return false;
         }
 
+     /**
+     * toString implementation of Maze3DStates
+     * Uses the Position3D toString implementation in oreder to print the Maze3DStates
+     * @return Maze3DState's Position toString (String)
+     */
         public String toString()
         {
             return this.getState().toString();

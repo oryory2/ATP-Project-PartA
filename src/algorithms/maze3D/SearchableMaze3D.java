@@ -13,6 +13,10 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
     private Maze3D maze;
     private int [][][] visitArr;
 
+     /**
+     * Constructor of SearchableMaze3D
+     * @param maze a certain Maze3D we want to turn into an Isearchable problem
+     */
     public SearchableMaze3D(Maze3D maze)
     {
         if(maze == null)
@@ -27,6 +31,12 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
         this.visitArr = new int[maze.getMax_depth()][maze.getMax_rows()][maze.getMax_columns()];
     }
 
+     /**
+     * gets a Maze3DState, and returns all the Possible legal moves
+     * from the certain state
+     * @param state the Maze3DState we want to check moves from
+     * @return List of possible Successors (ArrayList<AState>)
+     */
     public ArrayList<AState> getAllSuccessors(AState state)
     {
         if(state == null)
@@ -88,17 +98,25 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
         return maze_state_arr;
     }
 
-
-    public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List)
+     /**
+     * Arranges the list of legal moves in Priority order
+     * @param state_List list of Successors of a State
+     * @return States list arranged by priority (ArrayList<AState>)
+     ****** there is no need for this Method in the 3DMaze, so we just returned the original state_List
+     */
+     public ArrayList<AState> getPriorityStates(ArrayList<AState> state_List)
     {
         if(state_List == null)
         {
             throw new RuntimeException("The ArrayList that supplied is not legal! (null)");
         }
-        // there is no need for this Method in the 3DMaze, so we just returned the original state_List
         return state_List;
     }
 
+     /**
+     * puts the start position into a Maze3DState and returns it
+     * @return The Start State of a SearchableMaze problem (AState)
+     */
     public AState getStartState()
     {
         Position3D p = this.maze.getStartPosition();
@@ -106,6 +124,10 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
         return startState;
     }
 
+     /**
+     * puts the Goal position into a Maze3DState and returns it
+     * @return The Goal State of a SearchableMaze problem (AState)
+     */
     public AState getGoalState()
     {
         Position3D p = this.maze.getGoalPosition();
@@ -113,6 +135,14 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
         return goalState;
     }
 
+     /**
+     * check whether a certain State is already visited
+     * We will use a three-dimensional matrix to indicate whether we have visited a state or not
+     * 1 indicates a state we have already visited
+     * 0 indicates a state we have not visited yet
+     * @param state the state we want to check if visited
+     * @return Visited or not (boolean)
+     */
     public boolean isVisited(AState state)
     {
         if(state == null)
@@ -125,6 +155,11 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
         return false;
     }
 
+     /**
+     * Mark a certain state as visited
+     * change the value in a three-dimensional matrix that symbolizes visits from 0 to 1
+     * @param state the state we want to mark as visited
+     */
     public void setVisit(AState state)
     {
         if(state == null)
@@ -135,6 +170,10 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
         this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] = 1;
     }
 
+     /**
+     * change all the values in the three-dimensional matrix representing visits to 0
+     * which means that we will return the problem to the starting situation
+     */
     public void resetProblem()
     {
         this.visitArr = new int[maze.getMax_depth()][maze.getMax_rows()][maze.getMax_columns()];

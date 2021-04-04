@@ -14,7 +14,7 @@ public class Main
     {
         System.out.println("hey");
         MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(30,30);
+        Maze maze = m.generate(100,100);
         //SearchableMaze Smaze = new SearchableMaze(maze);
         //DepthFirstSearch d = new DepthFirstSearch();
         //Solution s1 = d.solve(Smaze);
