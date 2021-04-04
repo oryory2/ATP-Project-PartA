@@ -33,7 +33,7 @@ public class Main
         //DepthFirstSearch d = new DepthFirstSearch();
         //Solution s3 = d.solve(sMaze);
         maze.print();
-
+        System.out.println("gh");
         System.out.println("gh");
     }
 }
