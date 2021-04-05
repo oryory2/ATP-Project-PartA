@@ -14,10 +14,10 @@ public class Main
     {
         System.out.println("hey");
         MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(100,100);
-        //SearchableMaze Smaze = new SearchableMaze(maze);
-        //DepthFirstSearch d = new DepthFirstSearch();
-        //Solution s1 = d.solve(Smaze);
+        Maze maze = m.generate(10,11);
+        SearchableMaze Smaze = new SearchableMaze(maze);
+        DepthFirstSearch d = new DepthFirstSearch();
+        Solution s1 = d.solve(Smaze);
         //BreadthFirstSearch b = new BreadthFirstSearch();
         //Solution s2 = b.solve(Smaze);
         //BestFirstSearch BF = new BestFirstSearch();
