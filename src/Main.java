@@ -13,9 +13,9 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("hey");
-        MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(10,11);
-        SearchableMaze Smaze = new SearchableMaze(maze);
+        MyMaze3DGenerator m = new MyMaze3DGenerator();
+        Maze3D maze = m.generate(100,100,100);
+        SearchableMaze3D Smaze = new SearchableMaze3D(maze);
         DepthFirstSearch d = new DepthFirstSearch();
         Solution s1 = d.solve(Smaze);
         //BreadthFirstSearch b = new BreadthFirstSearch();

@@ -87,34 +87,34 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
         Position3D [] poseArr = new Position3D[6];
 
         // for each possible move (up, down, left, right, inside, outside) we check if it's a valid move
-        if(p.row - 1 >= 0) // up
+        if(p.row - 2 >= 0) // up
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row - 1, p.column);
+            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row - 2, p.column);
             NeighborsCounter++;
         }
-        if(p.column + 1 < max_column) // right
+        if(p.column + 2 < max_column) // right
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column + 1);
+            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column + 2);
             NeighborsCounter++;
         }
-        if(p.row + 1 < max_row) // down
+        if(p.row + 2 < max_row) // down
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row + 1, p.column);
+            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row + 2, p.column);
             NeighborsCounter++;
         }
-        if(p.column - 1 >= 0) // left
+        if(p.column - 2 >= 0) // left
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column - 1);
+            poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column - 2);
             NeighborsCounter++;
         }
-        if(p.depth + 1 < max_depth) // inside
+        if(p.depth + 2 < max_depth) // inside
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth + 1, p.row, p.column);
+            poseArr[NeighborsCounter] = new Position3D(p.depth + 2, p.row, p.column);
             NeighborsCounter++;
         }
-        if(p.depth - 1 >= 0) // outside
+        if(p.depth - 2 >= 0) // outside
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth - 1, p.row, p.column);
+            poseArr[NeighborsCounter] = new Position3D(p.depth - 2, p.row, p.column);
         }
         return poseArr;
     }

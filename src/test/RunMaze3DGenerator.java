@@ -12,7 +12,7 @@ public class RunMaze3DGenerator
     }
     public static void testMaz3DeGenerator(IMazeGenerator3D mazeGenerator)
     {
-        System.out.println(String.format("Maze generation time(ms): %s", mazeGenerator.measureAlgorithmTimeMillis(500,500, 500)));
+        System.out.println(String.format("Maze generation time(ms): %s", mazeGenerator.measureAlgorithmTimeMillis(100,100, 100)));
         Maze3D maze = mazeGenerator.generate(5,5,5);
         // get the maze entrance
         Position3D startPosition = maze.getStartPosition();
