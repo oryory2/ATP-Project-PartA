@@ -36,7 +36,7 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
         for (int i = 0; i < 6; i++) {
             if (startPoseNeighbors[i] == null)
                 break;
-            if ((mazeArr[startPoseNeighbors[i].getRow()][startPoseNeighbors[i].getRow()][startPoseNeighbors[i].getColumn()] == 1)) {
+            if ((mazeArr[startPoseNeighbors[i].getDepth()][startPoseNeighbors[i].getRow()][startPoseNeighbors[i].getColumn()] == 1)) {
                 FrontVal1.add(startPoseNeighbors[i]);
             }
         }
