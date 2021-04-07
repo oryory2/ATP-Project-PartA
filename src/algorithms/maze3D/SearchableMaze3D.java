@@ -58,7 +58,6 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
             if(!((thisDepth == -1) && (thisRow == -1) && (thisColumn == -1)))
                 throw new RuntimeException("The AState that supplied is not legal! AState Position3D can't have negative indexes");
         }
-
         // for each possible move (up, down, left, right, inside, outside) we check if it's a valid move
         if((thisRow - 1 >= 0) && (mazeArr[thisDepth][thisRow - 1][thisColumn] == 0))
         {

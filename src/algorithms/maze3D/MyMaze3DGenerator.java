@@ -25,7 +25,7 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
 
         ArrayList<Position3D> FrontVal1 = new ArrayList<Position3D>();  // array of Positions 2 (1 in depth) steps away from thisPose, with value 1
         Position3D thisPose = new Position3D(0, 0, 0);
-        Position3D[] startPoseNeighbors = Position3D.findLegalNeighbors(thisPose, depth, row, column);
+        Position3D[] startPoseNeighbors = findLegalNeighbors(thisPose, depth, row, column);
         for (int i = 0; i < 6; i++) {
             if (startPoseNeighbors[i] == null)
                 break;
@@ -38,7 +38,7 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
             int randomPick = (int) (Math.random() * (FrontVal1.size()));
             Position3D randFront = FrontVal1.get(randomPick); // choose a random Wall
             ArrayList<Position3D> BackVal0 = new ArrayList<Position3D>(); // array of Positions 2 (1 in depth) steps away from randFront, with value 0
-            Position3D[] randFrontNeighbors = Position3D.findLegalNeighbors(randFront, depth, row, column);
+            Position3D[] randFrontNeighbors = findLegalNeighbors(randFront, depth, row, column);
             for (int i = 0; i < 6; i++) {
                 if (randFrontNeighbors[i] == null)
                     break;
@@ -58,6 +58,66 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
         Maze3D newMaze = new Maze3D(mazeArr);
         return newMaze;
     }
+
+
+    /**
+     * gets a Position3D, and returns all the Possible legal moves (Position3D) from
+     * the specific Position3D by the depth/row/columns borders
+     * @param p The Specific Position
+     * @param max_depth The depth of the maze
+     * @param max_row The number of rows in the maze
+     * @param max_column The number of columns in the maze
+     * @return List of possible Positions (Position3D[])
+     */
+    private Position3D[] findLegalNeighbors (Position3D p, int max_depth, int max_row, int max_column)
+    {
+        if(p == null)
+        {
+            throw new RuntimeException("The Position3D that supplied is not legal (null)");
+        }
+        if((p.getDepth() < 0) || (p.getRow() < 0) || (p.getColumn() < 0))
+        {
+            if(!((p.getDepth() == -1) && (p.getRow() == -1) && (p.getColumn() == -1)))
+                throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
+        }
+
+        int NeighborsCounter = 0;
+        Position3D [] poseArr = new Position3D[6];
+
+        // for each possible move (up, down, left, right, inside, outside) we check if it's a valid move
+        if(p.getRow() - 2 >= 0) // up
+        {
+            poseArr[NeighborsCounter] = new Position3D(p.getDepth(), p.getRow() - 2, p.getColumn());
+            NeighborsCounter++;
+        }
+        if(p.getColumn() + 2 < max_column) // right
+        {
+            poseArr[NeighborsCounter] = new Position3D(p.getDepth(), p.getRow(), p.getColumn() + 2);
+            NeighborsCounter++;
+        }
+        if(p.getRow() + 2 < max_row) // down
+        {
+            poseArr[NeighborsCounter] = new Position3D(p.getDepth(), p.getRow() + 2, p.getColumn());
+            NeighborsCounter++;
+        }
+        if(p.getColumn() - 2 >= 0) // left
+        {
+            poseArr[NeighborsCounter] = new Position3D(p.getDepth(), p.getRow(), p.getColumn() - 2);
+            NeighborsCounter++;
+        }
+        if(p.getDepth() + 1 < max_depth) // inside
+        {
+            poseArr[NeighborsCounter] = new Position3D(p.getDepth() + 1, p.getRow(), p.getColumn());
+            NeighborsCounter++;
+        }
+        if(p.getDepth() - 1 >= 0) // outside
+        {
+            poseArr[NeighborsCounter] = new Position3D(p.getDepth() - 1, p.getRow(), p.getColumn());
+        }
+        return poseArr;
+    }
+
+
     private void updatePositionsVal (Position3D front, Position3D back, int [][][] mazeArr)
     {
         if (front.getRow() == back.getRow() && front.getColumn() == back.getColumn()) {
