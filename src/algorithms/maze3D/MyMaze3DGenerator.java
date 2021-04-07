@@ -8,6 +8,13 @@ import java.util.ArrayList;
 public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 3DMazeGenerator that build the Maze by the DFS method */
 {
 
+    /**
+     * Returns a new Maze3D build by the Prim algorithm
+     * @param row The number of rows will be in the maze
+     * @param column The number of columns will be in the maze
+     * @param depth The depth of the new maze
+     * @return the new maze3D (Maze3D)
+     */
     public Maze3D generate(int depth, int row, int column) {
         if ((depth <= 1) || (row <= 1) || (column <= 1)) {
             throw new RuntimeException("One or more of the supplied sizes are not legal! Depth/Row/Column values must be at least 2");
@@ -117,7 +124,14 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
         return poseArr;
     }
 
-
+     /**
+     * Update the values of 2 Positions:
+     * 1. Back Position3D
+     * 2. the Position3D between the Front and the Back
+     * @param front The "front" Position3D
+     * @param back The "back" Position3D
+     * @param mazeArr The 3D Array representing the Maze
+     */
     private void updatePositionsVal (Position3D front, Position3D back, int [][][] mazeArr)
     {
         if (front.getRow() == back.getRow() && front.getColumn() == back.getColumn()) {
@@ -135,6 +149,11 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
         }
     }
 
+     /**
+     * In cases of different Row/Columns combinations,
+     * we Make sure there will be a Path to the GoalState
+     * @param mazeArr The 3D Array representing the Maze
+     */
     private void FinishMaze(int [][][] mazeArr) {
         //Odd depth, odd rows, odd columns -> normal situation dont do anything
         // ------------------------- //

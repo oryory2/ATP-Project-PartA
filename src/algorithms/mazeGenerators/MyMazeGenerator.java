@@ -8,6 +8,12 @@ import java.util.Set;
 public class MyMazeGenerator extends AMazeGenerator /** This Class describe MazeGenerator that build the Maze by the DFS method */
 
 {
+     /**
+     * Returns a new Maze build by the Prim algorithm
+     * @param row The number of rows will be in the maze
+     * @param column The number of columns will be in the maze
+     * @return the new maze (Maze)
+     */
     public Maze generate(int row, int column) {
         if ((row <= 1) || (column <= 1)) {
             throw new RuntimeException("One or more of the supplied sizes are not legal! Row and Column values must be at least 2");
@@ -96,6 +102,14 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         return poseArr;
     }
 
+    /**
+     * Update the values of 2 Positions:
+     * 1. Back Position
+     * 2. the Position between the Front and the Back
+     * @param front The "front" Position
+     * @param back The "back" Position
+     * @param mazeArr The 2D Array representing the Maze
+     */
     private void updatePositionsVal (Position front, Position back, int [][] mazeArr)
     {
         if (front.getRow() == back.getRow()) {
@@ -108,6 +122,11 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         }
     }
 
+     /**
+     * In cases of different Row/Columns combinations,
+     * we Make sure there will be a Path to the GoalState
+     * @param mazeArr The 2D Array representing the Maze
+     */
     private void FinishMaze(int [][] mazeArr)
     {
         if(mazeArr.length % 2 != 0 && mazeArr[0].length % 2 != 0)
@@ -136,6 +155,10 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         }
     }
 
+     /**
+     * In a case the Row=Column=2, we Generate the maze ourself
+     * @return the new maze (Maze)
+     */
     public Maze generate2on2(){
         int[][] mazeArr = new int[2][2];
         int randomizeMaze = (int) (Math.random() * 2);
@@ -145,9 +168,7 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         if(randomizeMaze == 1){
             mazeArr[0][1] = 1;
         }
-
         Maze newMaze = new Maze(mazeArr);
         return newMaze;
     }
-
 }

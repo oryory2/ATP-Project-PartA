@@ -24,7 +24,7 @@ public class Main
         //Solution s3 = BF.solve(Smaze);
         //System.out.println("check");
         IMazeGenerator3D g = new MyMaze3DGenerator();
-        Maze3D newMaze = g.generate(4,11,12);
+        Maze3D newMaze = g.generate(2,11,12);
         SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
         //BreadthFirstSearch bfs = new BreadthFirstSearch();
         //Solution s1 = bfs.solve(sMaze);
