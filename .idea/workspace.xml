@@ -6,7 +6,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/Maze3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/Maze3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/MyMaze3DGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/MyMaze3DGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/Position3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/Position3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +182,7 @@
       <workItem from="1617803073866" duration="62000" />
       <workItem from="1617803182301" duration="52000" />
       <workItem from="1617803245515" duration="312000" />
-      <workItem from="1617803666814" duration="1606000" />
+      <workItem from="1617803666814" duration="5412000" />
     </task>
     <servers />
   </component>
@@ -201,10 +202,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="Smaze.maze.mazeArr" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

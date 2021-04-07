@@ -12,6 +12,8 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         if ((row <= 1) || (column <= 1)) {
             throw new RuntimeException("One or more of the supplied sizes are not legal! Row and Column values must be at least 2");
         }
+        if(row == 2 && column == 2)
+            return generate2on2();
         int[][] mazeArr = new int[row][column];
         for (int i = 0; i < mazeArr.length; i++) {
             for (int j = 0; j < mazeArr[0].length; j++)
@@ -93,4 +95,18 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
             }
         }
     }
+    public Maze generate2on2(){
+        int[][] mazeArr = new int[2][2];
+        int randomizeMaze = (int) (Math.random() * 2);
+        if(randomizeMaze == 0){
+            mazeArr[1][0] = 1;
+        }
+        if(randomizeMaze == 1){
+            mazeArr[0][1] = 1;
+        }
+
+        Maze newMaze = new Maze(mazeArr);
+        return newMaze;
+    }
+
 }

@@ -107,14 +107,14 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
             poseArr[NeighborsCounter] = new Position3D(p.depth, p.row, p.column - 2);
             NeighborsCounter++;
         }
-        if(p.depth + 2 < max_depth) // inside
+        if(p.depth + 1 < max_depth) // inside
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth + 2, p.row, p.column);
+            poseArr[NeighborsCounter] = new Position3D(p.depth + 1, p.row, p.column);
             NeighborsCounter++;
         }
-        if(p.depth - 2 >= 0) // outside
+        if(p.depth - 1 >= 0) // outside
         {
-            poseArr[NeighborsCounter] = new Position3D(p.depth - 2, p.row, p.column);
+            poseArr[NeighborsCounter] = new Position3D(p.depth - 1, p.row, p.column);
         }
         return poseArr;
     }

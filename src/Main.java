@@ -14,17 +14,17 @@ public class Main
     {
         System.out.println("hey");
         MyMazeGenerator m = new MyMazeGenerator();
-        Maze maze = m.generate(12,13);
+        Maze maze = m.generate(100,100);
         SearchableMaze Smaze = new SearchableMaze(maze);
         //DepthFirstSearch d = new DepthFirstSearch();
         //Solution s1 = d.solve(Smaze);
-        //BreadthFirstSearch b = new BreadthFirstSearch();
-        //Solution s2 = b.solve(Smaze);
-        //BestFirstSearch BF = new BestFirstSearch();
-        //Solution s3 = BF.solve(Smaze);
+        BreadthFirstSearch b = new BreadthFirstSearch();
+        Solution s2 = b.solve(Smaze);
+        BestFirstSearch BF = new BestFirstSearch();
+        Solution s3 = BF.solve(Smaze);
         //System.out.println("check");
         //IMazeGenerator3D g = new MyMaze3DGenerator();
-        //Maze3D newMaze = g.generate(3,10,10);
+        //Maze3D newMaze = g.generate(4,11,12);
         //SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
         //BreadthFirstSearch bfs = new BreadthFirstSearch();
         //Solution s1 = bfs.solve(sMaze);
