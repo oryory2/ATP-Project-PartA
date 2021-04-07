@@ -149,8 +149,6 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
             }
         }
 
-
-
             Maze newMaze = new Maze(mazeArr);
             return newMaze;
     }
