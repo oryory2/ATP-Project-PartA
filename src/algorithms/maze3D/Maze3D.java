@@ -128,8 +128,11 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
             while (counter != mazeArr.length - 1)
             {
                 counter++;
-                System.out.println("-------------");
-
+                for(int k = 0; k < mazeArr[0][0].length - 1; k++)
+                {
+                    System.out.print("-");
+                }
+                System.out.println("-");
                 for (int i = 0; i < this.mazeArr[0].length; i++)
                 {
                     System.out.print("{ ");
