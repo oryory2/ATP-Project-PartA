@@ -23,7 +23,7 @@ public class Main
         //BestFirstSearch BF = new BestFirstSearch();
         //Solution s3 = BF.solve(Smaze);
         IMazeGenerator3D g = new MyMaze3DGenerator();
-        Maze3D newMaze = g.generate(3,100, 100);
+        Maze3D newMaze = g.generate(100,2, 2);
         SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
         BreadthFirstSearch bfs = new BreadthFirstSearch();
         Solution s1 = bfs.solve(sMaze);
