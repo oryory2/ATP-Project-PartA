@@ -49,9 +49,9 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
             maze_state_arr.add(new Maze3DState((new Position3D(-1,-1,-1)))); // initializing the ArrayList, (-1,-1,-1) means illegal move
         }
         int [][][] mazeArr = this.maze.getMap();
-        int thisDepth = ((Position3D)state.getState()).getDepth();
-        int thisRow = ((Position3D)state.getState()).getRow();
-        int thisColumn = ((Position3D)state.getState()).getColumn();
+        int thisDepth = ((Position3D)state.getState()).getDepthIndex();
+        int thisRow = ((Position3D)state.getState()).getRowIndex();
+        int thisColumn = ((Position3D)state.getState()).getColumnIndex();
 
         if((thisDepth < 0) || (thisRow < 0)|| (thisColumn < 0))
         {
@@ -149,7 +149,7 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
             throw new RuntimeException("The AState that supplied is not legal! (null)");
         }
         Position3D thisState = ((Position3D)state.getState());
-        if(this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] == 1)
+        if(this.visitArr[thisState.getDepthIndex()][thisState.getRowIndex()][thisState.getColumnIndex()] == 1)
             return true;
         return false;
     }
@@ -166,7 +166,7 @@ public class SearchableMaze3D implements ISearchable /** This Class describe a S
             throw new RuntimeException("The AState that supplied is not legal! (null)");
         }
         Position3D thisState = ((Position3D)state.getState());
-        this.visitArr[thisState.getDepth()][thisState.getRow()][thisState.getColumn()] = 1;
+        this.visitArr[thisState.getDepthIndex()][thisState.getRowIndex()][thisState.getColumnIndex()] = 1;
     }
 
      /**

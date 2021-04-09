@@ -20,9 +20,9 @@ public class Maze3DState extends AState /** This Class describe a State inside a
             {
                 throw new RuntimeException("The Position3D that supplied is not legal (null)");
             }
-            if((p.getDepth() < 0) || (p.getRow() < 0) || (p.getColumn() < 0))
+            if((p.getDepthIndex() < 0) || (p.getRowIndex() < 0) || (p.getColumnIndex() < 0))
             {
-                if(!((p.getDepth() == -1) && (p.getRow() == -1) && (p.getColumn() == -1)))
+                if(!((p.getDepthIndex() == -1) && (p.getRowIndex() == -1) && (p.getColumnIndex() == -1)))
                     throw new RuntimeException("The Position3D that supplied is not legal! Position3D can't have negative indexes");
             }
             this.pose = p;
@@ -33,7 +33,7 @@ public class Maze3DState extends AState /** This Class describe a State inside a
      */
         public boolean legalState()
         {
-            if((((Position3D)this.pose).getDepth() == -1) && (((Position3D)this.pose).getRow() == -1) && (((Position3D)this.pose).getColumn() == -1))
+            if((((Position3D)this.pose).getDepthIndex() == -1) && (((Position3D)this.pose).getRowIndex() == -1) && (((Position3D)this.pose).getColumnIndex() == -1))
                 return false;
             return true;
         }
@@ -56,7 +56,7 @@ public class Maze3DState extends AState /** This Class describe a State inside a
             Position3D thisPose = ((Position3D)thisState);
             Position3D otherPose = ((Position3D)otherState);
 
-            if((thisPose.getDepth() == otherPose.getDepth()) && (thisPose.getRow() == otherPose.getRow()) && (thisPose.getColumn() == otherPose.getColumn()))
+            if((thisPose.getDepthIndex() == otherPose.getDepthIndex()) && (thisPose.getRowIndex() == otherPose.getRowIndex()) && (thisPose.getColumnIndex() == otherPose.getColumnIndex()))
                 return true;
             return false;
         }

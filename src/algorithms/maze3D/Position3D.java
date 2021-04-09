@@ -41,7 +41,7 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
      /**
      * @return The Depth index of the Position3D (int)
      */
-    public int getDepth()
+    public int getDepthIndex()
     {
         return this.depth;
     }
@@ -49,7 +49,7 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
      /**
      * @return The row index of the Position3D (int)
      */
-    public int getRow()
+    public int getRowIndex()
     {
         return this.row;
     }
@@ -57,7 +57,7 @@ public class Position3D /** This Class describe a specific 3DPosition in a 3DMaz
      /**
      * @return The Column index of the Position3D (int)
      */
-    public int getColumn()
+    public int getColumnIndex()
     {
         return this.column;
     }

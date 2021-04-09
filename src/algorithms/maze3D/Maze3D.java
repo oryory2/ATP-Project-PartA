@@ -4,7 +4,7 @@ import algorithms.mazeGenerators.Position;
 
 public class Maze3D /** This Class describe a 3DMaze from any Shape */
 {
-    private int[][][] mazeArr;
+    private int[][][] map;
     private int max_rows;
     private int max_columns;
     private int max_depth;
@@ -28,7 +28,7 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
         {
             throw new RuntimeException("The Array that supplied is not legal! Depth/Row/Column values must be at least 2");
         }
-        this.mazeArr = mazeArr;
+        this.map = mazeArr;
         this.max_depth = mazeArr.length;
         this.max_rows = mazeArr[0].length;
         this.max_columns = mazeArr[0][0].length;
@@ -41,7 +41,7 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
      /**
      * @return the 3DArray representing the maze (int [][][])
      */
-    public int[][][] getMap() { return mazeArr; }
+    public int[][][] getMap() { return map; }
 
     /**
      * @return the depth of the maze (int)
@@ -84,24 +84,24 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
      */
      public void print(){
          System.out.println("{");
-         for(int depth = 0; depth < mazeArr.length; depth++){
-             for(int row = 0; row < mazeArr[0].length; row++) {
+         for(int depth = 0; depth < map.length; depth++){
+             for(int row = 0; row < map[0].length; row++) {
                  System.out.print("{ ");
-                 for (int col = 0; col < mazeArr[0][0].length; col++) {
-                     if (depth == startPosition.getDepth() && row == startPosition.getRow() && col == startPosition.getColumn()) // if the position is the start - mark with S
+                 for (int col = 0; col < map[0][0].length; col++) {
+                     if (depth == startPosition.getDepthIndex() && row == startPosition.getRowIndex() && col == startPosition.getColumnIndex()) // if the position is the start - mark with S
                          System.out.print("S ");
                      else {
-                         if (depth == goalPosition.getDepth() && row == goalPosition.getRow() && col == goalPosition.getColumn()) // if the position is the goal - mark with E
+                         if (depth == goalPosition.getDepthIndex() && row == goalPosition.getRowIndex() && col == goalPosition.getColumnIndex()) // if the position is the goal - mark with E
                              System.out.print("E ");
                          else
-                             System.out.print(mazeArr[depth][row][col] + " ");
+                             System.out.print(map[depth][row][col] + " ");
                      }
                  }
                  System.out.println("}");
              }
-             if(depth < mazeArr.length - 1) {
+             if(depth < map.length - 1) {
                  System.out.print("---");
-                 for (int i = 0; i < mazeArr[0][0].length; i++)
+                 for (int i = 0; i < map[0][0].length; i++)
                      System.out.print("--");
                  System.out.println();
              }
