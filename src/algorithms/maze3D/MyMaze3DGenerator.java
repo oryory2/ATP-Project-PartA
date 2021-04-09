@@ -202,23 +202,9 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
                 mazeArr[depth - 1][row - 1][column - 2] = 0;
             }
         }
-        //Even depth, odd rows, odd columns
-        if (depth % 2 == 0 && row % 2 != 0 && column % 2 != 0) {
-            //fix last depth
-            for (int i = 0; i < row; i++) {
-                for (int j = 0; j < column; j++) {
-                    mazeArr[depth - 1][i][j] = (int) (Math.random() * 2);
-                }
-            }
-        }
+
         //Even depth, even rows, odd columns
         if (depth % 2 == 0 && row % 2 == 0 && column % 2 != 0) {
-            //fix last depth
-            for (int i = 0; i < row; i++) {
-                for (int j = 0; j < column; j++) {
-                    mazeArr[depth - 1][i][j] = (int) (Math.random() * 2);
-                }
-            }
             //fix last row
             for (int i = 0; i < depth; i++) {
                 for (int j = 0; j < column - 1; j++) {
@@ -237,12 +223,6 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
         }
         //Even depth, even rows, even columns
         if (depth % 2 == 0 && row % 2 == 0 && column % 2 == 0) {
-            //fix last depth
-            for (int i = 0; i < row; i++) {
-                for (int j = 0; j < column; j++) {
-                    mazeArr[depth - 1][i][j] = (int) (Math.random() * 2);
-                }
-            }
             //fix last row
             for (int i = 0; i < depth; i++) {
                 for (int j = 0; j < column - 1; j++) {
@@ -289,12 +269,6 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
         }
         //Even depth, odd rows, even columns
         if (depth % 2 == 0 && row % 2 != 0 && column % 2 == 0) {
-            //fix last depth
-            for (int i = 0; i < row; i++) {
-                for (int j = 0; j < column; j++) {
-                    mazeArr[depth - 1][i][j] = (int) (Math.random() * 2);
-                }
-            }
             //fix last column
             for (int i = 0; i < depth; i++) {
                 for (int j = 0; j < row - 1; j++) {

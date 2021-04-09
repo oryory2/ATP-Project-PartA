@@ -1,6 +1,6 @@
 package algorithms.maze3D;
 
-public interface IMazeGenerator3D /** This Interface describe a 3DMazeGenerator */
+public interface IMaze3DGenerator /** This Interface describe a 3DMazeGenerator */
 {
      /**
      * Returns a new general 3DMaze
