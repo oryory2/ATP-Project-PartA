@@ -51,8 +51,8 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
             maze_state_arr.add(new MazeState(new Position(-1,-1))); // initializing the ArrayList, (-1,-1) means illegal move
         }
         int [][] mazeArr = this.maze.getMazeArr();
-        int thisRow = ((Position)state.getState()).getRow();
-        int thisColumn = ((Position)state.getState()).getColumn();
+        int thisRow = ((Position)state.getState()).getRowIndex();
+        int thisColumn = ((Position)state.getState()).getColumnIndex();
         if((thisRow < 0)|| (thisColumn < 0))
         {
             if(!((thisRow == -1) && (thisColumn == -1)))
@@ -158,7 +158,7 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         {
             throw new RuntimeException("The AState that supplied is not legal! (null)");
         }
-        if(this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] == 1)
+        if(this.visitedArr[((Position)state.getState()).getRowIndex()][((Position)state.getState()).getColumnIndex()] == 1)
             return true;
         return false;
     }
@@ -174,7 +174,7 @@ public class SearchableMaze implements ISearchable /** This Class describe a Sea
         {
             throw new RuntimeException("The AState that supplied is not legal! (null)");
         }
-        this.visitedArr[((Position)state.getState()).getRow()][((Position)state.getState()).getColumn()] = 1;
+        this.visitedArr[((Position)state.getState()).getRowIndex()][((Position)state.getState()).getColumnIndex()] = 1;
     }
 
      /**

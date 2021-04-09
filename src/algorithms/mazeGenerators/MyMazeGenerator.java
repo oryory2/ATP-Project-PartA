@@ -33,7 +33,7 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         for (int i = 0; i < 4; i++) {
             if (startPoseNeighbors[i] == null)
                 break;
-            if ((mazeArr[startPoseNeighbors[i].getRow()][startPoseNeighbors[i].getColumn()] == 1))
+            if ((mazeArr[startPoseNeighbors[i].getRowIndex()][startPoseNeighbors[i].getColumnIndex()] == 1))
                 FrontVal1.add(startPoseNeighbors[i]);
         }
 
@@ -45,9 +45,9 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
             for (int i = 0; i < 4; i++) {
                 if (randFrontNeighbors[i] == null)
                     break;
-                if ((mazeArr[randFrontNeighbors[i].getRow()][randFrontNeighbors[i].getColumn()] == 0))
+                if ((mazeArr[randFrontNeighbors[i].getRowIndex()][randFrontNeighbors[i].getColumnIndex()] == 0))
                     BackVal0.add(randFrontNeighbors[i]);
-                if ((mazeArr[randFrontNeighbors[i].getRow()][randFrontNeighbors[i].getColumn()] == 1))
+                if ((mazeArr[randFrontNeighbors[i].getRowIndex()][randFrontNeighbors[i].getColumnIndex()] == 1))
                     FrontVal1.add(randFrontNeighbors[i]);
             }
             int randomNei = (int) (Math.random() * (BackVal0.size()));
@@ -76,28 +76,28 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
         if (p == null) {
             throw new RuntimeException("The Position that supplied is not legal (null)");
         }
-        if ((p.getRow() < 0) || (p.getColumn() < 0)) {
-            if (!((p.getRow() == -1) && (p.getColumn() == -1)))
+        if ((p.getRowIndex() < 0) || (p.getColumnIndex() < 0)) {
+            if (!((p.getRowIndex() == -1) && (p.getColumnIndex() == -1)))
                 throw new RuntimeException("One or more of the Position indexes are not legal! Position can't have negative indexes");
         }
 
         // for each possible move (up, down, left, right) we check if it's a valid move
         int NeighborsCounter = 0;
         Position[] poseArr = new Position[4];
-        if (p.getRow() - 2 >= 0) {
-            poseArr[NeighborsCounter] = new Position(p.getRow() - 2, p.getColumn()); // upper
+        if (p.getRowIndex() - 2 >= 0) {
+            poseArr[NeighborsCounter] = new Position(p.getRowIndex() - 2, p.getColumnIndex()); // upper
             NeighborsCounter++;
         }
-        if (p.getRow() + 2 < max_row) {
-            poseArr[NeighborsCounter] = new Position(p.getRow() + 2, p.getColumn()); // lower
+        if (p.getRowIndex() + 2 < max_row) {
+            poseArr[NeighborsCounter] = new Position(p.getRowIndex() + 2, p.getColumnIndex()); // lower
             NeighborsCounter++;
         }
-        if (p.getColumn() + 2 < max_column) {
-            poseArr[NeighborsCounter] = new Position(p.getRow(), p.getColumn() + 2); // right
+        if (p.getColumnIndex() + 2 < max_column) {
+            poseArr[NeighborsCounter] = new Position(p.getRowIndex(), p.getColumnIndex() + 2); // right
             NeighborsCounter++;
         }
-        if (p.getColumn() - 2 >= 0) {
-            poseArr[NeighborsCounter] = new Position(p.getRow(), p.getColumn() - 2); // left
+        if (p.getColumnIndex() - 2 >= 0) {
+            poseArr[NeighborsCounter] = new Position(p.getRowIndex(), p.getColumnIndex() - 2); // left
         }
         return poseArr;
     }
@@ -112,13 +112,13 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
      */
     private void updatePositionsVal (Position front, Position back, int [][] mazeArr)
     {
-        if (front.getRow() == back.getRow()) {
-            mazeArr[front.getRow()][front.getColumn()] = 0;
-            mazeArr[front.getRow()][(front.getColumn() + back.getColumn()) / 2] = 0;
+        if (front.getRowIndex() == back.getRowIndex()) {
+            mazeArr[front.getRowIndex()][front.getColumnIndex()] = 0;
+            mazeArr[front.getRowIndex()][(front.getColumnIndex() + back.getColumnIndex()) / 2] = 0;
         }
-        if (front.getColumn() == back.getColumn()) {
-            mazeArr[front.getRow()][front.getColumn()] = 0;
-            mazeArr[(front.getRow() + back.getRow()) / 2][front.getColumn()] = 0;
+        if (front.getColumnIndex() == back.getColumnIndex()) {
+            mazeArr[front.getRowIndex()][front.getColumnIndex()] = 0;
+            mazeArr[(front.getRowIndex() + back.getRowIndex()) / 2][front.getColumnIndex()] = 0;
         }
     }
 

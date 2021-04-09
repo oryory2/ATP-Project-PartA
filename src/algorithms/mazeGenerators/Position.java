@@ -29,14 +29,14 @@ public class Position /** This Class describe a specific Position in a Maze (row
     /**
      * @return The row index of the Position (int)
      */
-    public int getRow() {
+    public int getRowIndex() {
         return this.row;
     }
 
     /**
      * @return The column index of the Position (int)
      */
-    public int getColumn() {
+    public int getColumnIndex() {
         return this.column;
     }
 

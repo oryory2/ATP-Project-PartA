@@ -17,9 +17,9 @@ public class MazeState extends AState /** This Class describe a State inside a M
         {
             throw new RuntimeException("The Position that supplied is not legal (null)");
         }
-        if((p.getRow() < 0) ||(p.getColumn() < 0))
+        if((p.getRowIndex() < 0) ||(p.getColumnIndex() < 0))
         {
-            if(!((p.getRow() == -1) && (p.getColumn() == -1)))
+            if(!((p.getRowIndex() == -1) && (p.getColumnIndex() == -1)))
                 throw new RuntimeException("The Position that supplied is not legal! Position can't have negative indexes");
         }
         this.pose = p;
@@ -30,7 +30,7 @@ public class MazeState extends AState /** This Class describe a State inside a M
      */
     public boolean legalState()
     {
-        if((((Position)this.pose).getRow() == -1) && (((Position)this.pose).getColumn() == -1))
+        if((((Position)this.pose).getRowIndex() == -1) && (((Position)this.pose).getColumnIndex() == -1))
             return false;
         return true;
     }
@@ -53,7 +53,7 @@ public class MazeState extends AState /** This Class describe a State inside a M
         Position thisPose = ((Position)thisState);
         Position otherPose = ((Position)otherState);
 
-        if((thisPose.getRow() == otherPose.getRow()) && (thisPose.getColumn() == otherPose.getColumn()))
+        if((thisPose.getRowIndex() == otherPose.getRowIndex()) && (thisPose.getColumnIndex() == otherPose.getColumnIndex()))
             return true;
         return false;
     }
