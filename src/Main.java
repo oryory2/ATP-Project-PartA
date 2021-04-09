@@ -24,17 +24,16 @@ public class Main
         //Solution s3 = BF.solve(Smaze);
         //System.out.println("check");
         IMazeGenerator3D g = new MyMaze3DGenerator();
-        Maze3D newMaze = g.generate(3,10, 10);
+        Maze3D newMaze = g.generate(4,10, 10);
         SearchableMaze3D sMaze = new SearchableMaze3D(newMaze);
-        //BreadthFirstSearch bfs = new BreadthFirstSearch();
-        //Solution s1 = bfs.solve(sMaze);
-        //BestFirstSearch bfs2 = new BestFirstSearch();
-        //Solution s2 = bfs2.solve(sMaze);
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
+        Solution s1 = bfs.solve(sMaze);
+        BestFirstSearch bfs2 = new BestFirstSearch();
+        Solution s2 = bfs2.solve(sMaze);
         DepthFirstSearch d = new DepthFirstSearch();
         Solution s3 = d.solve(sMaze);
         //maze.print();
         newMaze.print();
-        System.out.println("gh");
         System.out.println("gh");
     }
 }
