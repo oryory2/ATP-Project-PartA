@@ -8,8 +8,8 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
     private int max_rows;
     private int max_columns;
     private int max_depth;
-    private Position3D StartPosition;
-    private Position3D GoalPosition;
+    private Position3D startPosition;
+    private Position3D goalPosition;
 
 
      /**
@@ -33,9 +33,9 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
         this.max_rows = mazeArr[0].length;
         this.max_columns = mazeArr[0][0].length;
         // we chose the StartPosition to be (0,0,0)
-        this.StartPosition = new Position3D(0, 0, 0);
+        this.startPosition = new Position3D(0, 0, 0);
         // we chose the GoalPosition to be (mazeArr.length - 1,mazeArr[0].length - 1,mazeArr[0][0].length - 1)
-        this.GoalPosition = new Position3D(mazeArr.length - 1, mazeArr[0].length - 1, mazeArr[0][0].length - 1);
+        this.goalPosition = new Position3D(mazeArr.length - 1, mazeArr[0].length - 1, mazeArr[0][0].length - 1);
     }
 
      /**
@@ -68,87 +68,44 @@ public class Maze3D /** This Class describe a 3DMaze from any Shape */
      * @return the StartPosition of the maze (Position3D)
      */
     public Position3D getStartPosition() {
-        return StartPosition;
+        return startPosition;
     }
 
      /**
      * @return the GoalPosition of the maze (Position3D)
      */
     public Position3D getGoalPosition() {
-        return GoalPosition;
+        return goalPosition;
     }
 
      /**
      * Printing method for the Maze3D
      * Printing the maze according to the 3DArray representing it
      */
-    public void print()
-    {
-        System.out.println("{");
-        System.out.print("{ S ");
-        for (int i = 1; i < mazeArr[0][0].length; i++) { // First Row
-            if (i != mazeArr[0][0].length - 1)
-                System.out.print(mazeArr[0][0][i] + " ");
-            else
-                System.out.println(mazeArr[0][0][i] + " }");
-        }
-        for (int i = 1; i < this.mazeArr[0].length - 1; i++) // Middle Rows
-        {
-            System.out.print("{ ");
-            for (int j = 0; j < mazeArr[0][0].length; j++) {
-                if (j != mazeArr[0][0].length - 1)
-                    System.out.print(mazeArr[0][i][j] + " ");
-                else
-                    System.out.println(mazeArr[0][i][j] + " }");
-            }
-        }
-        if (mazeArr.length == 1) // only one 2D array
-        {
-            System.out.print("{ ");
-            for (int t = 0; t < mazeArr[0][0].length; t++) // Last Row
-            {
-                if (t != mazeArr[0][0].length - 1)
-                    System.out.print(mazeArr[0][mazeArr[0].length - 1][t] + " ");
-                else
-                    System.out.println("E }");
-            }
-            System.out.println("}");
-        }
-        else // more than one 2D array
-        {
-            System.out.print("{ ");
-            for (int t = 0; t < mazeArr[0][0].length; t++)
-            {
-                if (t != mazeArr[0][0].length - 1)
-                    System.out.print(mazeArr[0][mazeArr[0].length - 1][t] + " ");
-                else
-                    System.out.println(mazeArr[0][mazeArr[0].length - 1][t] + " }");
-            }
-            int counter = 0;
-            while (counter != mazeArr.length - 1)
-            {
-                counter++;
-                for(int k = 0; k < mazeArr[0][0].length - 1; k++)
-                {
-                    System.out.print("-");
-                }
-                System.out.println("-");
-                for (int i = 0; i < this.mazeArr[0].length; i++)
-                {
-                    System.out.print("{ ");
-                    for (int j = 0; j < mazeArr[0][0].length; j++) {
-                        if (j != mazeArr[0][0].length - 1)
-                            System.out.print(mazeArr[counter][i][j] + " ");
-                        else {
-                            if ((counter == mazeArr.length - 1) && (i == mazeArr[0].length - 1))
-                                System.out.println("E }");
-                            else
-                                System.out.println(mazeArr[counter][i][j] + " }");
-                        }
-                    }
-                }
-            }
-            System.out.println("}");
-        }
-    }
+     public void print(){
+         System.out.println("{");
+         for(int depth = 0; depth < mazeArr.length; depth++){
+             for(int row = 0; row < mazeArr[0].length; row++) {
+                 System.out.print("{ ");
+                 for (int col = 0; col < mazeArr[0][0].length; col++) {
+                     if (depth == startPosition.getDepth() && row == startPosition.getRow() && col == startPosition.getColumn()) // if the position is the start - mark with S
+                         System.out.print("S ");
+                     else {
+                         if (depth == goalPosition.getDepth() && row == goalPosition.getRow() && col == goalPosition.getColumn()) // if the position is the goal - mark with E
+                             System.out.print("E ");
+                         else
+                             System.out.print(mazeArr[depth][row][col] + " ");
+                     }
+                 }
+                 System.out.println("}");
+             }
+             if(depth < mazeArr.length - 1) {
+                 System.out.print("---");
+                 for (int i = 0; i < mazeArr[0][0].length; i++)
+                     System.out.print("--");
+                 System.out.println();
+             }
+         }
+         System.out.println("}");
+     }
 }
