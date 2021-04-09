@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/AMaze3DGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/AMaze3DGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/IMazeGenerator3D.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunMaze3DGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunMaze3DGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunSearchOnMaze3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunSearchOnMaze3D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/MyMaze3DGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/MyMaze3DGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/AMaze3DGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/AMaze3DGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/IMazeGenerator3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/IMaze3DGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/RunMaze3DGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/RunMaze3DGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/RunSearchOnMaze3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/RunSearchOnMaze3D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +192,7 @@
       <workItem from="1617891096924" duration="88000" />
       <workItem from="1617959451798" duration="1827000" />
       <workItem from="1617964581044" duration="2989000" />
-      <workItem from="1617991367898" duration="1975000" />
+      <workItem from="1617991367898" duration="2277000" />
     </task>
     <servers />
   </component>
