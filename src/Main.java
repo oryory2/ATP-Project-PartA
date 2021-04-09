@@ -33,6 +33,7 @@ public class Main
         //Solution s3 = d.solve(sMaze);
         //maze.print();
         newMaze.print();
+        System.out.println("ghgh");
         System.out.println("gh");
     }
 }

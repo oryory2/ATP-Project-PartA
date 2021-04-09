@@ -112,14 +112,14 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
             poseArr[NeighborsCounter] = new Position3D(p.getDepthIndex(), p.getRowIndex(), p.getColumnIndex() - 2);
             NeighborsCounter++;
         }
-        if(p.getDepthIndex() + 1 < max_depth) // inside
+        if(p.getDepthIndex() + 2 < max_depth) // inside
         {
-            poseArr[NeighborsCounter] = new Position3D(p.getDepthIndex() + 1, p.getRowIndex(), p.getColumnIndex());
+            poseArr[NeighborsCounter] = new Position3D(p.getDepthIndex() + 2, p.getRowIndex(), p.getColumnIndex());
             NeighborsCounter++;
         }
-        if(p.getDepthIndex() - 1 >= 0) // outside
+        if(p.getDepthIndex() - 2 >= 0) // outside
         {
-            poseArr[NeighborsCounter] = new Position3D(p.getDepthIndex() - 1, p.getRowIndex(), p.getColumnIndex());
+            poseArr[NeighborsCounter] = new Position3D(p.getDepthIndex() - 2, p.getRowIndex(), p.getColumnIndex());
         }
         return poseArr;
     }
@@ -136,6 +136,7 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
     {
         if (front.getRowIndex() == back.getRowIndex() && front.getColumnIndex() == back.getColumnIndex()) {
             mazeArr[front.getDepthIndex()][front.getRowIndex()][front.getColumnIndex()] = 0;
+            mazeArr[(front.getDepthIndex() + back.getDepthIndex()) / 2][front.getRowIndex()][front.getColumnIndex()] = 0;
         }
         //The rows and depth are equal - we will change the columns
         if (front.getRowIndex() == back.getRowIndex() && front.getDepthIndex() == back.getDepthIndex()) {
