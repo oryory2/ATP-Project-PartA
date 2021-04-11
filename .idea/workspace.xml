@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/maze3D/MyMaze3DGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/maze3D/MyMaze3DGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/MyMazeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/search/ASearchingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/search/ASearchingAlgorithm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +187,11 @@
       <workItem from="1617891096924" duration="88000" />
       <workItem from="1617959451798" duration="1827000" />
       <workItem from="1617964581044" duration="2989000" />
-      <workItem from="1617991367898" duration="3896000" />
+      <workItem from="1617991367898" duration="4258000" />
+      <workItem from="1618046283909" duration="2130000" />
+      <workItem from="1618058343081" duration="483000" />
+      <workItem from="1618139757492" duration="641000" />
+      <workItem from="1618159630465" duration="3080000" />
     </task>
     <servers />
   </component>

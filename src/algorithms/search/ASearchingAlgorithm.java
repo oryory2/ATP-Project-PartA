@@ -57,6 +57,10 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm /** Thi
      */
     public void setNumberOfNodesEvaluated(int number)
     {
+        if(!(number > 1))
+        {
+            throw new RuntimeException("The number of Evaluated nodes is invalid, must be at least 2!");
+        }
         this.NumberOfNodesEvaluated = number;
     }
 

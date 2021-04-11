@@ -80,6 +80,10 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
             if (!((p.getRowIndex() == -1) && (p.getColumnIndex() == -1)))
                 throw new RuntimeException("One or more of the Position indexes are not legal! Position can't have negative indexes");
         }
+        if((max_row <= 1) || (max_column <= 1))
+        {
+            throw new RuntimeException("The row/columns indexes are invalid (must be at least 2)");
+        }
 
         // for each possible move (up, down, left, right) we check if it's a valid move
         int NeighborsCounter = 0;
@@ -112,6 +116,21 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
      */
     private void updatePositionsVal (Position front, Position back, int [][] mazeArr)
     {
+        if((front == null) || (back == null) || (mazeArr == null))
+        {
+            throw new RuntimeException("One of the Arguments supplied is not legal (null)");
+        }
+        if((front.getRowIndex() < 0) || (front.getColumnIndex() < 0))
+        {
+            if(!((front.getRowIndex() == -1) && (front.getColumnIndex() == -1)))
+                throw new RuntimeException("One or more of the Position indexes are not legal! Position can't have negative indexes");
+        }
+        if((back.getRowIndex() < 0) || (back.getColumnIndex() < 0))
+        {
+            if(!((back.getRowIndex() == -1) && (back.getColumnIndex() == -1)))
+                throw new RuntimeException("One or more of the Position indexes are not legal! Position can't have negative indexes");
+        }
+
         if (front.getRowIndex() == back.getRowIndex()) {
             mazeArr[front.getRowIndex()][front.getColumnIndex()] = 0;
             mazeArr[front.getRowIndex()][(front.getColumnIndex() + back.getColumnIndex()) / 2] = 0;
@@ -129,6 +148,10 @@ public class MyMazeGenerator extends AMazeGenerator /** This Class describe Maze
      */
     private void FinishMaze(int [][] mazeArr)
     {
+        if(mazeArr == null)
+        {
+            throw new RuntimeException("The Array that supplied is not legal (null)");
+        }
         if(mazeArr.length % 2 != 0 && mazeArr[0].length % 2 != 0)
             return;
         if(mazeArr.length % 2 == 0 && mazeArr[0].length % 2 == 0) // even even

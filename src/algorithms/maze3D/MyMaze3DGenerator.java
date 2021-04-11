@@ -87,6 +87,10 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
             if(!((p.getDepthIndex() == -1) && (p.getRowIndex() == -1) && (p.getColumnIndex() == -1)))
                 throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
         }
+        if((max_depth <= 1) ||(max_row <= 1) || (max_column <= 1))
+        {
+            throw new RuntimeException("The depth/row/columns indexes are invalid (must be at least 2)");
+        }
 
         int NeighborsCounter = 0;
         Position3D [] poseArr = new Position3D[6];
@@ -134,6 +138,20 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
      */
     private void updatePositionsVal (Position3D front, Position3D back, int [][][] mazeArr)
     {
+        if((front == null) || (back == null) || (mazeArr == null))
+        {
+            throw new RuntimeException("One of the Arguments supplied is not legal (null)");
+        }
+        if(((front.getDepthIndex() < 0) || (front.getRowIndex() < 0) || (front.getColumnIndex() < 0)))
+        {
+            if(!((front.getDepthIndex() == -1) && (front.getRowIndex() == -1) && (front.getColumnIndex() == -1)))
+                throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
+        }
+        if(((back.getDepthIndex() < 0) || (back.getRowIndex() < 0) || (back.getColumnIndex() < 0)))
+        {
+            if(!((back.getDepthIndex() == -1) && (back.getRowIndex() == -1) && (back.getColumnIndex() == -1)))
+                throw new RuntimeException("One or more of the Position3D indexes are not legal! Position3D can't have negative indexes");
+        }
         mazeArr[front.getDepthIndex()][front.getRowIndex()][front.getColumnIndex()] = 0;
         //The rows and depth are equal - we will change the columns
         if (front.getRowIndex() == back.getRowIndex() && front.getDepthIndex() == back.getDepthIndex()) {
@@ -151,6 +169,10 @@ public class MyMaze3DGenerator extends AMaze3DGenerator /** This Class describe 
      * @param mazeArr The 3D Array representing the Maze
      */
     private void FinishMaze(int [][][] mazeArr) {
+        if(mazeArr == null)
+        {
+            throw new RuntimeException("The Position3D that supplied is not legal (null)");
+        }
         //Odd depth, odd rows, odd columns -> normal situation dont do anything
         // ------------------------- //
         int depth = mazeArr.length;
