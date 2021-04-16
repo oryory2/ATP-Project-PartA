@@ -25,6 +25,12 @@ public class SimpleMazeGenerator extends AMazeGenerator /** This Class describe 
             for (int j = 0; j < mazeArr[0].length - 1; j++)
                 mazeArr[i][j] = (int)(Math.random() * 2);
         }
+
+        for(int i = 0; i < mazeArr[0].length; i++)
+            mazeArr[0][i] = 0;
+        for(int i = 0; i < mazeArr.length; i++)
+            mazeArr[i][mazeArr[0].length - 1] = 0;
+
         Maze newMaze = new Maze(mazeArr);
         return newMaze;
     }
