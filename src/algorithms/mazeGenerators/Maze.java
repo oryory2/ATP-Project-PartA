@@ -114,25 +114,25 @@ public class Maze /** This Class describe a Maze from any Shape */
         return max_columns;
     }
 
-    public byte[] toByteArray(Maze maze)
+    public byte[] toByteArray()
     {
-        ArrayList<Integer> IntegerCompressed = new ArrayList<Integer>(); // [row (0) row (1) , column(2) column(3) , s(4) s(5) , f(6) f(7) , ....................]
+        ArrayList<Integer> IntegerCompressed = new ArrayList<Integer>(); // [row (0) row (1), column(2) column(3), s(4) s(5), s(6) s(7), f(8) f(9), f(10) f(11), ....................]
 
-        int row = maze.max_rows;
-        int column = maze.max_columns;
+        int row = this.max_rows;
+        int column = this.max_columns;
 
         updateArrayList(row, IntegerCompressed);
         updateArrayList(column, IntegerCompressed);
 
-        Position s = maze.getStartPosition();
-        Position f = maze.getGoalPosition();
+        Position s = this.getStartPosition();
+        Position f = this.getGoalPosition();
 
         updateArrayList(s.getRowIndex(), IntegerCompressed);
         updateArrayList(s.getColumnIndex(), IntegerCompressed);
         updateArrayList(f.getColumnIndex(), IntegerCompressed);
         updateArrayList(f.getColumnIndex(), IntegerCompressed);
 
-        int[][] mazeArr = maze.getMazeArr();
+        int[][] mazeArr = this.getMazeArr();
         boolean flag = false; // true = 1, false = 0
         int counter = 0;
         for(int i = 0 ; i < mazeArr.length; i++)
@@ -142,10 +142,22 @@ public class Maze /** This Class describe a Maze from any Shape */
                 if((mazeArr[i][j] == 0) && (flag == false))
                 {
                     counter++;
+                    if(counter == 128)
+                    {
+                        IntegerCompressed.add(127);
+                        IntegerCompressed.add(0);
+                        counter = 1;
+                    }
                 }
                 else if((mazeArr[i][j] == 1) && (flag == true))
                 {
                     counter++;
+                    if(counter == 128)
+                    {
+                        IntegerCompressed.add(127);
+                        IntegerCompressed.add(0);
+                        counter = 1;
+                    }
                 }
                 else if((mazeArr[i][j] == 0) && (flag == true))
                 {
@@ -153,7 +165,7 @@ public class Maze /** This Class describe a Maze from any Shape */
                     counter = 1;
                     flag = false;
                 }
-                else
+                else if((mazeArr[i][j] == 1) && (flag == false))
                 {
                     IntegerCompressed.add(counter);
                     counter = 1;
@@ -161,6 +173,8 @@ public class Maze /** This Class describe a Maze from any Shape */
                 }
             }
         }
+        if(counter != 0)
+            IntegerCompressed.add(counter);
         return ArrayToByte(IntegerCompressed);
     }
 

@@ -14,7 +14,8 @@ public class MyDecompressorInputStream extends InputStream
     }
 
 
-    public int read() throws IOException {
+    public int read() throws IOException
+    {
         return 0;
     }
 }

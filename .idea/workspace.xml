@@ -7,14 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/IO/MyCompressorOutputStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IO/MyDecompressorInputStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ATP_Project_PartA_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ATP_Project_PartA_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/algorithms/mazeGenerators/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/algorithms/mazeGenerators/Maze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/MyDecompressorInputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/mazeGenerators/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/mazeGenerators/Maze.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +209,7 @@
       <workItem from="1618764464938" duration="50000" />
       <workItem from="1618774131158" duration="516000" />
       <workItem from="1618917782712" duration="24000" />
-      <workItem from="1619616431143" duration="5678000" />
+      <workItem from="1619616431143" duration="8275000" />
     </task>
     <servers />
   </component>
@@ -230,6 +227,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ATP_Project_PartA$Main.ic" NAME="Main Coverage Results" MODIFIED="1617965758880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
