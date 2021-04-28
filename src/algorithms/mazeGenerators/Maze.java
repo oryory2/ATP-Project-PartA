@@ -1,5 +1,9 @@
 package algorithms.mazeGenerators;
 
+import algorithms.search.AState;
+
+import java.util.ArrayList;
+
 public class Maze /** This Class describe a Maze from any Shape */
 
 {
@@ -108,5 +112,85 @@ public class Maze /** This Class describe a Maze from any Shape */
      */
     public int getMax_columns() {
         return max_columns;
+    }
+
+    public byte[] toByteArray(Maze maze)
+    {
+        ArrayList<Integer> IntegerCompressed = new ArrayList<Integer>(); // [row (0) row (1) , column(2) column(3) , s(4) s(5) , f(6) f(7) , ....................]
+
+        int row = maze.max_rows;
+        int column = maze.max_columns;
+
+        updateArrayList(row, IntegerCompressed);
+        updateArrayList(column, IntegerCompressed);
+
+        Position s = maze.getStartPosition();
+        Position f = maze.getGoalPosition();
+
+        updateArrayList(s.getRowIndex(), IntegerCompressed);
+        updateArrayList(s.getColumnIndex(), IntegerCompressed);
+        updateArrayList(f.getColumnIndex(), IntegerCompressed);
+        updateArrayList(f.getColumnIndex(), IntegerCompressed);
+
+        int[][] mazeArr = maze.getMazeArr();
+        boolean flag = false; // true = 1, false = 0
+        int counter = 0;
+        for(int i = 0 ; i < mazeArr.length; i++)
+        {
+            for (int j = 0; j < mazeArr[0].length; j++)
+            {
+                if((mazeArr[i][j] == 0) && (flag == false))
+                {
+                    counter++;
+                }
+                else if((mazeArr[i][j] == 1) && (flag == true))
+                {
+                    counter++;
+                }
+                else if((mazeArr[i][j] == 0) && (flag == true))
+                {
+                    IntegerCompressed.add(counter);
+                    counter = 1;
+                    flag = false;
+                }
+                else
+                {
+                    IntegerCompressed.add(counter);
+                    counter = 1;
+                    flag = true;
+                }
+            }
+        }
+        return ArrayToByte(IntegerCompressed);
+    }
+
+    private static void updateArrayList(int num, ArrayList<Integer> Arr)
+    {
+        if(num <= 127)
+        {
+            Arr.add(0);
+            Arr.add(num);
+        }
+        else if (num != 1000)
+        {
+            Arr.add(num % 100);
+            Arr.add(num - ((num % 100) * 100));
+        }
+        else
+        {
+            Arr.add(1);
+            Arr.add(000);
+        }
+    }
+
+    private static byte[] ArrayToByte(ArrayList<Integer> Arr)
+    {
+        byte[] byteArr = new byte[Arr.size()];
+        for(int i = 0 ; i < Arr.size(); i++)
+        {
+            int n = Arr.get(i);
+            byteArr[i] = ((byte)n);
+        }
+        return byteArr;
     }
 }
