@@ -55,7 +55,6 @@ public class Maze /** This Class describe a Maze from any Shape */
         }
 
         int [][] mazeArr = new int[this.max_rows][this.max_columns];
-        int flag = 0;
         int thisIndex = 12;
         for(int i = 0; i < mazeArr.length; i++)
         {
