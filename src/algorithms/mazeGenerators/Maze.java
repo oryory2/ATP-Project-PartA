@@ -38,16 +38,16 @@ public class Maze /** This Class describe a Maze from any Shape */
         this.max_columns = mazeArr[0].length;
     }
 
-    public Maze(byte[]Arr) // [row (0) row (1), column(2) column(3), s(4) s(5), s(6) s(7), f(8) f(9), f(10) f(11), ....................]
+    public Maze(byte [] b) // [row (0) row (1), column(2) column(3), s(4) s(5), s(6) s(7), f(8) f(9), f(10) f(11), ....................]
     {
-        if(Arr == null)
+        if(b == null)
         {
             throw new RuntimeException("The Array that supplied is not legal (null)");
         }
-        this.max_rows = bytesToInt(Arr[0], Arr[1]);
-        this.max_columns = bytesToInt(Arr[2], Arr[3]);
-        this.StartPosition = new Position(bytesToInt(Arr[4], Arr[5]), bytesToInt(Arr[6], Arr[7]));
-        this.GoalPosition = new Position(bytesToInt(Arr[8], Arr[9]), bytesToInt(Arr[10], Arr[11]));
+        this.max_rows = bytesToInt(b[0], b[1]);
+        this.max_columns = bytesToInt(b[2], b[3]);
+        this.StartPosition = new Position(bytesToInt(b[4], b[5]), bytesToInt(b[6], b[7]));
+        this.GoalPosition = new Position(bytesToInt(b[8], b[9]), bytesToInt(b[10], b[11]));
 
         if((this.max_rows <= 1) || (this.max_columns <= 1))
         {
@@ -56,40 +56,16 @@ public class Maze /** This Class describe a Maze from any Shape */
 
         int [][] mazeArr = new int[this.max_rows][this.max_columns];
         int flag = 0;
-        int byteIndex = 12;
-        byte[] originArr = new byte[Arr.length];
-        copyArr(Arr, originArr);
-        for (int i = 0; i < mazeArr.length; i++)
+        int thisIndex = 12;
+        for(int i = 0; i < mazeArr.length; i++)
         {
             for(int j = 0; j < mazeArr[0].length; j++)
             {
-                if(Arr[byteIndex] > 0) // Insert more 0/1..
-                {
-                    mazeArr[i][j] = flag;
-                    Arr[byteIndex]--;
-                }
-                else // change the Insertion from 0/1 to 1/0
-                {
-                    if(flag == 0)
-                        flag = 1;
-                    else
-                        flag = 0;
-                    mazeArr[i][j] = flag;
-                    byteIndex++;
-                    Arr[byteIndex]--;
-                }
+                mazeArr[i][j] = b[thisIndex];
+                thisIndex++;
             }
         }
-        copyArr(originArr, Arr);
         this.mazeArr = mazeArr;
-    }
-
-    private static void copyArr(byte[] arr, byte[] originArr)
-    {
-        for(int i = 0; i < arr.length; i++)
-        {
-            originArr[i] = arr[i];
-        }
     }
 
     private static int bytesToInt(byte a, byte b)
