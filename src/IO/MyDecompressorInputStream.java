@@ -31,9 +31,10 @@ public class MyDecompressorInputStream extends InputStream
         int insertIndex = 12;
         int thisIndex = 0;
         ArrayList<Integer> fixedIndexes = fixedIndexes(input);
+
         for(int i = 0; i < fixedIndexes.size(); i++)
         {
-            while((thisIndex < fixedIndexes.get(i)) && (insertIndex < b.length))
+            while(thisIndex < fixedIndexes.get(i))
             {
                 b[insertIndex] = 0;
                 insertIndex++;
