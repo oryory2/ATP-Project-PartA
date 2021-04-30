@@ -38,6 +38,56 @@ public class Maze /** This Class describe a Maze from any Shape */
         this.max_columns = mazeArr[0].length;
     }
 
+    public Maze(byte[]Arr) // [row (0) row (1), column(2) column(3), s(4) s(5), s(6) s(7), f(8) f(9), f(10) f(11), ....................]
+    {
+        if(Arr == null)
+        {
+            throw new RuntimeException("The Array that supplied is not legal (null)");
+        }
+        this.max_rows = bytesToInt(Arr[0], Arr[1]);
+        this.max_columns = bytesToInt(Arr[2], Arr[3]);
+        this.StartPosition = new Position(bytesToInt(Arr[4], Arr[5]), bytesToInt(Arr[6], Arr[7]));
+        this.GoalPosition = new Position(bytesToInt(Arr[8], Arr[9]), bytesToInt(Arr[10], Arr[11]));
+
+        if((this.max_rows <= 1) || (this.max_columns <= 1))
+        {
+            throw new RuntimeException("The Array that supplied is not legal! it must have at least 2 Rows and 2 Columns");
+        }
+
+        int [][] mazeArr = new int[this.max_rows][this.max_columns];
+        int flag = 0;
+        int byteIndex = 12;
+        for (int i = 0; i < mazeArr.length; i++)
+        {
+            for(int j = 0; j < mazeArr[0].length; j++)
+            {
+                if(Arr[byteIndex] > 0) // Insert more 0/1..
+                {
+                    mazeArr[i][j] = flag;
+                    Arr[byteIndex]--;
+                }
+                else // change the Insertion from 0/1 to 1/0
+                {
+                    if(flag == 0)
+                        flag = 1;
+                    else
+                        flag = 0;
+                    mazeArr[i][j] = flag;
+                    byteIndex++;
+                    Arr[byteIndex]--;
+                }
+            }
+        }
+        this.mazeArr = mazeArr;
+    }
+    private static int bytesToInt(byte a, byte b)
+    {
+        String one = String.valueOf(a);
+        String two = String.valueOf(b);
+        String c = one + two;
+        return Integer.parseInt(c);
+    }
+
      /**
      * @return the StartPosition of the maze (Position)
      */
@@ -180,25 +230,30 @@ public class Maze /** This Class describe a Maze from any Shape */
 
     private static void updateArrayList(int num, ArrayList<Integer> Arr)
     {
+        if(Arr == null)
+        {
+            throw new RuntimeException("The Array that supplied is not legal (null)");
+        }
+
         if(num <= 127)
         {
             Arr.add(0);
             Arr.add(num);
         }
-        else if (num != 1000)
-        {
-            Arr.add(num % 100);
-            Arr.add(num - ((num % 100) * 100));
-        }
         else
         {
-            Arr.add(1);
-            Arr.add(000);
+            Arr.add(num / 10);
+            Arr.add(num % 10);
         }
     }
 
     private static byte[] ArrayToByte(ArrayList<Integer> Arr)
     {
+        if(Arr == null)
+        {
+            throw new RuntimeException("The Array that supplied is not legal (null)");
+        }
+
         byte[] byteArr = new byte[Arr.size()];
         for(int i = 0 ; i < Arr.size(); i++)
         {

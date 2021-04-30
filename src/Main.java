@@ -10,13 +10,13 @@ public class Main
     public static void main(String[] args)
     {
         SimpleMazeGenerator e = new SimpleMazeGenerator();
-        Maze m = e.generate(10,10);
-        byte[] arr = m.toByteArray();
+        Maze m1 = e.generate(1000,500);
+        byte[] arr = m1.toByteArray();
+        Maze m2 = new Maze(arr);
         System.out.println("dsf");
 
 
 
-//[127 127 127 127 0 0 5 00]
 
 
 
