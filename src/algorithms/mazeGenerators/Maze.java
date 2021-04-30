@@ -194,49 +194,13 @@ public class Maze /** This Class describe a Maze from any Shape */
         updateArrayList(f.getColumnIndex(), IntegerCompressed);
         updateArrayList(f.getColumnIndex(), IntegerCompressed);
 
-        int[][] mazeArr = this.getMazeArr();
-        boolean flag = false; // true = 1, false = 0
-        int counter = 0;
-        for(int i = 0 ; i < mazeArr.length; i++)
+        for(int i = 0; i < this.mazeArr.length; i++)
         {
-            for (int j = 0; j < mazeArr[0].length; j++)
+            for(int j = 0; j < this.mazeArr[0].length; j++)
             {
-                if((mazeArr[i][j] == 0) && (flag == false))
-                {
-                    counter++;
-                    if(counter == 128)
-                    {
-                        IntegerCompressed.add(127);
-                        IntegerCompressed.add(0);
-                        counter = 1;
-                    }
-                }
-                else if((mazeArr[i][j] == 1) && (flag == true))
-                {
-                    counter++;
-                    if(counter == 128)
-                    {
-                        IntegerCompressed.add(127);
-                        IntegerCompressed.add(0);
-                        counter = 1;
-                    }
-                }
-                else if((mazeArr[i][j] == 0) && (flag == true))
-                {
-                    IntegerCompressed.add(counter);
-                    counter = 1;
-                    flag = false;
-                }
-                else if((mazeArr[i][j] == 1) && (flag == false))
-                {
-                    IntegerCompressed.add(counter);
-                    counter = 1;
-                    flag = true;
-                }
+                IntegerCompressed.add(this.mazeArr[i][j]);
             }
         }
-        if(counter != 0)
-            IntegerCompressed.add(counter);
         return ArrayToByte(IntegerCompressed);
     }
 

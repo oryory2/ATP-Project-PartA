@@ -10,7 +10,7 @@ public class Main
     public static void main(String[] args)
     {
         SimpleMazeGenerator e = new SimpleMazeGenerator();
-        Maze m1 = e.generate(1000,500);
+        Maze m1 = e.generate(5,5);
         byte[] arr = m1.toByteArray();
         Maze m2 = new Maze(arr);
         System.out.println("dsf");
