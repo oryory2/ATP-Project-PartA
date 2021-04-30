@@ -4,12 +4,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class MyDecompressorInputStream extends InputStream
+public class SimpleDecompressorInputStream extends InputStream
 {
-
     private InputStream in;
 
-    public MyDecompressorInputStream(InputStream inputStream)
+    public SimpleDecompressorInputStream(InputStream inputStream)
     {
         this.in = inputStream;
     }
@@ -19,11 +18,4 @@ public class MyDecompressorInputStream extends InputStream
     {
         return 0;
     }
-
-    public int read(byte[] b) throws IOException
-    {
-        this.in.read(b);
-        return 0;
-    }
-
 }

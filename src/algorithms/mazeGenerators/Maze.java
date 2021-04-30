@@ -57,6 +57,8 @@ public class Maze /** This Class describe a Maze from any Shape */
         int [][] mazeArr = new int[this.max_rows][this.max_columns];
         int flag = 0;
         int byteIndex = 12;
+        byte[] originArr = new byte[Arr.length];
+        copyArr(Arr, originArr);
         for (int i = 0; i < mazeArr.length; i++)
         {
             for(int j = 0; j < mazeArr[0].length; j++)
@@ -78,8 +80,18 @@ public class Maze /** This Class describe a Maze from any Shape */
                 }
             }
         }
+        copyArr(originArr, Arr);
         this.mazeArr = mazeArr;
     }
+
+    private static void copyArr(byte[] arr, byte[] originArr)
+    {
+        for(int i = 0; i < arr.length; i++)
+        {
+            originArr[i] = arr[i];
+        }
+    }
+
     private static int bytesToInt(byte a, byte b)
     {
         String one = String.valueOf(a);

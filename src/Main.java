@@ -14,14 +14,7 @@ public class Main
         byte[] arr = m1.toByteArray();
         Maze m2 = new Maze(arr);
         System.out.println("dsf");
-
-
-
-
-
-
-
-
+        byte a;
 
     }
 }
