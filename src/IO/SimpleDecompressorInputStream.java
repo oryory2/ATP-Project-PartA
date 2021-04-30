@@ -18,4 +18,10 @@ public class SimpleDecompressorInputStream extends InputStream
     {
         return 0;
     }
+
+    public int read(byte[] b) throws IOException
+    {
+        this.in.read(b);
+        return 0;
+    }
 }

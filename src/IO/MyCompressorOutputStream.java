@@ -34,4 +34,5 @@ public class MyCompressorOutputStream extends OutputStream
     {
         this.out.write(b);
     }
+
 }
