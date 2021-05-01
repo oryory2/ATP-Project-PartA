@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class ServerStrategyGenerateMaze implements IServerStrategy
 {
-
     public void applyStrategy(InputStream inFromClient, OutputStream outToClient)
     {
         try

@@ -26,6 +26,15 @@ public class Server
     public void start()
     {
         threadPool.submit(() -> {StartReal(); });
+        try
+        {
+            Thread.sleep(3000);
+
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
     }
     public void StartReal()
     {
@@ -40,7 +49,7 @@ public class Server
                 {
                     Socket clientSocket = serverSocket.accept(); // נוצר קשר עם לקוח
                     System.out.println("Client accepted : " + clientSocket.toString());
-                    threadPool.submit(() -> {handleClient(clientSocket); });
+                    threadPool.submit(() -> {ServerStrategy(clientSocket); });
                 }
                 catch (SocketTimeoutException e)
                 {
@@ -56,7 +65,7 @@ public class Server
         }
     }
 
-    private void handleClient(Socket clientSocket)
+    private void ServerStrategy(Socket clientSocket)
     {
         try
         {

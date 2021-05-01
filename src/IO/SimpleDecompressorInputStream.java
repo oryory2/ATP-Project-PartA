@@ -31,6 +31,7 @@ public class SimpleDecompressorInputStream extends InputStream
         int thisIndex = 12;
         for(int i = 12; i < input.length; i++)
         {
+
             if(flag == 0)
                 flag = 1;
             else
