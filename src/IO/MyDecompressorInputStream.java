@@ -17,6 +17,7 @@ public class MyDecompressorInputStream extends InputStream
 
     public int read() throws IOException
     {
+        this.in.read();
         return 0;
     }
 

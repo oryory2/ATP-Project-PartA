@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MyCompressorOutputStream extends OutputStream
 {
 
-    private OutputStream out;
+    public OutputStream out;
 
     public MyCompressorOutputStream(OutputStream outputStream)
     {
