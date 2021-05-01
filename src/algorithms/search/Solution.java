@@ -1,4 +1,5 @@
 package algorithms.search;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Solution /** This Class describe a Solution of an SearchAble problem */

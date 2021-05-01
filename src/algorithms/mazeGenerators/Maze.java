@@ -2,6 +2,7 @@ package algorithms.mazeGenerators;
 
 import algorithms.search.AState;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Maze /** This Class describe a Maze from any Shape */
@@ -213,4 +214,6 @@ public class Maze /** This Class describe a Maze from any Shape */
         }
         return byteArr;
     }
+
+
 }

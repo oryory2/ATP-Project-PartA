@@ -28,8 +28,7 @@ public class Server
         threadPool.submit(() -> {StartReal(); });
         try
         {
-            Thread.sleep(3000);
-
+            Thread.sleep(100);
         }
         catch (InterruptedException e)
         {

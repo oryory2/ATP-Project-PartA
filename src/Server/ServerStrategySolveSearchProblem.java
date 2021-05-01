@@ -18,22 +18,21 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
     {
         try
         {
-            InputStream in = new MyDecompressorInputStream(inFromClient);
+
+            ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
 
-            byte[] b = in.readAllBytes();
-            Maze thisMaze = new Maze(b);
-
+            Maze newMaze = (Maze)fromClient.readObject();
             String tempDirectoryPath = System.getProperty("java.io.tmpdir");
 
             // המייז קיים בקובץ?
             // אחרת
             BestFirstSearch best = new BestFirstSearch();
-            SearchableMaze sMaze = new SearchableMaze(thisMaze);
+            SearchableMaze sMaze = new SearchableMaze(newMaze);
             Solution sol = best.solve(sMaze);
             toClient.writeObject(sol);
 
-            in.close();
+            fromClient.close();
             toClient.close();
         }
         catch (Exception e)
