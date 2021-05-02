@@ -22,7 +22,7 @@ public class Configurations
         return Configurations.instance;
     }
 
-    public static void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType){
+    public void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType){
         try (OutputStream output = new FileOutputStream("config.properties.txt"))
         {
 
@@ -43,7 +43,7 @@ public class Configurations
         }
     }
 
-    public static String[] LoadProp(){
+    public String[] LoadProp(){
         try (InputStream input = new FileInputStream("config.properties.txt")) {
 
             Properties prop = new Properties();
@@ -51,6 +51,7 @@ public class Configurations
             // load a properties file
             prop.load(input);
             String[] PropArr = new String[4];
+
             PropArr[0] = prop.getProperty("threadPoolSize");
             PropArr[1] = prop.getProperty("mazeGeneratingAlgorithm");
             PropArr[2] = prop.getProperty("mazeSearchingAlgorithm");
