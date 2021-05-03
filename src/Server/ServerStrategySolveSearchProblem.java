@@ -24,17 +24,14 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
             Maze newMaze = (Maze)fromClient.readObject();
 
             String tempDirectoryPath = System.getProperty("java.io.tmpdir");
+            File folder = new File(tempDirectoryPath);
 
-            //FileInputStream fileIn = new FileInputStream(tempDirectoryPath);
-            //ObjectInputStream fromFile = new ObjectInputStream(fileIn);
-
-//            File folder = new File(tempDirectoryPath);
 //            for(File fileEntry : folder.listFiles())
 //            {
-//                FileInputStream fileIn1 = new FileInputStream(fileEntry.getAbsolutePath());
-//                ObjectInputStream fromFile1 = new ObjectInputStream(fileIn1);
-//                Maze temp = (Maze)fromFile1.readObject();
-//                if(temp.equal(newMaze))
+//                FileInputStream fileIn = new FileInputStream(fileEntry.getAbsolutePath());
+//                ObjectInputStream fromFile = new ObjectInputStream(fileIn);
+//                Maze temp = (Maze)fromFile.readObject();
+//                if(newMaze.isEqual(temp))
 //                {
 //                    // go to solution of same maze and return
 //                }
