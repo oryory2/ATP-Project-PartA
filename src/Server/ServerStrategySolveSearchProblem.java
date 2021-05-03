@@ -10,6 +10,7 @@ import algorithms.search.SearchableMaze;
 import algorithms.search.Solution;
 
 import java.io.*;
+import java.nio.file.Path;
 
 public class ServerStrategySolveSearchProblem implements IServerStrategy
 {
@@ -38,7 +39,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
 //                    // go to solution of same maze and return
 //                }
 //            }
-            // else
+//            //else - the maze is a new maze
 //
 //            FileOutputStream fileOut = new FileOutputStream(tempDirectoryPath);
 //            ObjectOutputStream toFile = new ObjectOutputStream(fileOut);

@@ -4,6 +4,7 @@ import algorithms.search.AState;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Maze implements Serializable /** This Class describe a Maze from any Shape */
 
@@ -241,5 +242,12 @@ public class Maze implements Serializable /** This Class describe a Maze from an
         return byteArr;
     }
 
-
+    public boolean isEqual(Maze other)
+    {
+        byte [] thisMazeArr = this.toByteArray();
+        byte [] otherMazeArr = other.toByteArray();
+        if(Arrays.equals(thisMazeArr, otherMazeArr))
+            return true;
+        return false;
+    }
 }
