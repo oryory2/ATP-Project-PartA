@@ -68,6 +68,12 @@ public class Maze /** This Class describe a Maze from any Shape */
         this.mazeArr = mazeArr;
     }
 
+    /**
+     * gets two bytes and chain them them into one int
+     * @param a first byte
+     * @param b second byte
+     * @return int the chained int of the two bytes
+     */
     private static int bytesToInt(byte a, byte b)
     {
         String one = String.valueOf(a);
@@ -152,6 +158,15 @@ public class Maze /** This Class describe a Maze from any Shape */
         return max_columns;
     }
 
+    /**
+     * Turns the Maze representation of the maze to bytes
+     * first two indexes represent the rows number
+     * next two indexes represent the columns number
+     * next four indexes represent the rows starting position, and then next 4 the goal position
+     * the rest of the indexes represent The contents of the maze in one-dimension
+     * setting the GoalPosition of the Maze to be {mazeArr.length - 1, mazeArr[0].length - 1}
+     * @return byte[] representation of the maze in format above
+     */
     public byte[] toByteArray()
     {
         ArrayList<Integer> IntegerCompressed = new ArrayList<Integer>(); // [row (0) row (1), column(2) column(3), s(4) s(5), s(6) s(7), f(8) f(9), f(10) f(11), ....................]
@@ -180,13 +195,19 @@ public class Maze /** This Class describe a Maze from any Shape */
         return ArrayToByte(IntegerCompressed);
     }
 
+    /**
+     * function used to add the first 12 indexes in our maze array format
+     * @param num some number to add to an array list in the our format
+     * @param Arr the array to add the number to
+     * @return the Updated array
+     */
     private static void updateArrayList(int num, ArrayList<Integer> Arr)
     {
         if(Arr == null)
         {
             throw new RuntimeException("The Array that supplied is not legal (null)");
         }
-
+        //Maximum byte is 127
         if(num <= 127)
         {
             Arr.add(0);
@@ -199,6 +220,11 @@ public class Maze /** This Class describe a Maze from any Shape */
         }
     }
 
+    /**
+     * gets an Integer array and turns into a byte array
+     * @param Arr Integer array to turn into byte array
+     * @return the Updated array
+     */
     private static byte[] ArrayToByte(ArrayList<Integer> Arr)
     {
         if(Arr == null)

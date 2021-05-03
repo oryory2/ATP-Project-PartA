@@ -25,8 +25,8 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
             Maze newMaze = (Maze)fromClient.readObject();
             String tempDirectoryPath = System.getProperty("java.io.tmpdir");
 
-            // המייז קיים בקובץ?
-            // אחרת
+            // Is the maze present in the file?
+            // else
             BestFirstSearch best = new BestFirstSearch();
             SearchableMaze sMaze = new SearchableMaze(newMaze);
             Solution sol = best.solve(sMaze);

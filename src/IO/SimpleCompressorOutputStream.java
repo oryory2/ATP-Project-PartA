@@ -5,7 +5,7 @@ import java.io.OutputStream;
 
 public class SimpleCompressorOutputStream extends OutputStream
 {
-    private OutputStream out;
+    public OutputStream out;
     private byte lastByte = 0;
     private int counter;
     private boolean flag = false;

@@ -20,7 +20,7 @@ public class Server
         this.port = port;
         this.ListeningIntervalMS = ListeningIntervalMS;
         this.strategy = strategy;
-        this.threadPool = Executors.newFixedThreadPool(10); // will change it in the next part
+        this.threadPool = Executors.newFixedThreadPool(10); // we will change it in the next part
 
     }
     public void start()
@@ -39,20 +39,20 @@ public class Server
     {
         try
         {
-            ServerSocket serverSocket = new ServerSocket(this.port); // אתחול סרבר סוקט
-            serverSocket.setSoTimeout(this.ListeningIntervalMS); // הקצבת זמן לקבלת בקשה לקישור מתוך לקוח
+            ServerSocket serverSocket = new ServerSocket(this.port); // Server Socket initialization
+            serverSocket.setSoTimeout(this.ListeningIntervalMS); // Allocation of time for requesting a link from a Client
             System.out.println("Starting server at port:" + this.port);
-            while(!stop) // הסרבר ימשיך לרוץ כל עוד..
+            while(!stop) // The server will continue to run as long as ..
             {
                 try
                 {
-                    Socket clientSocket = serverSocket.accept(); // נוצר קשר עם לקוח
+                    Socket clientSocket = serverSocket.accept(); // Contacting the Client
                     System.out.println("Client accepted : " + clientSocket.toString());
                     threadPool.submit(() -> {ServerStrategy(clientSocket); });
                 }
                 catch (SocketTimeoutException e)
                 {
-                    System.out.println("The time is out"); // במידה ואף לקוח לא יצר קשר תוך הזמן שהוקצב
+                    System.out.println("The time is out"); // If no Client contacted within the allotted time
                 }
             }
             serverSocket.close();
@@ -60,7 +60,7 @@ public class Server
         }
         catch (IOException e)
         {
-            e.printStackTrace(); // במידה ויש בעיה עם פתיחת הסרבר סוקט (port בשימוש/לא תקין)
+            e.printStackTrace(); // If there is a problem with opening a server socket (port used / invalid)
         }
     }
 
