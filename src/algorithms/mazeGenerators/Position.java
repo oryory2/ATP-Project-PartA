@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Position /** This Class describe a specific Position in a Maze (row,column) */
+public class Position implements Serializable /** This Class describe a specific Position in a Maze (row,column) */
 {
     private int row;
     private int column;

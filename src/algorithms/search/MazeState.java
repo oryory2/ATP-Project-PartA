@@ -3,7 +3,7 @@ import algorithms.mazeGenerators.Position;
 
 import java.io.Serializable;
 
-public class MazeState extends AState /** This Class describe a State inside a Maze (Position on the Maze board) */
+public class MazeState extends AState  /** This Class describe a State inside a Maze (Position on the Maze board) */
 
 {
     // We chose to describe illegal MazeState by having position {-1,-1}, illegal means that it's a wall or it's got indexes that are out of range
