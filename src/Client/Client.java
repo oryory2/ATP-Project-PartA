@@ -20,13 +20,13 @@ public class Client
     {
         try
         {
-            Socket serverSocket = new Socket(this.ServerIP, this.ServerPort); // שולח לשרת בקשת התחברות
+            Socket serverSocket = new Socket(this.ServerIP, this.ServerPort); // sending the server connection request
             System.out.println("Client is now connected to the Server: IP: " + this.ServerIP);
             this.strategy.clientStrategy(serverSocket.getInputStream(), serverSocket.getOutputStream());
         }
         catch (Exception e)
         {
-            e.printStackTrace(); // הסרבר לא קיים/לא קיבל את הבקשה
+            e.printStackTrace(); // the server is not available/not on
         }
     }
 }

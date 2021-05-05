@@ -18,10 +18,11 @@ public class SimpleCompressorOutputStream extends OutputStream
 
     public void write(int b) throws IOException
     {
-        if ((b == lastByte) && (!flag))
+        if ((b == lastByte) && (!flag)) // check if b is the same byte we got last time
         {
             counter++;
-            if (counter == 128) {
+            if (counter == 128) // check if b is shown 128 times in a row
+            {
                 this.out.write(127);
                 this.out.write(0);
                 counter = 1;
@@ -54,12 +55,12 @@ public class SimpleCompressorOutputStream extends OutputStream
     }
     public void write(byte[] b) throws IOException
     {
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < 12; i++) // write the first 12 bytes to the OutPutStream [row, row, column, column, S(r), S(r), S(c), S(c), G(r), G(r), G(c), G(c), ..]
         {
             this.out.write(b[i]);
         }
 
-        for(int i = 12 ; i < b.length; i++)
+        for(int i = 12 ; i < b.length; i++) // write the rest bytes - the mazeArray values
         {
             write(b[i]);
         }

@@ -24,6 +24,7 @@ public class ServerStrategyGenerateMaze implements IServerStrategy
             int[] arr = ((int[]) fromClient.readObject());
             MyMazeGenerator mazeGenerator = new MyMazeGenerator();
             Maze newMaze = mazeGenerator.generate(arr[0], arr[1]);
+
             middleStream.write(newMaze.toByteArray());
             toClient.writeObject(((ByteArrayOutputStream)middleStream.out).toByteArray());
             toClient.flush();
