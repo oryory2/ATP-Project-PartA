@@ -36,12 +36,13 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
 
         for(int i = 0; i < listOfFiles.length; i++)
         {
-            if(listOfFiles[i].getName().contains("maze"))
+            if(listOfFiles[i].getName().contains("maze")) // checks for Mazes sent in the past
             {
                 String mazeFileName = tempDirectoryPath + listOfFiles[i].getName();
                 String solFileName = mazeFileName;
                 solFileName = solFileName.replace("maze", "sol");
-                this.hashMap.put(mazeFileName,solFileName);
+
+                this.hashMap.put(mazeFileName,solFileName); // add the Maze with his Solution to the hashMap
 
                 String fileNumber = mazeFileName;
                 fileNumber = fileNumber.replace(tempDirectoryPath + "maze", "");
@@ -52,7 +53,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
                 }
             }
         }
-        this.counter.set(maxMazeCounter + 1);
+        this.counter.set(maxMazeCounter + 1); // Set the right next counter
     }
 
     public Map<String, String> getHashMap()
@@ -81,6 +82,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
                     Solution sol =(Solution)(solFromFile.readObject());
 
                     toClient.writeObject(sol);
+                    toClient.flush();
                     fromClient.close();
                     toClient.close();
                     return;
@@ -104,9 +106,10 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
             ObjectOutputStream solToFile = new ObjectOutputStream(toFile2);
             solToFile.writeObject(sol); // send the Solution into the new file
 
-            hashMap.put(mazeFileName, solFileName); // insert the (MazeFileName, SolutionFileName) to the HashMap
+            hashMap.put(mazeFileName, solFileName); // insert the (MazeFileName, SolutionFileName) to the hashMap
 
             toClient.writeObject(sol); // return the solution to the Client
+            toClient.flush();
             fromClient.close();
             toClient.close();
         }
