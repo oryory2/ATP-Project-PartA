@@ -8,13 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategySolveSearchProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategySolveSearchProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Configurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/RunCommunicateWithServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/RunCommunicateWithServers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +229,12 @@
       <workItem from="1619973149087" duration="459000" />
       <workItem from="1620149073926" duration="4189000" />
       <workItem from="1620201812992" duration="1206000" />
-      <workItem from="1620205894035" duration="2592000" />
+      <workItem from="1620205894035" duration="2662000" />
+      <workItem from="1620208645817" duration="1930000" />
+      <workItem from="1620210603246" duration="2805000" />
+      <workItem from="1620213505998" duration="55000" />
+      <workItem from="1620215131430" duration="277000" />
+      <workItem from="1620217375239" duration="1457000" />
     </task>
     <servers />
   </component>

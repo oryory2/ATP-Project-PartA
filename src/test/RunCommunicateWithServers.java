@@ -68,7 +68,7 @@ public class RunCommunicateWithServers {
         }
     }
 
-    public static void CommunicateWithServer_SolveSearchProblem()
+    private static void CommunicateWithServer_SolveSearchProblem()
     {
         try {
             Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
@@ -79,7 +79,7 @@ public class RunCommunicateWithServers {
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
                         MyMazeGenerator mg = new MyMazeGenerator();
-                        Maze maze = mg.generate(10, 10);
+                        Maze maze = mg.generate(4, 4);
                         maze.print();
                         toServer.writeObject(maze); //send maze to server
                         toServer.flush();

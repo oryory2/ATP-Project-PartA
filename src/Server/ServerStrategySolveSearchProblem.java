@@ -18,17 +18,44 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ServerStrategySolveSearchProblem implements IServerStrategy
 {
 
-    private Map<Maze, String> hashMap;
-    private static AtomicInteger counter;
+    private Map<String, String> hashMap;
+    private AtomicInteger counter;
 
 
     public ServerStrategySolveSearchProblem()
     {
-        ServerStrategySolveSearchProblem.counter = new AtomicInteger();
-        this.hashMap = new HashMap<Maze,String>();
+        this.counter = new AtomicInteger();
+        this.hashMap = new HashMap<String,String>();
+
+        String tempDirectoryPath = System.getProperty("java.io.tmpdir");
+        System.out.println(System.getProperty("java.io.tmpdir")); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!למחוק בסוף!!!!!!!!!!!!
+
+        File folder = new File(tempDirectoryPath);
+        File[] listOfFiles = folder.listFiles();
+        int maxMazeCounter = -1;
+
+        for(int i = 0; i < listOfFiles.length; i++)
+        {
+            if(listOfFiles[i].getName().contains("maze"))
+            {
+                String mazeFileName = tempDirectoryPath + listOfFiles[i].getName();
+                String solFileName = mazeFileName;
+                solFileName = solFileName.replace("maze", "sol");
+                this.hashMap.put(mazeFileName,solFileName);
+
+                String fileNumber = mazeFileName;
+                fileNumber = fileNumber.replace(tempDirectoryPath + "maze", "");
+
+                if(maxMazeCounter < Integer.parseInt(fileNumber))
+                {
+                    maxMazeCounter = Integer.parseInt(fileNumber);
+                }
+            }
+        }
+        this.counter.set(maxMazeCounter + 1);
     }
 
-    public Map<Maze, String> getHashMap()
+    public Map<String, String> getHashMap()
     {
         return this.hashMap;
     }
@@ -39,11 +66,12 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
         {
             ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
-            Map<Maze, String> hashMap = this.getHashMap();
+            Map<String, String> hashMap = this.getHashMap();
+
             Maze newMaze = (Maze)fromClient.readObject();
             for (Map.Entry elem : hashMap.entrySet())
             {
-                if(newMaze.isEqual((Maze)elem.getKey()) == true)
+                if(compareMazeFromFile(newMaze, (String) elem.getKey()))
                 {
                     // get the solution that saved in the Value of this key and return it
 
@@ -64,13 +92,19 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
             Solution sol = best.solve(sMaze);
 
             String tempDirectoryPath = System.getProperty("java.io.tmpdir");
-            String numOfSolution = String.valueOf(ServerStrategySolveSearchProblem.counter.getAndIncrement());
-            String solFileName = tempDirectoryPath + numOfSolution;
-            FileOutputStream toFile = new FileOutputStream(solFileName);
-            ObjectOutputStream solToFile = new ObjectOutputStream(toFile);
+            String numOfSolution = String.valueOf(this.counter.getAndIncrement());
 
-            solToFile.writeObject(sol); // send the solution into the new file
-            hashMap.put(newMaze, solFileName); // insert the (Maze, name of the file) to the HashMap
+            String mazeFileName = tempDirectoryPath + "maze" + numOfSolution;
+            FileOutputStream toFile1 = new FileOutputStream(mazeFileName);
+            ObjectOutputStream mazeToFile = new ObjectOutputStream(toFile1);
+            mazeToFile.writeObject(newMaze); // send the Maze into the new file
+
+            String solFileName = tempDirectoryPath + "sol" + numOfSolution;
+            FileOutputStream toFile2 = new FileOutputStream(solFileName);
+            ObjectOutputStream solToFile = new ObjectOutputStream(toFile2);
+            solToFile.writeObject(sol); // send the Solution into the new file
+
+            hashMap.put(mazeFileName, solFileName); // insert the (MazeFileName, SolutionFileName) to the HashMap
 
             toClient.writeObject(sol); // return the solution to the Client
             fromClient.close();
@@ -80,5 +114,20 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
         {
             e.printStackTrace();
         }
+    }
+
+    private static boolean compareMazeFromFile(Maze thisMaze, String otherMazeFileName)
+    {
+        try {
+            FileInputStream fromFile = new FileInputStream(otherMazeFileName);
+            ObjectInputStream mazeFromFile = new ObjectInputStream(fromFile);
+            Maze otherMaze = (Maze)(mazeFromFile.readObject());
+            return thisMaze.isEqual(otherMaze);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
