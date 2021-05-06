@@ -15,5 +15,6 @@ public class Main
     {
         RunCommunicateWithServers.gg();
         System.out.println("gg");
+        System.out.println("ggg");
     }
 }
