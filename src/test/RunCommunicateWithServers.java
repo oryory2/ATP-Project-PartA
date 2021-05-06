@@ -26,7 +26,6 @@ public class RunCommunicateWithServers {
         //solveSearchProblemServer.start();
         mazeGeneratingServer.start();
 
-
         //Communicating with servers
         CommunicateWithServer_MazeGenerating();
         //CommunicateWithServer_SolveSearchProblem();
@@ -34,7 +33,11 @@ public class RunCommunicateWithServers {
         //Stopping all servers
         mazeGeneratingServer.stop();
         //solveSearchProblemServer.stop();
+    }
 
+    public static void gg()
+    {
+        CommunicateWithServer_MazeGenerating();
     }
 
     private static void CommunicateWithServer_MazeGenerating() {
@@ -69,7 +72,7 @@ public class RunCommunicateWithServers {
         }
     }
 
-    private static void CommunicateWithServer_SolveSearchProblem() ////////////////
+    private static void CommunicateWithServer_SolveSearchProblem()
     {
         try {
             Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
