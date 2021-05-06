@@ -25,7 +25,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
      * constructor
      * initialize two fields:
      * 1. counter = Atomic integer that provide us the number of the mazeFiles created in the past
-     * 2. Hashmap = the hashMap <Maze, solFileName>
+     * 2. Hashmap = the hashMap <Maze.hashStr(), solFileName>
      * when we start the server, it's check for mazes/solutions he created in the past, and add them to the hashMap
      */
     public ServerStrategySolveSearchProblem()
