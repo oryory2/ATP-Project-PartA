@@ -1,10 +1,12 @@
 package algorithms.mazeGenerators;
 
+import IO.SimpleCompressorOutputStream;
 import algorithms.search.AState;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Maze implements Serializable /** This Class describe a Maze from any Shape */
 
@@ -213,7 +215,6 @@ public class Maze implements Serializable /** This Class describe a Maze from an
             throw new RuntimeException("The Array that supplied is not legal (null)");
         }
         if(num <= 127) //Maximum byte is 127
-
         {
             Arr.add(0);
             Arr.add(num);
@@ -259,5 +260,69 @@ public class Maze implements Serializable /** This Class describe a Maze from an
         if(Arrays.equals(thisMazeArr, otherMazeArr)) // compare the mazes by their Arrays
             return true;
         return false;
+    }
+
+     /**
+     * return the maze presentation by the simpleCompressor method
+     * @return The maze representation by HashStr (String)
+     */
+    public String getHashStr()
+    {
+        byte[] byteArr = this.toByteArray();
+        ArrayList<String> compressedArr = new ArrayList<>();
+
+        for(int i = 0; i < 12; i++) // write the first 12 bytes to the OutPutStream [row, row, column, column, S(r), S(r), S(c), S(c), G(r), G(r), G(c), G(c), ..]
+        {
+            compressedArr.add( "" + byteArr[i]);
+        }
+
+        boolean flag = false;
+        byte lastByte = 0;
+        int counter = 0;
+        for(int i = 12 ; i < byteArr.length; i++) // write the rest bytes - the mazeArray values
+        {
+            if ((byteArr[i] == lastByte) && (!flag)) // check if b is '0', and lastByte was '0'
+            {
+                counter++;
+                if (counter == 128)
+                {
+                    compressedArr.add("127");
+                    compressedArr.add("0");
+                    counter = 1;
+                }
+            }
+            else if ((byteArr[i] == lastByte) && (flag)) // check if b is '1', and lastByte was '1'
+            {
+                counter++;
+                if(counter == 128) // check if b is shown 128 times in a row - if yes, insert 127 - 0, and keep counting from 1
+                {
+                    compressedArr.add("127");
+                    compressedArr.add("0");
+                    counter = 1;
+                }
+            }
+            else if((byteArr[i] != lastByte) && (flag)) // check if b is '0', and lastByte was '1'
+            {
+                compressedArr.add(String.valueOf(counter));
+                counter = 1;
+                flag = false;
+                lastByte = (byte)byteArr[i];
+            }
+            else if((byteArr[i] != lastByte) && (!flag)) // check if b is '1', and lastByte was '0'
+            {
+                compressedArr.add(String.valueOf(counter));
+                counter = 1;
+                flag = true;
+                lastByte = (byte)byteArr[i];
+            }
+        }
+        if(counter != 0)
+            compressedArr.add(String.valueOf(counter));
+        String hashStr = "";
+        for(int i = 0; i < compressedArr.size(); i++)
+        {
+            hashStr += compressedArr.get(i);
+        }
+        return hashStr;
     }
 }

@@ -4,6 +4,7 @@ import IO.MyDecompressorInputStream;
 import IO.SimpleDecompressorInputStream;
 import Server.*;
 import Client.*;
+import algorithms.mazeGenerators.EmptyMazeGenerator;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.search.AState;
@@ -79,7 +80,7 @@ public class RunCommunicateWithServers {
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
                         MyMazeGenerator mg = new MyMazeGenerator();
-                        Maze maze = mg.generate(100, 100);
+                        Maze maze = mg.generate(2, 2);
                         maze.print();
                         toServer.writeObject(maze); //send maze to server
                         toServer.flush();
