@@ -37,6 +37,7 @@ public class Server
     public void start()
     {
         threadPool.submit(() -> {StartReal(); }); // run the server
+
         try
         {
             Thread.sleep(100);
