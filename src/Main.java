@@ -14,5 +14,6 @@ public class Main
     public static void main(String[] args)
     {
         RunCommunicateWithServers.gg();
+        System.out.println("gg");
     }
 }
