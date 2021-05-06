@@ -11,22 +11,28 @@ import java.util.ArrayList;
 
 public class ServerStrategyGenerateMaze implements IServerStrategy
 {
+     /**
+     * A function that receives a request from a client
+     * and generates a maze for him according to the Parameters (row,column) the client requested
+     * @param inFromClient the Server's Input stream
+     * @param outToClient the Server's Output stream
+     */
     public void applyStrategy(InputStream inFromClient, OutputStream outToClient)
     {
         try
         {
-            ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
-            ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
+            ObjectInputStream fromClient = new ObjectInputStream(inFromClient); // fromClient
+            ObjectOutputStream toClient = new ObjectOutputStream(outToClient); // toClient
 
-            OutputStream out = new ByteArrayOutputStream();
-            MyCompressorOutputStream middleStream = new MyCompressorOutputStream(out);
+            OutputStream out = new ByteArrayOutputStream(); // use this Stream to enable sending the byteArray to the Client
+            MyCompressorOutputStream middleStream = new MyCompressorOutputStream(out); // Compressor
 
             int[] arr = ((int[]) fromClient.readObject());
             MyMazeGenerator mazeGenerator = new MyMazeGenerator();
-            Maze newMaze = mazeGenerator.generate(arr[0], arr[1]);
+            Maze newMaze = mazeGenerator.generate(arr[0], arr[1]); // Generating newMaze by the Client request
 
             middleStream.write(newMaze.toByteArray());
-            toClient.writeObject(((ByteArrayOutputStream)middleStream.out).toByteArray());
+            toClient.writeObject(((ByteArrayOutputStream)middleStream.out).toByteArray()); // sending the newMaze to the Client
             toClient.flush();
 
             fromClient.close();

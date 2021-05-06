@@ -16,11 +16,16 @@ public class Configurations
 {
     private static Configurations instance = null;
 
+     /**
+     * constructor
+     * enter default values for the first time we boot the server
+     * The file will contain settings for:
+     * threadPoolSize, mazeGeneratingAlgorithm, mazeSearchingAlgorithm, CompressorType
+     */
     private Configurations()
     {
         try (OutputStream output = new FileOutputStream("config.properties.txt"))
         {
-
             // set the Default Setting of the Program
 
             Properties prop = new Properties();
@@ -41,6 +46,13 @@ public class Configurations
 
     }
 
+     /**
+     * check if there is no instance created for 'Configurations'
+     * no instance ---> create and return
+     * yes instance --> return the instance
+     * (singleton design pattern)
+     * @return the Only Instance(Configurations)
+     */
     public static Configurations getInstance()
     {
         if (Configurations.instance == null)
@@ -50,10 +62,17 @@ public class Configurations
         return Configurations.instance;
     }
 
+     /**
+     * write the properties obtained as parameters to the configuration file
+     * override the existing properties
+     * @param NumberOfThreads Number of threads to be opened
+     * @param MGA The algorithm for creating a maze
+     * @param MSA The algorithm for solving a maze
+     * @param CompressorType the Compression algorithm
+     */
     public void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType){
         try (OutputStream output = new FileOutputStream("config.properties.txt"))
         {
-
             Properties prop = new Properties();
             // set the properties value
             prop.setProperty("threadPoolSize", NumberOfThreads);
@@ -63,7 +82,6 @@ public class Configurations
 
             // save properties to project root folder
             prop.store(output, null);
-
         }
         catch (IOException io)
         {
@@ -71,6 +89,10 @@ public class Configurations
         }
     }
 
+     /**
+     * load the properties from the configuration file
+     * @return array of the properties from the configuration file(Object[])
+     */
     public Object[] LoadProp(){
         try (InputStream input = new FileInputStream("config.properties.txt")) {
 

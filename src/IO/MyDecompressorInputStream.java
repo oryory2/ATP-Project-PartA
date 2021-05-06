@@ -9,17 +9,30 @@ public class MyDecompressorInputStream extends InputStream
 {
     private InputStream in;
 
+     /**
+     * constructor
+     * @param inputStream the inputStream field
+     */
     public MyDecompressorInputStream(InputStream inputStream)
     {
         this.in = inputStream;
     }
 
+     /**
+     * A function that reads one byte from the inputStream (in)
+     * @return 0 (int)
+     */
     public int read() throws IOException
     {
         this.in.read(); // read a byte from the Stream
         return 0;
     }
 
+     /**
+     * Gets Compressed array(compressed by the MyCompressor algorithm)
+     * And Decompresses it adapted to the format
+     * @return 0 (int)
+     */
     public int read(byte[] b) throws IOException
     {
         byte [] input = this.in.readAllBytes(); // read all the bytes from the Stream
@@ -52,6 +65,11 @@ public class MyDecompressorInputStream extends InputStream
         return 0;
     }
 
+     /**
+     * Gets byte array filled with bytes, presenting the indexes where '1' is shown in the mazeArr, and "fix" the indexes from bytes to integers
+     * 127 - 0 - 51 -------> 178
+     * @return the fixedIndexes ArrayList (ArrayList<Integer>)
+     */
     public static ArrayList<Integer> fixedIndexes(byte[] arr)
     {
         int sum = 0;
