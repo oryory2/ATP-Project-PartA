@@ -24,9 +24,16 @@ public class Configurations
      */
     private Configurations()
     {
-        try (OutputStream output = new FileOutputStream("config.properties.txt"))
+        File f = new File("resources/config.properties.txt"); // check if the config file is empty
+
+        if (f.length() != 0)
         {
-            // set the Default Setting of the Program
+            return;
+        }
+
+        try (OutputStream output = new FileOutputStream("resources/config.properties.txt")) // set the Default Setting of the Program
+
+        {
 
             Properties prop = new Properties();
             prop.setProperty("threadPoolSize", "10");
@@ -34,16 +41,12 @@ public class Configurations
             prop.setProperty("mazeSearchingAlgorithm", "BestFirstSearch");
             prop.setProperty("CompressorType", "MyCompressorOutputStream");
 
-            // save properties to project root folder
-            prop.store(output, null);
-
+            prop.store(output, null); // save properties to project root folder
         }
         catch (IOException io)
         {
             io.printStackTrace();
         }
-
-
     }
 
      /**
@@ -71,7 +74,7 @@ public class Configurations
      * @param CompressorType the Compression algorithm
      */
     public void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType){
-        try (OutputStream output = new FileOutputStream("config.properties.txt"))
+        try (OutputStream output = new FileOutputStream("ce"))
         {
             Properties prop = new Properties();
             // set the properties value
@@ -80,8 +83,8 @@ public class Configurations
             prop.setProperty("mazeSearchingAlgorithm", MSA);
             prop.setProperty("CompressorType", CompressorType);
 
-            // save properties to project root folder
-            prop.store(output, null);
+            prop.store(output, null); // save properties to project root folder
+
         }
         catch (IOException io)
         {
@@ -94,12 +97,12 @@ public class Configurations
      * @return array of the properties from the configuration file(Object[])
      */
     public Object[] LoadProp(){
-        try (InputStream input = new FileInputStream("config.properties.txt")) {
+        try (InputStream input = new FileInputStream("resources/config.properties.txt")) {
 
             Properties prop = new Properties();
 
-            // load a properties file
-            prop.load(input);
+            prop.load(input); // load a properties file
+
             String[] PropArr = new String[4];
 
             PropArr[0] = prop.getProperty("threadPoolSize");

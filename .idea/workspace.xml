@@ -6,7 +6,17 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="" />
+    <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Configurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/RunCommunicateWithServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/RunCommunicateWithServers.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,15 +77,15 @@
       <recent name="algorithms.search" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunCommunicateWithServers">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartB" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunCommunicateWithServers" type="Application" factoryName="Application" singleton="true" nameIsGenerated="true">
+    <configuration name="RunCommunicateWithServers" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.RunCommunicateWithServers" />
       <module name="ATP-Project-PartB" />
       <extension name="coverage">
@@ -262,6 +272,8 @@
       <workItem from="1620316654607" duration="41000" />
       <workItem from="1620316752178" duration="824000" />
       <workItem from="1620317595302" duration="44000" />
+      <workItem from="1620375389608" duration="948000" />
+      <workItem from="1620376357433" duration="1674000" />
     </task>
     <servers />
   </component>
@@ -279,6 +291,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ATP_Project_PartA$Main.ic" NAME="Main Coverage Results" MODIFIED="1617965758880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

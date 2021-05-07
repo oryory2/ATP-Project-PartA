@@ -1,0 +1,5 @@
+#Fri May 07 11:58:40 IDT 2021
+CompressorType=MyCompressorOutputStream
+threadPoolSize=10
+mazeGeneratingAlgorithm=MyMazeGenerator
+mazeSearchingAlgorithm=BestFirstSearch
