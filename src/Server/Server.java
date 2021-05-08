@@ -25,10 +25,12 @@ public class Server
      */
     public Server(int port, int ListeningIntervalMS, IServerStrategy strategy)
     {
+        Configurations c = Configurations.getInstance();
+        Object[] configurations = c.LoadProp();
         this.port = port; // the port number of the server
         this.ListeningIntervalMS = ListeningIntervalMS;
         this.strategy = strategy; // the strategy the server will use
-        this.threadPool = Executors.newFixedThreadPool(10); // the number of Client we can serve in concurrent
+        this.threadPool = Executors.newFixedThreadPool((int)(configurations[0])); // the number of Client we can serve in concurrent
     }
 
      /**

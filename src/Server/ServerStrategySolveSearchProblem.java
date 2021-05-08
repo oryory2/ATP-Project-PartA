@@ -4,10 +4,7 @@ import IO.MyCompressorOutputStream;
 import IO.MyDecompressorInputStream;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MyMazeGenerator;
-import algorithms.search.BestFirstSearch;
-import algorithms.search.ISearchable;
-import algorithms.search.SearchableMaze;
-import algorithms.search.Solution;
+import algorithms.search.*;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -34,7 +31,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
         this.hashMap = new HashMap<String,String>(); // haseMap <Maze, solFileName>
 
         String tempDirectoryPath = System.getProperty("java.io.tmpdir");
-        System.out.println(System.getProperty("java.io.tmpdir")); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!למחוק בסוף!!!!!!!!!!!!
+        System.out.println(System.getProperty("java.io.tmpdir")); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!למחוק בסוף!!!!!!!!@#@!#!@#!@#!@#!@#!@#!@#!@#!!!!!
 
         File folder = new File(tempDirectoryPath);
         File[] listOfFiles = folder.listFiles();
@@ -104,9 +101,11 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
                 }
 
 
-            BestFirstSearch best = new BestFirstSearch();
+            Configurations c = Configurations.getInstance(); // load the Properties of the Program
+            Object[] configurations = c.LoadProp();
+
             SearchableMaze sMaze = new SearchableMaze(newMaze);
-            Solution sol = best.solve(sMaze);
+            Solution sol = ((ASearchingAlgorithm)(configurations[2])).solve(sMaze);
 
             String tempDirectoryPath = System.getProperty("java.io.tmpdir");
             String numOfSolution = String.valueOf(this.counter.getAndIncrement());
@@ -135,7 +134,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
     }
 
      /**
-     * A function that receives a maze and a mazeFile, and compare both mazes
+     * A function that receives a File, and gets the Maze inside it
      * @param MazeFileName the Filename of the File with the maze inside
      * @return The maze inside the file (Maze)
      */
