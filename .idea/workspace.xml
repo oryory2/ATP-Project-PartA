@@ -7,20 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategyGenerateMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategyGenerateMaze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategySolveSearchProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategySolveSearchProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savedMaze.maze" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerStrategyGenerateMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerStrategyGenerateMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/RunCommunicateWithServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/RunCommunicateWithServers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/config.properties.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Configurations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +275,9 @@
       <workItem from="1620406477091" duration="106000" />
       <workItem from="1620474212516" duration="431000" />
       <workItem from="1620476967296" duration="612000" />
-      <workItem from="1620485141093" duration="3334000" />
+      <workItem from="1620485141093" duration="3441000" />
+      <workItem from="1620488912031" duration="959000" />
+      <workItem from="1620489889298" duration="39000" />
     </task>
     <servers />
   </component>

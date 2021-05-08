@@ -24,14 +24,14 @@ public class Configurations
      */
     private Configurations()
     {
-        File f = new File("resources/config.properties.txt"); // check if the config file is empty
+        File f = new File("resources/config.properties"); // check if the config file is empty
 
         if (f.length() != 0)
         {
             return;
         }
 
-        try (OutputStream output = new FileOutputStream("resources/config.properties.txt")) // set the Default Setting of the Program
+        try (OutputStream output = new FileOutputStream("resources/config.properties")) // set the Default Setting of the Program
 
         {
 
@@ -74,7 +74,7 @@ public class Configurations
      * @param CompressorType the Compression algorithm
      */
     public void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType){
-        try (OutputStream output = new FileOutputStream("ce"))
+        try (OutputStream output = new FileOutputStream("resources/config.properties"))
         {
             Properties prop = new Properties();
             // set the properties value
@@ -97,7 +97,7 @@ public class Configurations
      * @return array of the properties from the configuration file(Object[])
      */
     public Object[] LoadProp(){
-        try (InputStream input = new FileInputStream("resources/config.properties.txt")) {
+        try (InputStream input = new FileInputStream("resources/config.properties")) {
 
             Properties prop = new Properties();
 
