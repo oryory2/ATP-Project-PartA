@@ -73,7 +73,9 @@ public class Configurations
      * @param MSA The algorithm for solving a maze
      * @param CompressorType the Compression algorithm
      */
-    public void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType){
+    public void writeProp(String NumberOfThreads, String MGA ,String MSA, String CompressorType)
+    {
+
         try (OutputStream output = new FileOutputStream("resources/config.properties"))
         {
             Properties prop = new Properties();

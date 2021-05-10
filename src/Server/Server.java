@@ -1,7 +1,5 @@
 package Server;
 
-import test.RunCommunicateWithServers;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -60,18 +58,18 @@ public class Server
         {
             ServerSocket serverSocket = new ServerSocket(this.port); // Server Socket initialization
             serverSocket.setSoTimeout(this.ListeningIntervalMS); // Allocation of time for requesting a link from a Client
-            System.out.println("Starting server at port:" + this.port);
+            //System.out.println("Starting server at port:" + this.port);
             while(!stop) // The server will continue to run as long as ..
             {
                 try
                 {
                     Socket clientSocket = serverSocket.accept(); // Contacting the Client
-                    System.out.println("Client accepted : " + clientSocket.toString());
+                    //System.out.println("Client accepted : " + clientSocket.toString());
                     threadPool.submit(() -> {ServerStrategy(clientSocket); });
                 }
                 catch (SocketTimeoutException e)
                 {
-                    System.out.println("The time is out"); // If no Client contacted within the allotted time
+                    //System.out.println("The time is out"); // If no Client contacted within the allotted time
                 }
             }
             serverSocket.close();
@@ -91,7 +89,7 @@ public class Server
     {
         try
         {
-            strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream()); // apply the strategy with the Client
+            strategy.ServerStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream()); // apply the strategy with the Client
             clientSocket.close(); // disconnect the client from the server
         }
         catch (IOException e)

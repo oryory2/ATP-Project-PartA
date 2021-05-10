@@ -32,7 +32,7 @@ public class Client
         try
         {
             Socket serverSocket = new Socket(this.ServerIP, this.ServerPort); // sending the server connection request
-            System.out.println("Client is now connected to the Server: IP: " + this.ServerIP);
+            //System.out.println("Client is now connected to the Server: IP: " + this.ServerIP);
             this.strategy.clientStrategy(serverSocket.getInputStream(), serverSocket.getOutputStream());
         }
         catch (Exception e)

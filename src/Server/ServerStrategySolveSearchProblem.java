@@ -31,7 +31,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
         this.hashMap = new HashMap<String,String>(); // haseMap <Maze, solFileName>
 
         String tempDirectoryPath = System.getProperty("java.io.tmpdir");
-        System.out.println(System.getProperty("java.io.tmpdir")); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!למחוק בסוף!!!!!!!!@#@!#!@#!@#!@#!@#!@#!@#!@#!!!!!
+        //System.out.println(System.getProperty("java.io.tmpdir"));
 
         File folder = new File(tempDirectoryPath);
         File[] listOfFiles = folder.listFiles();
@@ -74,7 +74,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
      * @param inFromClient the Server's Input stream
      * @param outToClient the Server's Output stream
      */
-    public void applyStrategy(InputStream inFromClient, OutputStream outToClient)
+    public void ServerStrategy(InputStream inFromClient, OutputStream outToClient)
     {
         try
         {
@@ -85,6 +85,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
             Maze newMaze = (Maze)fromClient.readObject();
             String hashcode = newMaze.getHashStr();
             if(hashMap.containsKey(hashcode))
+
                 {
                     // get the solution that saved in the Value of this key and return it
 

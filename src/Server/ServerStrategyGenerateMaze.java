@@ -20,7 +20,7 @@ public class ServerStrategyGenerateMaze implements IServerStrategy
      * @param inFromClient the Server's Input stream
      * @param outToClient the Server's Output stream
      */
-    public void applyStrategy(InputStream inFromClient, OutputStream outToClient)
+    public void ServerStrategy(InputStream inFromClient, OutputStream outToClient)
     {
         try
         {
