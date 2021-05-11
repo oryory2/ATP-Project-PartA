@@ -31,7 +31,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy
         this.hashMap = new HashMap<String,String>(); // haseMap <Maze, solFileName>
 
         String tempDirectoryPath = System.getProperty("java.io.tmpdir");
-        //System.out.println(System.getProperty("java.io.tmpdir"));
+        System.out.println(System.getProperty("java.io.tmpdir"));
 
         File folder = new File(tempDirectoryPath);
         File[] listOfFiles = folder.listFiles();
