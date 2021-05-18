@@ -7,41 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ATP_Project_PartA_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ATP_Project_PartA_jar/ATP-Project-PartA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/AMaze3DGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/IMaze3DGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3DState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/MyMaze3DGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Position3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/SearchableMaze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/AMazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/EmptyMazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/IMazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Position.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/SimpleMazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ASearchingAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/AState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BestFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ISearchable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ISearchingAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/MazeState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/GeneralCheckingFunctions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunMaze3DGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunMazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunSearchOnMaze.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunSearchOnMaze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ATP-Project-PartA/algorithms/search/BestFirstSearchTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +155,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.RunCommunicateWithServers" />
@@ -311,7 +290,13 @@
       <workItem from="1620762271729" duration="59000" />
       <workItem from="1620762341595" duration="38000" />
       <workItem from="1620762389441" duration="86000" />
-      <workItem from="1620762508155" duration="2000" />
+      <workItem from="1620762508155" duration="41000" />
+      <workItem from="1620762561878" duration="5000" />
+      <workItem from="1620762669009" duration="13000" />
+      <workItem from="1620811971677" duration="748000" />
+      <workItem from="1620836514443" duration="607000" />
+      <workItem from="1621326967846" duration="287000" />
+      <workItem from="1621333909969" duration="1354000" />
     </task>
     <servers />
   </component>
