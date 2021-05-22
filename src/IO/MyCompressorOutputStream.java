@@ -1,6 +1,7 @@
 package IO;
 
 import algorithms.mazeGenerators.Position;
+import jdk.jfr.Unsigned;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -41,27 +42,25 @@ public class MyCompressorOutputStream extends OutputStream
         {
             this.out.write(b[i]);
         }
-        for(int i = 12 ; i < b.length; i++) // write the rest bytes - the mazeArray values
+        int counter = 0;
+        String s = "";
+        int lastIter = 7;
+        for(int i = 12; i < b.length; i++)
         {
-            int thisIndex = i - 12; // get the right inserting index to the b array
-            if(b[i] == 1)
+            s += b[i];
+            counter++;
+            if((counter == 7) || (i == b.length - 1))
             {
-                if(thisIndex <= 127) // if the number is lower than 127 than write it to the Stream
-                    this.out.write(thisIndex);
-                else
+                if(i == b.length - 1)
                 {
-                    int temp = thisIndex;
-                    while(temp > 127) // insert a number that bigger than 127 by 127 - 0 - 127 - 0 -......
-                    {
-                        this.out.write(127);
-                        this.out.write(0);
-                        temp -= 127;
-                    }
-                    if(temp != 0)
-                        this.out.write(temp);
+                    lastIter = counter;
                 }
+                byte binaryByte = (byte)(int)Integer.valueOf(s, 2);
+                this.out.write(binaryByte);
+                counter = 0;
+                s = "";
             }
-
         }
+        this.out.write(lastIter);
     }
 }

@@ -8,6 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2358ba7c-e6fb-44ea-b735-f5d2a786abe8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyCompressorOutputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyCompressorOutputStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyDecompressorInputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyDecompressorInputStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCompressDecompressMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCompressDecompressMaze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IO/MyCompressorOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/MyCompressorOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/MyDecompressorInputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/RunCompressDecompressMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/RunCompressDecompressMaze.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,21 +110,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="threadasd.a" />
+    <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tester" />
       <module name="ATP-Project-PartB" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="threadasd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="c" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="threadasd.c" />
+    <configuration name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="threadasd.a" />
       <module name="ATP-Project-PartB" />
       <extension name="coverage">
         <pattern>
@@ -155,15 +156,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,18 +171,18 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.RunCommunicateWithServers" />
       <item itemvalue="Application.a" />
-      <item itemvalue="Application.c" />
       <item itemvalue="Application.d" />
       <item itemvalue="Application.e" />
       <item itemvalue="Application.RunCompressDecompressMaze" />
+      <item itemvalue="Application.Tester" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RunCompressDecompressMaze" />
+        <item itemvalue="Application.Tester" />
         <item itemvalue="Application.a" />
         <item itemvalue="Application.e" />
         <item itemvalue="Application.d" />
-        <item itemvalue="Application.c" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +295,8 @@
       <workItem from="1620811971677" duration="748000" />
       <workItem from="1620836514443" duration="607000" />
       <workItem from="1621326967846" duration="287000" />
-      <workItem from="1621333909969" duration="1354000" />
+      <workItem from="1621333909969" duration="1785000" />
+      <workItem from="1621715136506" duration="8960000" />
     </task>
     <servers />
   </component>

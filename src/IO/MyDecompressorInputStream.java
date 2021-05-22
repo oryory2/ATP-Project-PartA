@@ -41,59 +41,45 @@ public class MyDecompressorInputStream extends InputStream
         {
             b[i] = input[i];
         }
+        int counter = 12;
 
-        int insertIndex = 12; // get the right inserting index to the b array
-        int thisIndex = 0;
-        ArrayList<Integer> fixedIndexes = fixedIndexes(input);
-
-        for(int i = 0; i < fixedIndexes.size(); i++)
+        for(int i = 12; i < input.length; i++)
         {
-            while(thisIndex < fixedIndexes.get(i)) // while the index of the next '1' val in the array is bigger than thisIndex, keep insert '0'
+            if(i == input.length - 1)
             {
-                b[insertIndex] = 0;
-                insertIndex++;
-                thisIndex++;
+                break;
             }
-            b[insertIndex] = 1; // insert '1'
-            insertIndex++;
-            thisIndex++;
+            String s, fixedS;
+            if(i != input.length - 2)
+            {
+                s = Integer.toBinaryString(input[i]);
+                fixedS =  fixStr(s, 7);
+            }
+            else
+            {
+                int len = input[input.length - 1];
+                s = Integer.toBinaryString(input[i]);
+                fixedS =  fixStr(s, len);
+            }
+
+            for (int j = 0; j < fixedS.length(); j++)
+            {
+                b[counter] = (byte)(int)Integer.valueOf(String.valueOf(fixedS.charAt(j)), 2);
+                counter++;
+            }
         }
-        for(int i = insertIndex; i < b.length; i++) // insert '0' until the end of the b array
-        {
-            b[i] = 0;
-        }
+
         return 0;
     }
 
-     /**
-     * Gets byte array filled with bytes, presenting the indexes where '1' is shown in the mazeArr, and "fix" the indexes from bytes to integers
-     * 127 - 0 - 51 -------> 178
-     * @return the fixedIndexes ArrayList (ArrayList<Integer>)
-     */
-    public static ArrayList<Integer> fixedIndexes(byte[] arr)
+    public static String fixStr(String s, int len)
     {
-        int sum = 0;
-        ArrayList<Integer> ListArr = new ArrayList<Integer>();
-
-        for(int i = 12; i < arr.length; i++) // start working from index 12 (the start of the mazeArr values)
+        int fix = len - s.length();
+        for(int i = 0; i < fix; i++)
         {
-            sum += arr[i];
-            if((arr[i] != 127) && (arr[i] != 0))
-            {
-                ListArr.add(sum);
-                sum = 0;
-            }
-            else if((arr[i] == 127) && (i < arr.length - 1) && (arr[i + 1] != 0)) // check if we need add more to sum (left indexSize is more than 127)
-            {
-                ListArr.add(sum);
-                sum = 0;
-            }
-            else if((i == 12) && (arr[i] == 0)) // check if the first index that '1' is shown is 0
-            {
-                ListArr.add(0);
-            }
+            s = '0' + s;
         }
-        return ListArr;
+        return s;
     }
 
 }
