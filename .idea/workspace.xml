@@ -69,7 +69,7 @@
       <recent name="algorithms.search" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunCommunicateWithServers">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartB" />
@@ -291,6 +291,9 @@
       <workItem from="1621333909969" duration="1785000" />
       <workItem from="1621715136506" duration="8998000" />
       <workItem from="1621724220870" duration="844000" />
+      <workItem from="1621725972351" duration="471000" />
+      <workItem from="1621753774881" duration="1032000" />
+      <workItem from="1621762875909" duration="370000" />
     </task>
     <servers />
   </component>
